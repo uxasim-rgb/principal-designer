@@ -10,7 +10,7 @@ The output structure for an orchestrated cross-discipline review, and the rules 
 
 Opens the review. Four things:
 
-> **Reviewed.** Access review flow — list, member detail, confirmation. Admin and owner roles. Desktop and mobile, light and dark.
+> **Reviewed.** Access review flow: list, member detail, confirmation. Admin and owner roles. Desktop and mobile, light and dark.
 >
 > **Against.** The project's 4px spacing scale, the `ds-*` token set, the existing component library. Density target: professional tool, daily use.
 >
@@ -28,21 +28,21 @@ At the top, never the end.
 
 ### 3. Findings
 
-At most twenty, severity order. Each finding as a block, not a table row — a table cannot hold a measurement, a consequence and a fix legibly.
+At most twenty, severity order. Each finding as a block, not a table row: a table cannot hold a measurement, a consequence and a fix legibly.
 
-> **Serious — `accessibility`**
+> **Serious: `accessibility`**
 > **Where.** Member list, bulk-select checkbox, all breakpoints.
 > **Measured.** Target is 16×16 CSS px. Adjacent targets 8px apart, so the spacing exception does not apply. WCAG 2.5.8 requires 24×24.
-> **Consequence.** Selecting members on touch requires repeated attempts, and the adjacent row link is hit instead — which navigates away and loses the selection.
+> **Consequence.** Selecting members on touch requires repeated attempts, and the adjacent row link is hit instead: which navigates away and loses the selection.
 > **Fix.** Expand the hit area to 24px minimum with padding on the wrapping label. Visible checkbox can stay 16px.
 
 The five fields do specific work:
 
-- **Severity and owner** — so it can be ranked and routed without discussion.
-- **Where** — so it can be found. Screen, state, breakpoint, role.
-- **Measured** — the number and the threshold, where one exists. Omit only where nothing is measurable.
-- **Consequence** — what it costs a user. **This field is what separates a finding from a preference.** If you cannot fill it, cut the finding.
-- **Fix** — in the project's own system. A token, a component, a class. Not a rewrite.
+- **Severity and owner**: so it can be ranked and routed without discussion.
+- **Where**: so it can be found. Screen, state, breakpoint, role.
+- **Measured**: the number and the threshold, where one exists. Omit only where nothing is measurable.
+- **Consequence**: what it costs a user. **This field is what separates a finding from a preference.** If you cannot fill it, cut the finding.
+- **Fix**: in the project's own system. A token, a component, a class. Not a rewrite.
 
 ### 4. Conflicts resolved
 
@@ -52,7 +52,7 @@ Where domains disagreed, say what was chosen and why. Silent resolution hides a 
 
 ### 5. Worth keeping
 
-Two or three specific things. Not a compliment — a warning about what the fix might break.
+Two or three specific things. Not a compliment: a warning about what the fix might break.
 
 > The error path on bulk actions reports partial success with a per-row retry, which is usually missing. Preserve it through the checkbox change.
 
@@ -76,7 +76,7 @@ Findings beyond the cap, listed in one line each. Present so they are not lost, 
 | --- | --- |
 | Spacing is inconsistent | The two card variants use 12px and 16px internal spacing, so a scanning user reads them as different object types |
 | The copy could be better | The error says "Invalid input" with no indication of which field or what a valid value is, so the user must guess |
-| Contrast looks low | Body text `#767676` on `#FFFFFF` computes to 4.54:1 — passes AA at 4.5:1 but fails at 14px bold, which this is |
+| Contrast looks low | Body text `#767676` on `#FFFFFF` computes to 4.54:1, passes AA at 4.5:1 but fails at 14px bold, which this is |
 | I'd use a different icon | The gear icon is used for workspace settings here and for row-level actions on the previous screen |
 
 **Measure what is measurable.** Contrast, target size, duration, measure in characters, bundle size, layout shift. A finding that could carry a number and does not is incomplete.

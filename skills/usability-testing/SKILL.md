@@ -45,7 +45,7 @@ The moderator's tells matter more than the script. Reacting to success, sighing 
 
 A task that names the interface element tests whether the participant can read. A task that states a goal tests whether the interface communicates the path.
 
-| Instruction — tests nothing | Goal — tests the design |
+| Instruction (tests nothing | Goal) tests the design |
 | --- | --- |
 | Click Settings, then Billing, then Change plan. | You've decided the team plan is too expensive for what you use. Sort that out. |
 | Use the filter to find orders over $500. | Your manager wants to know which orders this month were unusually large. Find out. |
@@ -60,7 +60,7 @@ Give each task a reason. The reason supplies the context a real user would have 
 | | Moderated | Unmoderated |
 | --- | --- | --- |
 | Best for | Why a failure happened | How often it happens |
-| Participants | 5 per segment | 20–50 |
+| Participants | 5 per segment | 20 to 50 |
 | You get | Reasons, follow-ups, recovery from broken tasks | Completion rates, time on task, a clip pile |
 | You lose | Frequency, and a day per five sessions | The ability to ask a single follow-up |
 | Fails when | The sample is too small to quantify | The task is ambiguous, and you find out afterwards |
@@ -85,7 +85,7 @@ The escalation ladder, in order, one step at a time:
 
 1. Silence. Count to twenty.
 2. "What are you trying to do right now?"
-3. "What would you do if I weren't here?" — the highest-value question in a usability test. It reveals whether they would abandon, ask a colleague, call support, or try something else.
+3. "What would you do if I weren't here?": the highest-value question in a usability test. It reveals whether they would abandon, ask a colleague, call support, or try something else.
 4. "Take as long as you need, or tell me if you'd like to stop."
 5. End the task. Mark it failed. Move on.
 
@@ -95,13 +95,13 @@ Help only after step 5, if a later task depends on reaching this state. Then hel
 
 During the session capture observations: what the participant did, where they clicked, what they said verbatim, where they paused, where they backtracked. Interpretation comes later and elsewhere.
 
-"Participant scrolled past the filter twice, then used browser search" is an observation. "Participant didn't see the filter" is an inference — plausible, but it is a conclusion and it belongs in analysis where it can be checked against the other four sessions.
+"Participant scrolled past the filter twice, then used browser search" is an observation. "Participant didn't see the filter" is an inference: plausible, but it is a conclusion and it belongs in analysis where it can be checked against the other four sessions.
 
 Timestamp anything worth clipping. Finding a moment in a recording afterwards costs more than noting it at the time.
 
 ## Rate severity by consequence, not by annoyance
 
-A problem's severity is a function of impact, frequency and persistence — not of how irritating it looked in the room. The model and the ladder are in [severity rating](severity-rating.md).
+A problem's severity is a function of impact, frequency and persistence: not of how irritating it looked in the room. The model and the ladder are in [severity rating](severity-rating.md).
 
 The short form: a problem is **Critical** if users cannot complete the task or lose data or money; **Serious** if they complete it slowly, with workarounds, or with errors they notice; **Moderate** if it causes hesitation that resolves; **Minor** if it is noticed and shrugged off.
 
@@ -111,11 +111,11 @@ Frequency modifies rather than sets it. A problem hit by one participant on a ta
 
 Report counts, never percentages. "4 of 5 participants failed" is the finding; "80% of users fail" is a claim about a population five people cannot support.
 
-One participant failing a task is a signal, not a finding — unless the failure is catastrophic, in which case one is enough, because the cost of ignoring it is asymmetric. Data loss, a charge the user did not intend, or a dead end with no recovery is reportable at n=1.
+One participant failing a task is a signal, not a finding: unless the failure is catastrophic, in which case one is enough, because the cost of ignoring it is asymmetric. Data loss, a charge the user did not intend, or a dead end with no recovery is reportable at n=1.
 
 Separate observed failure from stated dissatisfaction. Someone who completed the task while complaining has not found a usability problem; they have expressed a preference. Both are worth knowing and they are different rows.
 
-Where a problem was caused by the test rather than the design — an ambiguous task, a prototype dead end, a broken test account — say so and exclude it. A finding that is an artifact of the protocol will be discovered by an engineer later, at the cost of the study's credibility.
+Where a problem was caused by the test rather than the design (an ambiguous task, a prototype dead end, a broken test account) say so and exclude it. A finding that is an artifact of the protocol will be discovered by an engineer later, at the cost of the study's credibility.
 
 ## Before you ship
 
@@ -134,18 +134,18 @@ Where a problem was caused by the test rather than the design — an ambiguous t
 
 **The deliverable is a rated problem list with evidence**, not a session-by-session narrative. Nobody acts on a narrative.
 
-**Severity ladder:** `Critical` — task cannot be completed, or data, money or trust is lost · `Serious` — completed with errors, workarounds, or substantial delay · `Moderate` — hesitation or a wrong turn that the participant recovers from · `Minor` — noticed, mentioned, no effect on outcome.
+**Severity ladder:** `Critical`: task cannot be completed, or data, money or trust is lost · `Serious`: completed with errors, workarounds, or substantial delay · `Moderate`: hesitation or a wrong turn that the participant recovers from · `Minor`: noticed, mentioned, no effect on outcome.
 
 **Verification before reporting:** every problem has at least one timestamped observation; every severity has a stated consequence; every task has a completion count; any assisted or excluded task is marked.
 
 **Format:**
 
-1. **What was tested** — build or prototype, date, tasks, and what was *not* covered.
-2. **Participants** — segments and counts. No names.
-3. **Task completion table** — task, completed unassisted, completed with difficulty, failed.
+1. **What was tested**: build or prototype, date, tasks, and what was *not* covered.
+2. **Participants**: segments and counts. No names.
+3. **Task completion table**: task, completed unassisted, completed with difficulty, failed.
 4. **Problems**, ordered by severity, each with: severity, what was observed, how many participants hit it, the consequence, a verbatim quote, and the owning skill for the fix (`information-architecture`, `content-design`, `forms-and-input`, `components-and-states`, `accessibility`).
-5. **What worked** — short, and honest. A report with no positives will be read as an attack on the designer, and the team needs to know what not to break.
-6. **Limits** — sample, segments not covered, anything the prototype could not do.
-7. **Next step** — one. Usually: fix Critical and Serious, retest the same tasks.
+5. **What worked**: short, and honest. A report with no positives will be read as an attack on the designer, and the team needs to know what not to break.
+6. **Limits**: sample, segments not covered, anything the prototype could not do.
+7. **Next step**: one. Usually: fix Critical and Serious, retest the same tasks.
 
 **Done when:** every problem names a consequence rather than a feeling, and the team can start work from the list without rewatching a session.

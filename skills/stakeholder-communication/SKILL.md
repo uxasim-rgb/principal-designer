@@ -1,6 +1,6 @@
 ---
 name: stakeholder-communication
-description: Frames design work for the person hearing it — executives, engineering, sales, clients — and handles pushback without either capitulating or digging in. Use when the work is right and the conversation is the risk.
+description: Frames design work for the person hearing it (executives, engineering, sales, clients) and handles pushback without either capitulating or digging in. Use when the work is right and the conversation is the risk.
 when_to_use: Use when presenting design work to stakeholders or leadership, framing a recommendation for an executive or client, handling pushback or disagreement, negotiating scope, explaining why a design decision was made, or preparing for a review where the work may be challenged.
 ---
 
@@ -31,8 +31,8 @@ Most design presentations are structured as a journey: here is the process, here
 Invert it:
 
 1. **What we are doing**, in one sentence.
-2. **What changes as a result** — the outcome, in their terms.
-3. **What we need from you** — a decision, a resource, an approval, or nothing.
+2. **What changes as a result**: the outcome, in their terms.
+3. **What we need from you**: a decision, a resource, an approval, or nothing.
 4. *Then* the reasoning, the evidence and the alternatives, for whoever wants them.
 
 If the meeting is cut to five minutes, the first three points are the whole meeting. If it runs full length, the rest is there.
@@ -41,7 +41,7 @@ Show the work, not the process. A senior audience does not need the exploration;
 
 ## Match the frame to what they own
 
-The same decision needs a different framing per audience. This is not spin — it is naming the consequence each person is accountable for.
+The same decision needs a different framing per audience. This is not spin: it is naming the consequence each person is accountable for.
 
 | Audience | They are accountable for | Frame it as |
 | --- | --- | --- |
@@ -57,7 +57,7 @@ Prepare one sentence per audience in the room before the meeting. Being able to 
 
 ## Argue from the problem, never from craft
 
-Craft arguments lose to people who do not share your craft, and they should — "it's better typography" is not a reason anyone outside design can evaluate or act on.
+Craft arguments lose to people who do not share your craft, and they should: "it's better typography" is not a reason anyone outside design can evaluate or act on.
 
 | Weak | Strong |
 | --- | --- |
@@ -67,7 +67,7 @@ Craft arguments lose to people who do not share your craft, and they should — 
 | Users won't like it | Users who hit this step contact support 3× more often |
 | This is bad design | This will produce the support volume we saw with the previous version |
 
-Every strong version names a consequence the listener already cares about. Where you have research, cite it with counts. Where you do not, say so and name the cost of finding out — which is usually smaller than the cost of being wrong, and that comparison is the argument.
+Every strong version names a consequence the listener already cares about. Where you have research, cite it with counts. Where you do not, say so and name the cost of finding out: which is usually smaller than the cost of being wrong, and that comparison is the argument.
 
 Accessibility and legal obligations are the one place to argue from the standard directly, because the standard is the consequence.
 
@@ -96,12 +96,12 @@ The last one is worth designing around: an audience given no legitimate way to c
 
 Four parts, every time:
 
-1. **What you understood the request to be** — demonstrates you engaged.
+1. **What you understood the request to be**: demonstrates you engaged.
 2. **What it is competing against**, specifically. Not "we're at capacity".
-3. **What would change the decision** — a number, a customer count, a date. This turns a refusal into a condition.
-4. **What they can do now** — a workaround, a manual process, or when it will be reconsidered.
+3. **What would change the decision**: a number, a customer count, a date. This turns a refusal into a condition.
+4. **What they can do now**: a workaround, a manual process, or when it will be reconsidered.
 
-Never decline by going quiet, and never decline with "it's not a priority" alone — that communicates a ranking without its reasoning, reads as dismissal, and guarantees the request returns through someone more senior.
+Never decline by going quiet, and never decline with "it's not a priority" alone: that communicates a ranking without its reasoning, reads as dismissal, and guarantees the request returns through someone more senior.
 
 ## Disagree with the argument, not the person, and know when to stop
 
@@ -109,7 +109,7 @@ When a decision goes against the evidence, say so once, clearly, in writing: wha
 
 Continuing to relitigate after a decision costs your credibility for the next one, and the next one may matter more. Record the disagreement in `design-docs` with a **revisit if** condition, so it can be reopened on evidence rather than on persistence.
 
-The exception: where the decision creates a real harm — an accessibility barrier that excludes people, a dark pattern, a data-loss path, a legal exposure — escalating is appropriate, and it should be done in writing, once, to the person who owns the risk. Name the harm and the obligation, not your preference.
+The exception: where the decision creates a real harm (an accessibility barrier that excludes people, a dark pattern, a data-loss path, a legal exposure) escalating is appropriate, and it should be done in writing, once, to the person who owns the risk. Name the harm and the obligation, not your preference.
 
 ## Evidence bar
 
@@ -128,7 +128,7 @@ Where you are asked for a prediction you cannot make, say what you would need to
 | The presentation opens with process | The audience does not know what is being asked | Decision and outcome first |
 | Fifteen slides of exploration | Showing process, not work | One sentence that alternatives were considered |
 | The argument is about craft | Cannot be evaluated by the audience | Name the consequence they own |
-| No ask stated | Silence will be read as approval | Inform, input or decide — say which |
+| No ask stated | Silence will be read as approval | Inform, input or decide: say which |
 | Every stakeholder got the same framing | Nobody heard what they are accountable for | One sentence per audience, prepared |
 | The objection was defended immediately | The real concern is still unknown | Ask what the concern is |
 | Everyone comments on color | No legitimate way to contribute was offered | Give them a real question |
@@ -142,11 +142,11 @@ Where you are asked for a prediction you cannot make, say what you would need to
 
 **The deliverable is usually a short written follow-up**, sent within a day. Verbal agreement is not durable, and the same discussion recurs otherwise.
 
-1. **What was decided** — or what remains open, with the decider and date.
-2. **What we agreed the outcome would be** — the metric from `success-metrics`.
-3. **Concerns raised, and how each was addressed** — including any not addressed, said plainly.
-4. **Disagreements recorded** — where you advised differently, stated once, with the revisit condition.
-5. **Next steps** — with owners and dates.
+1. **What was decided**: or what remains open, with the decider and date.
+2. **What we agreed the outcome would be**: the metric from `success-metrics`.
+3. **Concerns raised, and how each was addressed**: including any not addressed, said plainly.
+4. **Disagreements recorded**: where you advised differently, stated once, with the revisit condition.
+5. **Next steps**: with owners and dates.
 
 Where the meeting was a decision point, the record belongs in `design-docs` as a decision record rather than living in a thread.
 

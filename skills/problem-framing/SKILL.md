@@ -17,7 +17,7 @@ The governing idea: almost every request arrives as a solution, and the solution
 | The situation | Go to |
 | --- | --- |
 | Someone asked for a specific feature | **Work backwards from the solution** below |
-| The problem is asserted, not observed | `research-planning` — but read **Assumption mapping** first to pick what to test |
+| The problem is asserted, not observed | `research-planning`: but read **Assumption mapping** first to pick what to test |
 | The team agrees on the problem but not the solution | You are past this skill; go to `user-flows` or `prototyping` |
 | The team disagrees about the problem | **Write one problem statement** below, then circulate it |
 | You have research findings and need a decision | `research-synthesis` output feeds directly into **Write one problem statement** |
@@ -39,7 +39,7 @@ A request names a solution. Three questions recover the problem, and they work i
 2. **Who is having a bad time today, and what does that look like?** Answers the problem and the population. Vague answers here mean nobody has watched anyone.
 3. **What happens if we do nothing?** Answers urgency and size. "Nothing much" is a legitimate answer and it should stop the project.
 
-Ask them in that order and in the requester's language. The failure mode is asking them as a challenge — "why do you even want this" — which turns a framing conversation into a defence of the request.
+Ask them in that order and in the requester's language. The failure mode is asking them as a challenge ("why do you even want this") which turns a framing conversation into a defence of the request.
 
 Where the answers come back solid, stop. Framing is finished and the request was well-formed; say so and move on. Running the full ritual on a well-formed request is how this skill earns a reputation for obstruction.
 
@@ -53,7 +53,7 @@ A problem statement that contains a solution has decided the design before anyon
 | We need better onboarding docs | New users cannot get their first successful result without contacting support |
 | The dashboard needs filters | Managers cannot answer "what changed this week" without exporting to a spreadsheet |
 
-The right-hand column leaves room for five designs. The left-hand column has one, and it may not be the best one — bulk edit is one answer to abandonment, and so is making the single-record edit fast enough that ten in a row is tolerable.
+The right-hand column leaves room for five designs. The left-hand column has one, and it may not be the best one: bulk edit is one answer to abandonment, and so is making the single-record edit fast enough that ten in a row is tolerable.
 
 The test: can you think of two genuinely different solutions that would both satisfy the statement? If not, the statement contains a solution.
 
@@ -65,7 +65,7 @@ Written as a job: **when [situation], I want to [motivation], so I can [outcome]
 
 > When I get back from a week off, I want to see what changed while I was away, so I can work out what needs me today.
 
-Two things this buys. First, the competition becomes visible — the competitor here is not another dashboard, it is scrolling the team channel and asking a colleague. Second, the job stays true when the interface changes, so it survives the redesign that invalidates every screen-level requirement.
+Two things this buys. First, the competition becomes visible: the competitor here is not another dashboard, it is scrolling the team channel and asking a colleague. Second, the job stays true when the interface changes, so it survives the redesign that invalidates every screen-level requirement.
 
 Jobs are recovered from research, not invented in a room. Where the job is invented, mark it as an assumption and treat it as one. `user-interviews` recovers jobs well because it asks about past events, which is where jobs live.
 
@@ -82,16 +82,16 @@ The low-confidence, high-damage quadrant is the research backlog, in priority or
 
 Four assumption types, and the order they usually fail in:
 
-- **Value** — someone wants this solved. Fails most often, and is tested last most often.
-- **Usability** — they can work out how to use the solution. `usability-testing` owns this.
-- **Feasibility** — it can be built and operated. Ask engineering before framing hardens, not after.
-- **Viability** — the business can sustain it. Pricing, support load, compliance.
+- **Value**: someone wants this solved. Fails most often, and is tested last most often.
+- **Usability**: they can work out how to use the solution. `usability-testing` owns this.
+- **Feasibility**: it can be built and operated. Ask engineering before framing hardens, not after.
+- **Viability**: the business can sustain it. Pricing, support load, compliance.
 
 Write each as something falsifiable: not "users want faster export" but "admins who export more than weekly will use a scheduled export instead of manual". The second can be wrong in a way you would notice.
 
 ## Five whys, with a stop rule
 
-Walking the chain from a symptom to a cause is useful and gets abused. The abuse is walking until you reach something profound — "our culture doesn't value quality" — which is unactionable and ends the conversation.
+Walking the chain from a symptom to a cause is useful and gets abused. The abuse is walking until you reach something profound ("our culture doesn't value quality") which is unactionable and ends the conversation.
 
 Stop at the first cause your team can actually change. That is the level to frame at. Going deeper produces a truer statement and a less useful one.
 
@@ -116,9 +116,9 @@ The last line does more work than the rest combined. An explicit non-goal is the
 
 Mark every claim in the statement as observed, inferred or assumed. A problem statement where all three are written flat reads as equally certain, and the assumed parts are where the project will fail.
 
-Where the core claim — that this problem exists and matters — is assumed rather than observed, say so in the statement itself and name the cheapest study that would settle it. Do not block on it; teams do build on assumption, legitimately, when the cost of being wrong is affordable. Make the choice visible instead of implicit.
+Where the core claim (that this problem exists and matters) is assumed rather than observed, say so in the statement itself and name the cheapest study that would settle it. Do not block on it; teams do build on assumption, legitimately, when the cost of being wrong is affordable. Make the choice visible instead of implicit.
 
-Do not frame toward a predetermined answer. When the framing keeps arriving at the solution that was originally requested, that is worth a second look — it may be right, and it is also what confirmation looks like from the inside. Check whether any assumption in the map, if false, would rule the solution out. If none would, the map is not doing its job.
+Do not frame toward a predetermined answer. When the framing keeps arriving at the solution that was originally requested, that is worth a second look: it may be right, and it is also what confirmation looks like from the inside. Check whether any assumption in the map, if false, would rule the solution out. If none would, the map is not doing its job.
 
 When the honest conclusion is that the problem is small or already solved, write that. Killing a project at framing is the highest-return thing this skill does and the thing it will be least thanked for.
 
@@ -140,12 +140,12 @@ When the honest conclusion is that the problem is small or already solved, write
 
 **The deliverable is a one-page framing document.** It is read by everyone who touches the project and it is the thing `design-docs` builds on.
 
-1. **The request as received** — verbatim, with who asked and when. This matters later when the work is questioned.
-2. **Problem statement** — the six parts above.
-3. **The job** — when / I want to / so I can, with its source.
-4. **Assumptions** — the low-confidence, high-damage ones only, each marked value / usability / feasibility / viability, each falsifiable.
-5. **What would change our mind** — the result that would make the team drop this.
-6. **Evidence status** — observed, inferred or assumed, per claim.
-7. **Recommended next step** — one. Usually either a study from `research-planning` or a decision from `prioritization`.
+1. **The request as received**: verbatim, with who asked and when. This matters later when the work is questioned.
+2. **Problem statement**: the six parts above.
+3. **The job**: when / I want to / so I can, with its source.
+4. **Assumptions**: the low-confidence, high-damage ones only, each marked value / usability / feasibility / viability, each falsifiable.
+5. **What would change our mind**: the result that would make the team drop this.
+6. **Evidence status**: observed, inferred or assumed, per claim.
+7. **Recommended next step**: one. Usually either a study from `research-planning` or a decision from `prioritization`.
 
 **Done when:** the requester recognizes their request in it, two people who disagreed can point at the same sentence, and at least one thing is written under non-goals.

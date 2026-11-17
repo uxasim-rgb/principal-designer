@@ -11,19 +11,19 @@ Consent is informed when the participant could repeat back what they agreed to. 
 Cover six things before recording starts:
 
 1. **What the session is for**, in one sentence, without selling.
-2. **What is recorded** — audio, video, screen, and whether their face is captured.
-3. **Who sees it** — the research team, the wider company, external clients. Be specific; "our team" is not.
+2. **What is recorded**: audio, video, screen, and whether their face is captured.
+3. **Who sees it**: the research team, the wider company, external clients. Be specific; "our team" is not.
 4. **How long it is kept** and what happens at the end of that period.
 5. **How to withdraw**, including after the session, and what withdrawal does to already-recorded material.
 6. **That they can skip any question or stop at any time**, with no effect on payment.
 
-Then start the recording and re-confirm on tape: "I've explained what we're recording and how it will be used — are you happy for me to record?" The on-record confirmation is what makes the consent auditable.
+Then start the recording and re-confirm on tape: "I've explained what we're recording and how it will be used: are you happy for me to record?" The on-record confirmation is what makes the consent auditable.
 
 ## Make withdrawal real
 
 A withdrawal route that requires emailing a legal inbox and quoting a participant ID is a withdrawal route nobody uses. Give a named contact and a simple address, say how long they have, and honor it without asking why.
 
-Withdrawal after synthesis is genuinely hard — the observation may already be woven into a theme. Decide the policy in advance and state it: the usual workable line is that recordings and quotes are deleted, and aggregate findings that no longer identify the participant remain.
+Withdrawal after synthesis is genuinely hard: the observation may already be woven into a theme. Decide the policy in advance and state it: the usual workable line is that recordings and quotes are deleted, and aggregate findings that no longer identify the participant remain.
 
 ## Record the minimum the question needs
 
@@ -49,7 +49,7 @@ Conditioning payment on completion selects for participants who will push throug
 
 Set the amount against the participant's time at their own rate, not yours. Under-paying specialist participants selects for the ones with least to do.
 
-Disclose any relationship that could bias the answer — if the incentive comes from the team whose product is being tested, say so.
+Disclose any relationship that could bias the answer: if the incentive comes from the team whose product is being tested, say so.
 
 ## Never use research as a sales channel
 
@@ -82,14 +82,14 @@ A working script, to adapt rather than read verbatim:
 
 > Thanks for making the time. Before we start, a few things so you know what you're agreeing to.
 >
-> This is a research session, not a sales call, and nothing you say will affect your account. I'm trying to understand how you *actually* do this, so there are no wrong answers — if something is confusing, that's useful information about the product, not about you.
+> This is a research session, not a sales call, and nothing you say will affect your account. I'm trying to understand how you *actually* do this, so there are no wrong answers: if something is confusing, that's useful information about the product, not about you.
 >
 > I'd like to record the audio and your screen so I don't have to take notes the whole time. The recording goes to the product team here and nobody outside it, and we delete it after six months. I'll use short quotes in a summary, without your name.
 >
-> You can skip anything, and you can stop at any point — you'll still get the incentive either way. If you change your mind later, email me and I'll delete your recording.
+> You can skip anything, and you can stop at any point: you'll still get the incentive either way. If you change your mind later, email me and I'll delete your recording.
 >
 > Any questions before I start recording?
 >
 > *[start recording]*
 >
-> Just for the record — I've explained how this will be recorded and used. Are you happy for me to record?
+> Just for the record: I've explained how this will be recorded and used. Are you happy for me to record?

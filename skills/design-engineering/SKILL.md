@@ -8,7 +8,7 @@ when_to_use: Use when implementing a design in code, structuring CSS or styling 
 
 This skill is where design becomes running code. It sits in the Build band, between `design-handoff` and `review-the-change`.
 
-The governing idea: the browser already does most of this well. Most interface bugs come from fighting the platform — reimplementing scrolling, focus, form behavior or layout that already existed and worked.
+The governing idea: the browser already does most of this well. Most interface bugs come from fighting the platform: reimplementing scrolling, focus, form behavior or layout that already existed and worked.
 
 **Works with:** `design-handoff` supplies the spec · `design-systems` supplies tokens and component contracts · `accessibility` supplies the requirements to implement · `motion-and-interaction` supplies what can be animated cheaply · `components-and-states` supplies the state set · `review-the-change` reviews the result.
 
@@ -46,6 +46,8 @@ Before building a behavior, check whether the browser already provides it. The l
 
 Each platform feature arrives with keyboard support, assistive-technology semantics and behavior that matches user expectation. A reimplementation starts at zero on all three and regresses.
 
+Then finish the details the platform leaves open: text wrapping, color in perceptual space, layout traps like `100vw` and `min-width: auto`, sticky-header focus, hover on touch screens, forced colors and interruptible motion. Each has a one-line fix in [css-recipes.md](css-recipes.md), with the browser support you can count on. On Tailwind and shadcn/ui, [tailwind-and-shadcn.md](tailwind-and-shadcn.md) maps the same fixes to classes and says how to change copied components without fighting them.
+
 The legitimate reasons to build your own: the native element genuinely cannot be styled to the design, browser support does not reach your audience, or the behavior needed differs from the standard. All three are checkable claims rather than assumptions.
 
 ## Architecture that survives
@@ -56,7 +58,7 @@ Whatever the styling system, the properties that matter are the same: a change s
 - **Keep specificity flat.** Deep selectors and `!important` are the beginning of an arms race. A single class per element is enough in almost every case.
 - **Use tokens, never raw values.** A hex or a pixel value in a component is a drift point. `design-systems` owns the token set.
 - **Prefer composition over overrides.** Reaching into a component from outside to restyle it couples the two permanently.
-- **Use logical properties** — `margin-inline-start` rather than `margin-left` — so the layout mirrors for RTL without a parallel stylesheet. `global-and-inclusive` owns why.
+- **Use logical properties** (`margin-inline-start` rather than `margin-left`) so the layout mirrors for RTL without a parallel stylesheet. `global-and-inclusive` owns why.
 - **Use container queries** for component-level responsiveness. A component that responds to its container works wherever it is placed; one responding to the viewport only works where it was designed.
 - **Let the browser do layout.** Grid and flexbox with intrinsic sizing need fewer breakpoints than fixed columns, and fail more gracefully.
 
@@ -75,13 +77,13 @@ Metrics worth holding a budget against:
 
 Set the budget as a number in CI so a regression fails a build rather than being noticed a quarter later. A budget nobody enforces is a preference.
 
-Measure on hardware users have — a throttled CPU, a mid-range phone, a slow connection — not on the development machine, which is not representative of anything.
+Measure on hardware users have (a throttled CPU, a mid-range phone, a slow connection) not on the development machine, which is not representative of anything.
 
 ## What the compositor can do
 
 `transform` and `opacity` animate on the compositor and stay smooth. Animating `width`, `height`, `top`, `left` or `margin` forces layout on every frame and produces jank on anything but a fast machine.
 
-Where a size change is needed, prefer `transform: scale()` or the layout-animation APIs the project already uses. `will-change` is a narrow, temporary hint — left on permanently it costs memory and can make things worse.
+Where a size change is needed, prefer `transform: scale()` or the layout-animation APIs the project already uses. `will-change` is a narrow, temporary hint: left on permanently it costs memory and can make things worse.
 
 Long tasks on the main thread block input, which is what most "it feels slow" reports actually are. Break them up, move work off the main thread, or do less. `motion-and-interaction` owns the durations and curves; this skill owns whether the browser can hit them.
 
@@ -90,7 +92,7 @@ Long tasks on the main thread block input, which is what most "it feels slow" re
 Layout shift is the most user-hostile and most preventable performance defect: content moves while someone is reading or reaching for a control.
 
 - `width` and `height` attributes or `aspect-ratio` on every image, video and embed.
-- Skeletons that match the dimensions of what arrives — `components-and-states` owns the pattern.
+- Skeletons that match the dimensions of what arrives: `components-and-states` owns the pattern.
 - `font-display: swap` with a fallback metric-matched closely enough that the swap does not reflow.
 - Never insert content above existing content after load. Banners, notices and ad slots are the usual culprits; reserve the space or insert below.
 
@@ -105,7 +107,7 @@ Layout shift is the most user-hostile and most preventable performance defect: c
 - **Both themes**, if the product has them.
 - **RTL**, if it is supported or will be.
 - **Reduced motion enabled.**
-- **Slow or failed responses** — throttle the API, not only the network, and see what the interface does.
+- **Slow or failed responses**: throttle the API, not only the network, and see what the interface does.
 
 Mobile viewport units are worth knowing specifically: `100vh` does not account for browser chrome that appears and disappears. Use `100dvh` where the intent is the visible area, and `svh`/`lvh` where stable sizing matters more than accuracy.
 
@@ -123,13 +125,13 @@ The spec says what should happen when a request fails. The implementation is whe
 
 ## Evidence bar
 
-Performance claims require a measurement and the conditions it was taken under. "It's fast" is not a finding and neither is "it feels slow" — report the metric, the number and the device.
+Performance claims require a measurement and the conditions it was taken under. "It's fast" is not a finding and neither is "it feels slow": report the metric, the number and the device.
 
 Browser support claims are checkable. State the feature and the baseline rather than asserting a feature is unusable; support data changes, and decisions made on stale assumptions cost more than the feature would have.
 
 Accessibility implementation is verified by operating the interface, not by reading the markup. `accessibility` owns the method.
 
-Architectural preferences — a styling library, a state approach, a file layout — are preferences unless you can name the cost. A finding is "this component cannot be deleted without hunting styles in four files", not "I would have used a different approach".
+Architectural preferences (a styling library, a state approach, a file layout) are preferences unless you can name the cost. A finding is "this component cannot be deleted without hunting styles in four files", not "I would have used a different approach".
 
 Where the design cannot be implemented as specified, say so with the cost and an alternative, and route it back through `design-handoff`. Silently approximating the design is how a build ends up wrong in ways nobody decided on.
 
@@ -155,7 +157,7 @@ Where the design cannot be implemented as specified, say so with the cost and an
 
 ## Reporting
 
-**Severity ladder:** `Critical` — data loss, a control unreachable by keyboard, a failure path with no code behind it, a budget breach that makes the product unusable on target hardware · `Serious` — jank on target devices, layout shift above threshold, reimplemented platform behavior missing keyboard or assistive support · `Moderate` — architectural coupling that makes change unsafe, raw values bypassing tokens, missing container-query scoping · `Minor` — style inconsistency with no functional cost.
+**Severity ladder:** `Critical`: data loss, a control unreachable by keyboard, a failure path with no code behind it, a budget breach that makes the product unusable on target hardware · `Serious`: jank on target devices, layout shift above threshold, reimplemented platform behavior missing keyboard or assistive support · `Moderate`: architectural coupling that makes change unsafe, raw values bypassing tokens, missing container-query scoping · `Minor`: style inconsistency with no functional cost.
 
 **Verification:** measured on throttled CPU and network with the device named; keyboard walk completed; both themes and RTL checked where supported; failure paths exercised by throttling the API; budget numbers recorded.
 

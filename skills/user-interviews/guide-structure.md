@@ -12,26 +12,26 @@ Times assume a 60-minute session. Scale proportionally; below 30 minutes, cut th
 - The one thing this session must produce. If the session runs long, this is what survives.
 - Any hypothesis you hold, written down. Writing it down makes it easier to notice when you are fishing for it.
 
-### Warm-up — 5 min
+### Warm-up: 5 min
 
 Purpose: establish that this is a conversation, that there are no wrong answers, and that they are the expert. Every question here must be impossible to fail.
 
 - Consent script, recording confirmation. See `research-planning`.
-- "Tell me about your role — what does a normal week look like?"
+- "Tell me about your role: what does a normal week look like?"
 - "Where does [the domain thing] fit into that?"
 
 Do not ask anything you need an answer to yet. The participant is still calibrating how much detail to give.
 
-### Context — 10 min
+### Context: 10 min
 
 Purpose: the surrounding system. Who else is involved, what happens upstream and downstream, what tools are already in play. Most of the best findings live here rather than in the core, because this is where the workarounds are.
 
 - "Walk me through the last time you did [the task]. Start from what triggered it."
 - "Who else was involved?"
 - "What did you have to have ready before you could start?"
-- "What happened after you finished — where did it go?"
+- "What happened after you finished: where did it go?"
 
-### The core — 25 min
+### The core: 25 min
 
 Purpose: the research questions. Two or three topics maximum. Each opens with a past-event question and then gets probed down.
 
@@ -39,15 +39,15 @@ Structure each topic as: opening question → listen → probe the most interest
 
 Leave the topics in a fixed order but let the participant reorder them by what they raise. A guide followed in order regardless of what the participant says is a survey administered out loud.
 
-### Specifics — 10 min
+### Specifics: 10 min
 
 Purpose: the direct questions the team needs answered, and anything that reveals what you are working on. Deliberately last so it cannot frame the earlier conversation.
 
-This is where a concept or design can be shown, if it must be. Frame it as a task, not as a reveal: "Here's something we're exploring — what would you do on this screen?" then watch rather than ask for an opinion.
+This is where a concept or design can be shown, if it must be. Frame it as a task, not as a reveal: "Here's something we're exploring: what would you do on this screen?" then watch rather than ask for an opinion.
 
-### Close — 5 min
+### Close: 5 min
 
-- "Is there anything I should have asked about and didn't?" — consistently one of the highest-yield questions in the guide.
+- "Is there anything I should have asked about and didn't?": consistently one of the highest-yield questions in the guide.
 - "Anything you want to add?"
 - Answer any questions they deferred earlier. You promised.
 - "Is there anyone else who does this work differently that I should talk to?"
@@ -90,7 +90,7 @@ Adapt rather than lift. The value is in the shape.
 - "Has anyone on your team built something for this?"
 - "What do you do when it doesn't do what you need?"
 
-A spreadsheet, a saved search, a naming convention, a private doc, a recurring reminder — each is a user-built product that measures the size of an unsolved problem.
+A spreadsheet, a saved search, a naming convention, a private doc, a recurring reminder: each is a user-built product that measures the size of an unsolved problem.
 
 ### Sizing, anchored
 
@@ -122,6 +122,6 @@ The guide is expected to change. After each session, before the next:
 
 - Cut questions that produced nothing twice in a row.
 - Add the question you wished you had asked.
-- Move anything that consistently comes up unprompted earlier, and note that it was unprompted — that is a finding in itself.
+- Move anything that consistently comes up unprompted earlier, and note that it was unprompted: that is a finding in itself.
 
 Keep a dated version of each guide. When synthesis finds that early and late participants answered differently, the guide history explains whether the participants differed or the questions did.

@@ -1,6 +1,6 @@
 ---
 name: design-critique
-description: Runs and receives critique on work in progress — framing the ask, separating reaction from reasoning, and capturing what was decided. Use for feedback between people, not for auditing a build.
+description: Runs and receives critique on work in progress: framing the ask, separating reaction from reasoning, and capturing what was decided. Use for feedback between people, not for auditing a build.
 when_to_use: Use when running or joining a design critique or review session, giving feedback on someone's design, asking for feedback on your own work, handling difficult critique conversations, or setting up a team critique practice.
 disable-model-invocation: true
 ---
@@ -21,30 +21,30 @@ The governing idea: critique fails for social reasons, not analytical ones. The 
 | You are giving feedback | **Describe, then ask, then suggest** below |
 | Setting up a team practice | **Run it as a session with a shape** below |
 | Feedback is going badly | **When critique goes wrong** below |
-| You need an audit against standards | `full-review` — that is not critique |
+| You need an audit against standards | `full-review`: that is not critique |
 | You need to review a diff | `review-the-change` |
 | The audience is executives or clients | `stakeholder-communication` |
 
 ## Frame the ask before showing anything
 
-The presenter's job is to make useful feedback possible, and most bad critique is caused by an unframed ask. Without one, everyone comments on what they notice, which is whatever is most visually salient — usually the least settled and least important thing.
+The presenter's job is to make useful feedback possible, and most bad critique is caused by an unframed ask. Without one, everyone comments on what they notice, which is whatever is most visually salient: usually the least settled and least important thing.
 
 Say four things, in under two minutes, before showing the work:
 
-1. **The problem** — one sentence, from `problem-framing`.
-2. **Where this is** — exploring, converging, or nearly done. This sets what feedback is useful.
-3. **What is decided and why** — so people do not relitigate settled ground. "The nav pattern is fixed; it came out of last quarter's tree test."
-4. **What you want feedback on** — specifically. "Does the second step make sense without the first?" not "what do you think?"
+1. **The problem**: one sentence, from `problem-framing`.
+2. **Where this is**: exploring, converging, or nearly done. This sets what feedback is useful.
+3. **What is decided and why**: so people do not relitigate settled ground. "The nav pattern is fixed; it came out of last quarter's tree test."
+4. **What you want feedback on**: specifically. "Does the second step make sense without the first?" not "what do you think?"
 
 "What do you think?" is the question that produces the feedback nobody can use.
 
-Where something is genuinely undecided, say so. Where something is fake — placeholder copy, grey boxes, stock data — say so, or the session will be about that.
+Where something is genuinely undecided, say so. Where something is fake (placeholder copy, grey boxes, stock data) say so, or the session will be about that.
 
 ## Describe, then ask, then suggest
 
 The reviewer's sequence. Each step is cheaper than jumping ahead, and jumping ahead is what makes critique feel like an attack.
 
-**Describe** what you observe, neutrally. "My eye goes to the illustration before the heading." "I read the second option as the default." This is information the presenter cannot get any other way — they cannot see their own work fresh.
+**Describe** what you observe, neutrally. "My eye goes to the illustration before the heading." "I read the second option as the default." This is information the presenter cannot get any other way: they cannot see their own work fresh.
 
 **Ask** before assuming. "What led you to put the total at the bottom?" There is frequently a constraint you do not know about, and asking finds it without anyone defending anything.
 
@@ -54,7 +54,7 @@ Tie every point to something outside your preference: the problem statement, a r
 
 ## Separate reaction from reasoning, and report both
 
-A first reaction is real data — the presenter will never see the work fresh again — and it is not a conclusion.
+A first reaction is real data (the presenter will never see the work fresh again) and it is not a conclusion.
 
 Give it as what it is: "My first reaction is that this feels heavier than the old version." Then, separately, work out why, or say you cannot. An unexamined reaction stated as a judgement is what produces design-by-taste, and a reaction suppressed entirely loses information nobody else can supply.
 
@@ -70,7 +70,7 @@ A shape that works for 45 minutes:
 | --- | --- |
 | 2 min | Presenter frames: problem, stage, decided, the ask |
 | 5 min | Silent looking. No talking. People write notes |
-| 3 min | Clarifying questions only — facts, not opinions |
+| 3 min | Clarifying questions only: facts, not opinions |
 | 20 min | Feedback, one person at a time, against the stated ask |
 | 10 min | Open discussion, including anything outside the ask |
 | 5 min | Presenter summarizes what they heard and what they will act on |
@@ -87,13 +87,13 @@ Critique is input, not a vote, and the person doing the work decides what to act
 
 The presenter's responsibilities: listen without defending, ask for specifics when feedback is vague, say what they will and will not change, and say why for the ones they decline. A declined piece of feedback with a reason is a normal outcome and it keeps people contributing.
 
-The reviewer's corresponding responsibility: not to relitigate. Say it once, well, and let it go. Where you believe something is genuinely serious rather than a preference, say that explicitly — "I think this one is a blocker, not a preference" — which is a claim you can then be held to.
+The reviewer's corresponding responsibility: not to relitigate. Say it once, well, and let it go. Where you believe something is genuinely serious rather than a preference, say that explicitly ("I think this one is a blocker, not a preference") which is a claim you can then be held to.
 
-Where the work is genuinely blocked on a standard rather than a preference — an accessibility barrier, a data-loss path — that is not critique, and it should be raised as a finding through `full-review` or `accessibility` rather than as an opinion in a room.
+Where the work is genuinely blocked on a standard rather than a preference (an accessibility barrier, a data-loss path) that is not critique, and it should be raised as a finding through `full-review` or `accessibility` rather than as an opinion in a room.
 
 ## When critique goes wrong
 
-**Everyone comments on the visuals of an unfinished flow.** The frame did not land, or the fidelity invites it. Restate the ask; next time show it uglier — `prototyping` covers deliberate low fidelity.
+**Everyone comments on the visuals of an unfinished flow.** The frame did not land, or the fidelity invites it. Restate the ask; next time show it uglier: `prototyping` covers deliberate low fidelity.
 
 **The most senior person speaks first.** Everything after is anchored. Have them speak last, deliberately, and expect to enforce it.
 
@@ -101,13 +101,13 @@ Where the work is genuinely blocked on a standard rather than a preference — a
 
 **The presenter defends every point.** Usually because the stage was not framed, so feedback on an exploration landed as criticism of a proposal. Reframe, and separately: a presenter who defends everything gets less feedback next time, which is worth saying privately.
 
-**Nothing changes afterwards.** Either the feedback was not usable or the decisions were not captured. Add the closing summary and write decisions down — `design-docs` owns the durable record.
+**Nothing changes afterwards.** Either the feedback was not usable or the decisions were not captured. Add the closing summary and write decisions down: `design-docs` owns the durable record.
 
 **It becomes a status meeting.** Critique needs a specific ask and unfinished work. If the work is done, it is a review, not a critique.
 
 ## Evidence bar
 
-Feedback tied to a problem statement, a research finding, or a rule from an owning skill is evidence. Feedback tied to nothing is a preference, and labelling it as one is not dismissive — preferences are legitimate input and are weighed differently.
+Feedback tied to a problem statement, a research finding, or a rule from an owning skill is evidence. Feedback tied to nothing is a preference, and labelling it as one is not dismissive: preferences are legitimate input and are weighed differently.
 
 Say which you are giving. "This is a preference, take it or leave it" is one of the most useful sentences in critique, because it frees the presenter from having to work out how much weight to give it.
 
@@ -135,11 +135,11 @@ Where research exists that settles a question, cite it rather than debating it. 
 
 **The deliverable is a short written summary**, produced by the presenter within a day. Verbal critique evaporates, and the same feedback arrives again a fortnight later.
 
-1. **What was shown** — the work, and the stage it was at.
-2. **The ask** — as framed.
-3. **What we heard** — themes, not a transcript. Group repeated feedback; a point made by four people is different from a point made by one.
-4. **Decisions** — what will change, and what will not, with a reason for each decline.
-5. **Open questions** — anything the room could not settle, with how it will be settled: a decision owner, or a research question for `research-planning`.
-6. **Blockers raised** — anything claimed as a standard rather than a preference, routed to the owning skill.
+1. **What was shown**: the work, and the stage it was at.
+2. **The ask**: as framed.
+3. **What we heard**: themes, not a transcript. Group repeated feedback; a point made by four people is different from a point made by one.
+4. **Decisions**: what will change, and what will not, with a reason for each decline.
+5. **Open questions**, anything the room could not settle, with how it will be settled: a decision owner, or a research question for `research-planning`.
+6. **Blockers raised**: anything claimed as a standard rather than a preference, routed to the owning skill.
 
 **Done when:** the presenter has said what they will act on, every decline has a reason, and anything unsettled has a route rather than a hope that it comes up again.

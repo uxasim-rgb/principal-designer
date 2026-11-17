@@ -17,7 +17,7 @@ The governing idea: a strong interface is not nine independent audits stapled to
 | The situation | Go to |
 | --- | --- |
 | Reviewing a finished screen or flow | Run the five steps below |
-| Reviewing a diff, branch or PR | `review-the-change` — it hands findings back here |
+| Reviewing a diff, branch or PR | `review-the-change`: it hands findings back here |
 | Giving feedback on work in progress | `design-critique` |
 | Deciding what work to do next | `field-guide` |
 | You only need one domain checked | That skill directly. Routing to all nine is waste |
@@ -27,9 +27,9 @@ The governing idea: a strong interface is not nine independent audits stapled to
 
 Before reviewing, state what is under review and what it is being judged against.
 
-- **Scope** — which screens, which states, which roles, which breakpoints. And what is excluded.
-- **The project's own conventions** — spacing scale, token set, component library, density, motion language, voice. Review against these, not against defaults. A dense professional tool judged by consumer-app spacing produces a review that gets dismissed entirely, and correctly.
-- **The intent** — what this surface is for, and who uses it. From `problem-framing` or `design-docs` where they exist.
+- **Scope**: which screens, which states, which roles, which breakpoints. And what is excluded.
+- **The project's own conventions**: spacing scale, token set, component library, density, motion language, voice. Review against these, not against defaults. A dense professional tool judged by consumer-app spacing produces a review that gets dismissed entirely, and correctly.
+- **The intent**: what this surface is for, and who uses it. From `problem-framing` or `design-docs` where they exist.
 
 Where the project has an established system, a deviation from it is a finding. Where it does not, the defaults in each domain skill apply and should be named as defaults rather than as rules.
 
@@ -53,8 +53,18 @@ Each domain skill owns its rules. This skill never restates or overrides them.
 | Locale, script, bandwidth, cognitive load | `global-and-inclusive` |
 | System conformance | `design-systems` |
 | Implementation | `design-engineering` |
+| AI output and agent actions | `ai-and-agents` |
+| Charts and dashboards | `data-visualization` |
+| Marketing and landing pages | `marketing-pages` |
+| Manipulative patterns | `deceptive-patterns` |
+| iOS, Android and cross-platform apps | `native-platforms` |
+| Regulated or safety-critical products | `high-stakes-domains` |
 
-Not every surface needs all fourteen. A static content page does not need `forms-and-input`. State which domains you covered and which you did not — implied completeness is the most common dishonesty in a review.
+Not every surface needs all fourteen. A static content page does not need `forms-and-input`. State which domains you covered and which you did not: implied completeness is the most common dishonesty in a review.
+
+For the details reviews usually miss (first-use versus empty, stale data, focus after delete, partial bulk results, locale formats, ending states), run the relevant groups in [small-checks.md](small-checks.md).
+
+Then one pass of your own: does the surface look generated rather than designed? Gradients and glow by default, cards inside cards, three icon boxes, slogan headlines and invented proof are listed with fixes in [generic-ai-tells.md](generic-ai-tells.md). Report them as findings when they cost clarity or trust, not as taste.
 
 `accessibility` is never skipped. Its findings are measured rather than judged, and skipping it is how a review passes something unusable.
 
@@ -66,7 +76,7 @@ Every finding, from every domain, is rated on this ladder. Domain skills carry t
 | --- | --- |
 | **Critical** | A user cannot complete the task, loses data or money, or is excluded entirely. Ship-blocking without exception |
 | **Serious** | The task completes with errors, workarounds or substantial delay; or a standard the product is obliged to meet is failed with a workaround available |
-| **Moderate** | Friction that resolves — hesitation, a wrong turn recovered, an inconsistency with a nameable cost |
+| **Moderate** | Friction that resolves: hesitation, a wrong turn recovered, an inconsistency with a nameable cost |
 | **Minor** | Noticed, no measurable cost. Fix if free |
 
 **Escalation triggers.** These raise a finding to Critical regardless of how it first appears:
@@ -84,10 +94,12 @@ These exist because each is routinely reported as Moderate by a reviewer who did
 
 Nine domains reviewing one surface produce overlapping findings. Merge before you rank.
 
-- **One root cause, one finding.** A screen that is cluttered, has poor hierarchy and long measure may be one content-volume problem. Report it once, at the root, naming the owning skill — usually `information-architecture` rather than the three craft skills that observed the symptom.
+- **One root cause, one finding.** A screen that is cluttered, has poor hierarchy and long measure may be one content-volume problem. Report it once, at the root, naming the owning skill: usually `information-architecture` rather than the three craft skills that observed the symptom.
 - **Resolve conflicts explicitly.** Domains disagree: density from `layout-and-composition` against target size from `accessibility`, brevity from `content-design` against clarity from `global-and-inclusive`. Where they conflict, `accessibility` wins on anything it measures, and everything else is a tradeoff to be named rather than silently resolved.
 - **Attribute to the owner, not the observer.** A contrast failure found while reviewing typography belongs to `accessibility`.
 - **Separate findings from preferences.** Every finding names a consequence. Anything that cannot is cut, not downgraded.
+
+**Prefer the cheapest fix.** For every finding, try fixes in this order and recommend the first that works: remove the thing, use what the platform already does, reuse an existing token or component, correct a value, and only then add something new. Reviews that always add (another label, another state, another token) leave the product heavier than they found it.
 
 ## 5. Cap the list and give a verdict
 
@@ -102,7 +114,7 @@ Nine domains reviewing one surface produce overlapping findings. Merge before yo
 | **Approve with notes** | Only Moderate and Minor remain |
 | **Approve** | Nothing actionable remains |
 
-The verdict is mechanical from the severity list. It is not a judgement about overall quality and should not be softened because the work is good in other respects — a single Critical blocks a surface that is otherwise excellent, and saying so plainly is what makes the ladder worth having.
+The verdict is mechanical from the severity list. It is not a judgement about overall quality and should not be softened because the work is good in other respects: a single Critical blocks a surface that is otherwise excellent, and saying so plainly is what makes the ladder worth having.
 
 Include what works. A review with no positives reads as an attack on whoever built it, and the team needs to know what not to break in the fix.
 
@@ -112,7 +124,7 @@ Every finding names a consequence for a user. "Inconsistent spacing" is not a fi
 
 Measurable things are measured. Contrast ratios computed, target sizes in CSS pixels, durations in milliseconds, measure in characters. A review reporting "contrast looks low" has not done the work, and `accessibility` owns the thresholds.
 
-State coverage honestly. Which domains, which states, which breakpoints, which roles — and which were not checked. A review implying completeness it did not have is worse than a narrow one stated accurately.
+State coverage honestly. Which domains, which states, which breakpoints, which roles, and which were not checked. A review implying completeness it did not have is worse than a narrow one stated accurately.
 
 Say which findings are hypotheses. Expert review predicts; it does not observe. Where a finding would be settled by five participants, say so and route it to `usability-testing` rather than asserting the user impact.
 
@@ -139,12 +151,12 @@ When a surface is genuinely sound, say so and stop. Manufacturing findings to ju
 
 Full structure in [how to report](how-to-report.md). The shape:
 
-1. **Scope and standard** — what was reviewed, against which conventions, which domains and states covered, and what was not.
-2. **Verdict** — Block, Needs changes, Approve with notes, or Approve. At the top, with the count of findings by severity.
-3. **Findings** — at most twenty, severity order, each with: severity, the owning skill, where it occurs, the measured value where one applies, the consequence for a user, and the fix.
-4. **Conflicts resolved** — where domains disagreed, what was chosen and why.
-5. **Worth keeping** — what works and should survive the fix.
-6. **Test these** — findings that are hypotheses, framed as research questions for `usability-testing`.
-7. **Appendix** — findings beyond the cap.
+1. **Scope and standard**: what was reviewed, against which conventions, which domains and states covered, and what was not.
+2. **Verdict**: Block, Needs changes, Approve with notes, or Approve. At the top, with the count of findings by severity.
+3. **Findings**, at most twenty, severity order, each with: severity, the owning skill, where it occurs, the measured value where one applies, the consequence for a user, and the fix.
+4. **Conflicts resolved**: where domains disagreed, what was chosen and why.
+5. **Worth keeping**: what works and should survive the fix.
+6. **Test these**: findings that are hypotheses, framed as research questions for `usability-testing`.
+7. **Appendix**: findings beyond the cap.
 
 **Done when:** the verdict follows mechanically from the ladder, every finding names a consequence and an owner, coverage is stated including its gaps, and nothing measurable was estimated.

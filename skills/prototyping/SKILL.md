@@ -22,7 +22,7 @@ The governing idea: a prototype has one question and a disposal date. Without th
 | Code or a design tool? | **Prototype where the question lives** below |
 | Testing with users | Build to this skill's rules, then `usability-testing` |
 | The prototype is becoming the product | **Decide the disposal route up front** below |
-| You have the answer | `design-handoff` — and delete the prototype |
+| You have the answer | `design-handoff`: and delete the prototype |
 | You want three options compared | **Diverge on one axis** below |
 
 ## Write the question first
@@ -61,12 +61,12 @@ When testing structure or copy, **deliberately keep it ugly**. Participants comm
 
 | The question is about | Build it in |
 | --- | --- |
-| Layout, hierarchy, structure | A design tool — faster to iterate |
-| Timing, physics, gesture, drag | Code — design tools approximate motion badly |
+| Layout, hierarchy, structure | A design tool: faster to iterate |
+| Timing, physics, gesture, drag | Code: design tools approximate motion badly |
 | Real data, edge cases, volume | Code with real or realistic data |
 | Copy and comprehension | Text in a document, or a wireframe |
 | Performance or feasibility | Code, against the real stack |
-| Whether anyone wants it | Neither — a landing page or a manual version |
+| Whether anyone wants it | Neither: a landing page or a manual version |
 
 Code prototypes are frequently faster than expected for interaction questions, and design-tool prototypes are frequently slower than expected for anything involving real data or state.
 
@@ -78,7 +78,7 @@ When exploring alternatives, three versions that differ on a named axis teach mo
 
 Pick the axis: density, disclosure, guidance, layout direction, the amount shown by default. Hold everything else constant, and say in the artifact what the axis is.
 
-Three versions that vary randomly produce a preference vote, which tells you nothing you can generalize. Three that vary on disclosure tell you how much this audience wants up front — which applies to the next twenty screens.
+Three versions that vary randomly produce a preference vote, which tells you nothing you can generalize. Three that vary on disclosure tell you how much this audience wants up front: which applies to the next twenty screens.
 
 Build them behind a switch so people can flip between them in the same context. Comparing screenshots side by side compares compositions; flipping in place compares experiences.
 
@@ -88,7 +88,7 @@ A prototype is allowed to be a facade. Hardcode the data, fake the latency, igno
 
 What must be real: whatever the question is about. If the question is about performance with a thousand rows, the thousand rows are real and everything else is fake. If it is about comprehension, the copy is real and the data is fixtures.
 
-Make the seams obvious to anyone using it — a banner, an obvious placeholder style — so nobody mistakes it for a build and nobody reports the fake parts as bugs.
+Make the seams obvious to anyone using it (a banner, an obvious placeholder style) so nobody mistakes it for a build and nobody reports the fake parts as bugs.
 
 Stub the dead ends visibly. A prototype that silently does nothing when clicked outside the tested path wastes session time working out whether it is broken.
 
@@ -97,7 +97,7 @@ Stub the dead ends visibly. A prototype that silently does nothing when clicked 
 Every prototype ends one of three ways. Choose before building, and write it down:
 
 1. **Delete it.** The default, and correct for almost all of them. The answer is what you keep; the code was a means.
-2. **Harvest it.** Take specific learnings — a timing value, a copy string, a layout decision — into the real build. Still delete the code.
+2. **Harvest it.** Take specific learnings (a timing value, a copy string, a layout decision) into the real build. Still delete the code.
 3. **Grow it.** Only when it was built to production standards from the start, which means it was not a prototype.
 
 The failure is a prototype drifting into production because it demoed well and a deadline arrived. It carries no error states, no accessibility, no tests, and no edge cases, and those absences surface as production bugs months later, attributed to engineering rather than to the decision to ship a facade.
@@ -134,13 +134,13 @@ Say what the prototype could not test. A facade with fake data cannot tell you a
 
 **The deliverable is an answer, not an artifact.** The prototype is scaffolding; the write-up is what survives.
 
-1. **The question** — as written before building.
-2. **What was built** — fidelity, tool, what was real and what was faked.
-3. **How it was evaluated** — tested with whom, or demoed to whom. Named honestly.
-4. **The answer** — directly, in one paragraph.
-5. **What changes as a result** — the decision this unblocks.
-6. **What this could not tell us** — the limits, from the facade and the method.
-7. **Disposal** — delete, harvest or grow, and what is being carried forward.
+1. **The question**: as written before building.
+2. **What was built**: fidelity, tool, what was real and what was faked.
+3. **How it was evaluated**: tested with whom, or demoed to whom. Named honestly.
+4. **The answer**: directly, in one paragraph.
+5. **What changes as a result**: the decision this unblocks.
+6. **What this could not tell us**: the limits, from the facade and the method.
+7. **Disposal**: delete, harvest or grow, and what is being carried forward.
 
 Where three variants were built, add a comparison table: variant, the axis position, what happened, and the recommendation with its reason.
 

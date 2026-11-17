@@ -6,7 +6,7 @@ The full decision table, the tradeoffs behind it, and the methods people reach f
 
 Every method sits somewhere on two axes, and naming the position resolves most arguments about which to use.
 
-**Attitudinal ↔ behavioral.** What people say versus what people do. Interviews, surveys and preference tests are attitudinal. Usability tests, analytics and A/B tests are behavioral. The gap between the two is not dishonesty — people genuinely cannot introspect on habit, and they answer the question they think you are asking.
+**Attitudinal ↔ behavioral.** What people say versus what people do. Interviews, surveys and preference tests are attitudinal. Usability tests, analytics and A/B tests are behavioral. The gap between the two is not dishonesty: people genuinely cannot introspect on habit, and they answer the question they think you are asking.
 
 **Qualitative ↔ quantitative.** Why and how versus how many and how much. Qualitative methods observe a few people closely and generate hypotheses. Quantitative methods observe many people thinly and test them.
 
@@ -16,17 +16,17 @@ A study that needs both quadrants needs two studies. Run qualitative first: it t
 
 | Question shape | Method | Gives you | Costs | Fails at |
 | --- | --- | --- | --- | --- |
-| What is going on in this domain | Semi-structured interviews | Context, vocabulary, mental models | 5–8 sessions, 45–60 min each | Rates, prediction of behavior |
+| What is going on in this domain | Semi-structured interviews | Context, vocabulary, mental models | 5 to 8 sessions, 45 to 60 min each | Rates, prediction of behavior |
 | How does work actually happen | Contextual inquiry, diary study | Environment, interruptions, workarounds | High; travel or multi-week | Anything fast |
-| Can people complete this task | Moderated usability test | Observed failure points with reasons | 5 per segment, 30–60 min | Frequency across population |
-| Can people complete this task, at scale | Unmoderated usability test | Completion rates, time on task | 20–50 participants, tooling | Why a failure happened |
+| Can people complete this task | Moderated usability test | Observed failure points with reasons | 5 per segment, 30 to 60 min | Frequency across population |
+| Can people complete this task, at scale | Unmoderated usability test | Completion rates, time on task | 20 to 50 participants, tooling | Why a failure happened |
 | How common is this | Survey | Distribution, rates, segment comparison | Sample size math, careful writing | Why, and anything about behavior |
-| How usable is it, comparably | SUS / UMUX-Lite / SEQ | A benchmark number over time | Bolted onto another study cheaply | Diagnosis — a low score says nothing about cause |
+| How usable is it, comparably | SUS / UMUX-Lite / SEQ | A benchmark number over time | Bolted onto another study cheaply | Diagnosis: a low score says nothing about cause |
 | Which version performs better | A/B test | Causal effect on a metric | Traffic, duration, instrumentation | Small effects, low-traffic surfaces |
-| How do people group and name things | Card sort | Their taxonomy and vocabulary | 15–30 participants, unmoderated | Whether the resulting structure works |
+| How do people group and name things | Card sort | Their taxonomy and vocabulary | 15 to 30 participants, unmoderated | Whether the resulting structure works |
 | Can people find things in this structure | Tree test | Findability per task, first-click accuracy | 30+ participants | Anything visual |
 | Where do people drop off | Funnel analysis | Location of the problem | Existing instrumentation | The reason for the drop |
-| What does the interface get wrong on principle | `heuristic-evaluation` | Defensible issue list, no recruiting | 2–3 evaluators, hours | Which issues actually bite real users |
+| What does the interface get wrong on principle | `heuristic-evaluation` | Defensible issue list, no recruiting | 2 to 3 evaluators, hours | Which issues actually bite real users |
 
 ## Common mis-selections
 
@@ -50,7 +50,7 @@ A study that needs both quadrants needs two studies. Run qualitative first: it t
 
 **No access to real users.** Recruit the closest proxy and name the gap explicitly in the report. Internal colleagues are the worst proxy for an unfamiliar product and an acceptable one for an internal tool.
 
-**Legal or compliance blocks recording.** Run the session with a dedicated notetaker, and shorten it — notes without recording degrade fast past 45 minutes.
+**Legal or compliance blocks recording.** Run the session with a dedicated notetaker, and shorten it: notes without recording degrade fast past 45 minutes.
 
 ## Mixing methods well
 

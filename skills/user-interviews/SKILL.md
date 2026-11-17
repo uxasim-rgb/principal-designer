@@ -18,7 +18,7 @@ The governing idea: people are reliable reporters of what happened and unreliabl
 | --- | --- |
 | You need the guide itself | [Guide structure](guide-structure.md) |
 | You need to know if an interview is even right | `research-planning` |
-| The question is "can they use this" | `usability-testing` — an interview will not tell you |
+| The question is "can they use this" | `usability-testing`: an interview will not tell you |
 | You want to show a design and get reactions | Reframe it as a task, or accept you are collecting speculation |
 | Sessions are done | `research-synthesis` |
 | You want to know how many people feel this way | `surveys-and-measurement` |
@@ -47,7 +47,7 @@ The legitimate forward-looking question is about commitment already made: what t
 
 ## Let the silence do the work
 
-The most productive interviewing move is saying nothing for three seconds after the participant stops. Most people are not finished — they have given the tidy answer and are deciding whether to give the real one. Filling that gap with the next question buys the tidy answer.
+The most productive interviewing move is saying nothing for three seconds after the participant stops. Most people are not finished: they have given the tidy answer and are deciding whether to give the real one. Filling that gap with the next question buys the tidy answer.
 
 Second most productive: "Say more about that." It is content-free, so it cannot lead, and it signals that the thread is worth continuing.
 
@@ -59,18 +59,18 @@ When something interesting surfaces, go down rather than on. The useful probes, 
 
 - **Sequence.** "What happened right before that?" / "And then what did you do?"
 - **Consequence.** "What happens if you get that wrong?"
-- **Workaround.** "How do you handle it when that fails?" Workarounds are the highest-value finding in an interview — someone built a solution at their own expense, which measures the problem.
+- **Workaround.** "How do you handle it when that fails?" Workarounds are the highest-value finding in an interview: someone built a solution at their own expense, which measures the problem.
 - **Frequency, anchored.** "How many times last month?" not "how often?"
 - **Contrast.** "Is that how it went the time before, too?"
 - **The echo.** Repeat their last three words as a question. Content-free, reliably productive.
 
-Avoid "why" as an opener — it asks for a justification and people supply a rational-sounding one. "What made you do that?" gets the cause; "why did you do that?" gets the defense.
+Avoid "why" as an opener: it asks for a justification and people supply a rational-sounding one. "What made you do that?" gets the cause; "why did you do that?" gets the defense.
 
 ## Do not correct, sell or teach
 
 When a participant misuses the product, misunderstands a feature or describes a workaround for something already solved, the correct response is curiosity, not instruction. Their wrong model is the finding. Explaining the right one destroys the rest of the session, because they will now perform understanding.
 
-If they ask directly, defer: "I want to see how you'd approach it first — I'll show you at the end." Then actually show them at the end. That is a fair trade and it costs nothing.
+If they ask directly, defer: "I want to see how you'd approach it first: I'll show you at the end." Then actually show them at the end. That is a fair trade and it costs nothing.
 
 The same applies to the product's roadmap. Do not confirm or deny what is coming.
 
@@ -78,11 +78,11 @@ The same applies to the product's roadmap. Do not confirm or deny what is coming
 
 A guide is a spine with room to move. Full structure in [guide structure](guide-structure.md); the shape:
 
-- **Warm-up** (5 min) — their role and the last time they did the thing, asked in a way that cannot fail.
-- **Context** (10 min) — the surrounding workflow, who else is involved, what happens before and after.
-- **The core** (25 min) — two or three main topics, each opened with a past-event question and then probed.
-- **Specifics** (10 min) — targeted questions the study needs answered, asked late so they do not frame the earlier conversation.
-- **Close** (5 min) — anything they expected to be asked, anything they want to add, referrals.
+- **Warm-up** (5 min): their role and the last time they did the thing, asked in a way that cannot fail.
+- **Context** (10 min): the surrounding workflow, who else is involved, what happens before and after.
+- **The core** (25 min): two or three main topics, each opened with a past-event question and then probed.
+- **Specifics** (10 min): targeted questions the study needs answered, asked late so they do not frame the earlier conversation.
+- **Close** (5 min): anything they expected to be asked, anything they want to add, referrals.
 
 Order matters: broad before narrow, and anything that reveals what you are interested in goes last. A guide that asks about the new feature in minute three has told the participant what to talk about for the remaining fifty-five.
 
@@ -102,7 +102,7 @@ Three independent participants describing the same behavior is the threshold for
 
 Separate what you watched from what you were told. A participant describing their process and a participant performing their process routinely diverge, and the report should mark which it is.
 
-Quote verbatim. Cleaning up a quote to make the point clearer moves it from evidence toward argument, and the specific words people use are often the finding — especially their vocabulary for the domain, which belongs to `content-design` and `information-architecture`.
+Quote verbatim. Cleaning up a quote to make the point clearer moves it from evidence toward argument, and the specific words people use are often the finding: especially their vocabulary for the domain, which belongs to `content-design` and `information-architecture`.
 
 When the interviews did not answer the research question, say so. A guide that was too broad or a sample that was wrong produces an honest null result, and reporting one is cheaper than acting on a manufactured pattern.
 
@@ -127,13 +127,13 @@ Per session, capture: participant ID (never the name), segment, date, the tasks 
 
 The readout, one page:
 
-1. **What we asked** — the research questions, restated.
-2. **Who we talked to** — segments and counts, no names.
-3. **Patterns** — each with the count of participants supporting it, most-supported first.
-4. **Signals** — single or double observations worth watching, labeled as such.
-5. **Surprises** — anything that contradicted the team's assumption, called out on its own. This section is why anyone reads the document.
-6. **What this does not tell you** — the limits from the plan, restated honestly.
-7. **Recommended next step** — one.
+1. **What we asked**: the research questions, restated.
+2. **Who we talked to**: segments and counts, no names.
+3. **Patterns**: each with the count of participants supporting it, most-supported first.
+4. **Signals**: single or double observations worth watching, labeled as such.
+5. **Surprises**: anything that contradicted the team's assumption, called out on its own. This section is why anyone reads the document.
+6. **What this does not tell you**: the limits from the plan, restated honestly.
+7. **Recommended next step**: one.
 
 Hand the patterns to `research-synthesis` if there is more than one study to combine, and to `problem-framing` if the output is a decision about what to build.
 

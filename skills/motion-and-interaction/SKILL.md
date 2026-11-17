@@ -8,7 +8,7 @@ when_to_use: Use when adding animation or transitions, choosing easing curves or
 
 This skill decides what moves, how fast, and why. It sits in the Craft band.
 
-The governing idea: motion exists to explain a change — where something came from, what it became, what is still loading. Motion that explains nothing is a delay you added on purpose.
+The governing idea: motion exists to explain a change: where something came from, what it became, what is still loading. Motion that explains nothing is a delay you added on purpose.
 
 **Works with:** `components-and-states` owns the states motion moves between · `accessibility` owns reduced-motion and vestibular safety as requirements · `design-engineering` owns performance and what the compositor can animate · `design-systems` owns duration and easing as tokens.
 
@@ -17,8 +17,8 @@ The governing idea: motion exists to explain a change — where something came f
 | The situation | Go to |
 | --- | --- |
 | Adding animation to something | **Ask what it explains** below |
-| It feels sluggish | **Duration by distance and size** below — usually too long |
-| It feels janky | `design-engineering` — likely animating a non-composited property |
+| It feels sluggish | **Duration by distance and size** below: usually too long |
+| It feels janky | `design-engineering`: likely animating a non-composited property |
 | Designing a modal, drawer or toast | **Enter and exit are not symmetrical** below |
 | Building a gesture | **Gestures need a visible alternative** below |
 | Handling reduced motion | **Reduced motion is not no motion** below |
@@ -28,11 +28,11 @@ The governing idea: motion exists to explain a change — where something came f
 
 Before animating, name what the motion tells the user. Legitimate jobs:
 
-- **Continuity** — this thing came from there, or became this. A card expanding into a detail view.
-- **Causality** — your action caused this. A button depressing, a row sliding out on delete.
-- **Status** — something is happening. A progress indicator.
-- **Direction** — you moved forward, or back. A page transition that respects the direction of travel.
-- **Attention**, sparingly — something changed that you would otherwise miss.
+- **Continuity**: this thing came from there, or became this. A card expanding into a detail view.
+- **Causality**: your action caused this. A button depressing, a row sliding out on delete.
+- **Status**: something is happening. A progress indicator.
+- **Direction**: you moved forward, or back. A page transition that respects the direction of travel.
+- **Attention**, sparingly: something changed that you would otherwise miss.
 
 If none apply, the animation is decoration on a path the user walks many times a day, and it should be cut. The tenth time a user sees an entrance animation, it is a wait.
 
@@ -44,16 +44,16 @@ Short. Almost always shorter than it feels like it should be when you are the on
 
 | What | Duration |
 | --- | --- |
-| Micro-feedback — hover, press, focus, checkbox | 80–120ms |
-| Small element entering or leaving — tooltip, dropdown, toast | 150–200ms |
-| Medium — modal, drawer, expanding panel | 200–300ms |
-| Large — full-screen or page transition | 300–400ms |
+| Micro-feedback: hover, press, focus, checkbox | 80 to 120ms |
+| Small element entering or leaving: tooltip, dropdown, toast | 150 to 200ms |
+| Medium: modal, drawer, expanding panel | 200 to 300ms |
+| Large: full-screen or page transition | 300 to 400ms |
 | Anything above | Reconsider; you are adding a wait |
 
 Two adjustments:
 
 - **Distance scales duration**, but sub-linearly. Something travelling twice as far does not need twice the time.
-- **Exits are faster than entrances**, typically 0.7–0.8×. The user has decided; getting out of the way promptly feels responsive, while a slow dismissal feels like the interface is arguing.
+- **Exits are faster than entrances**, typically 0.7 to 0.8×. The user has decided; getting out of the way promptly feels responsive, while a slow dismissal feels like the interface is arguing.
 
 Anything under ~100ms reads as instant. Anything over ~400ms on a routine interaction reads as slow, however elegant.
 
@@ -64,18 +64,20 @@ Anything under ~100ms reads as instant. Anything over ~400ms on a routine intera
 | `ease-out` (fast start, slow end) | Entrances, things appearing, anything responding to input | Feels immediate; the user sees the response instantly |
 | `ease-in` (slow start, fast end) | Exits, things leaving | Accelerating away reads as departure |
 | `ease-in-out` | Things moving between two on-screen positions | Symmetrical movement |
-| `linear` | Continuous, mechanical motion — spinners, progress, marquee | Anything eased looks like it is stalling |
+| `linear` | Continuous, mechanical motion: spinners, progress, marquee | Anything eased looks like it is stalling |
 | Spring | Direct manipulation, drag release, playful products | Carries momentum; needs testing for overshoot |
 
 **`ease-out` is the correct default for interface motion.** The dominant perception of responsiveness comes from how fast the motion starts, and `ease-out` starts fast.
 
-Avoid the browser default `ease` for anything meaningful; it is a compromise curve and it makes entrances feel hesitant. Define a small set of named curves as tokens — `design-systems` owns them — rather than writing bezier values per component.
+Avoid the browser default `ease` for anything meaningful; it is a compromise curve and it makes entrances feel hesitant. Define a small set of named curves as tokens (`design-systems` owns them) rather than writing bezier values per component.
 
 ## Enter and exit are not symmetrical
 
 The reverse of an entrance is rarely the right exit.
 
-A modal that scales up from 0.95 with a fade on entry should usually fade out faster without scaling down — the scale communicates arrival, and on the way out it reads as the interface retreating. A toast that slides in from the edge can simply fade out, because the user is no longer tracking where it went.
+A modal that scales up from 0.95 with a fade on entry should usually fade out faster without scaling down: the scale communicates arrival, and on the way out it reads as the interface retreating. A toast that slides in from the edge can simply fade out, because the user is no longer tracking where it went.
+
+Concrete starting values for press, hover, enter and exit, staggered lists, icon swaps, expanding panels, toasts and loading are in [recipes.md](recipes.md).
 
 Decide four things for every transient surface: how it enters, how it exits, what happens if it is dismissed during the entrance, and whether it can be interrupted.
 
@@ -94,7 +96,7 @@ The test: click something on, then immediately off, three times fast. If the int
 
 ## Animate only what the compositor can handle
 
-`transform` and `opacity` animate on the compositor and stay smooth. Animating layout properties — `width`, `height`, `top`, `left`, `margin` — forces layout recalculation on every frame and produces jank on anything but a fast machine.
+`transform` and `opacity` animate on the compositor and stay smooth. Animating layout properties (`width`, `height`, `top`, `left`, `margin`) forces layout recalculation on every frame and produces jank on anything but a fast machine.
 
 Where a size change is genuinely needed, prefer `transform: scale()`, or use the modern layout-animation APIs the project already depends on. `will-change` is a last resort applied narrowly, and left on permanently it costs memory rather than helping.
 
@@ -105,7 +107,7 @@ Test on a throttled CPU, not on the development machine. `design-engineering` ow
 A gesture is invisible. Swipe-to-delete, long-press menus, pinch-to-zoom and drag-to-reorder are all fine as accelerators and none are acceptable as the only route.
 
 - Every gesture has an equivalent visible control.
-- Destructive gestures are undoable — a swipe that deletes without undo will delete things accidentally, because swipes happen while scrolling.
+- Destructive gestures are undoable: a swipe that deletes without undo will delete things accidentally, because swipes happen while scrolling.
 - Drag targets need adequate hit area; `accessibility` owns the thresholds.
 - `touch-action: none` only on the specific surface implementing a custom gesture, never at page level, where it removes scrolling.
 - Drag-and-drop needs a keyboard equivalent, and that is a requirement rather than a nicety.
@@ -125,11 +127,11 @@ Write motion as opt-in so the default is safe:
 }
 ```
 
-Anything that auto-plays, loops, flashes or moves for more than five seconds needs a pause control. Content flashing more than three times per second is a seizure risk and is a hard failure — `accessibility` owns that threshold.
+Anything that auto-plays, loops, flashes or moves for more than five seconds needs a pause control. Content flashing more than three times per second is a seizure risk and is a hard failure: `accessibility` owns that threshold.
 
 ## Evidence bar
 
-Duration, frame rate and the property being animated are all measurable. "Feels slow" becomes "the drawer transition is 450ms on a 280px travel" — one is a finding, the other is an impression.
+Duration, frame rate and the property being animated are all measurable. "Feels slow" becomes "the drawer transition is 450ms on a 280px travel": one is a finding, the other is an impression.
 
 Jank is measurable: record a performance profile on a throttled CPU and report dropped frames. Do not report smoothness from the development machine, which is not representative of anything.
 
@@ -157,7 +159,7 @@ Reduced-motion behavior, pause controls and the flash threshold are requirements
 
 ## Reporting
 
-**Severity ladder:** `Critical` — content flashing above the seizure threshold, motion with no reduced-motion alternative, a gesture that is the only path to an action, a destructive gesture with no undo · `Serious` — input blocked during transition, jank on target hardware, auto-playing motion with no pause · `Moderate` — duration outside range, wrong easing for the job, symmetrical exit · `Minor` — inconsistent curve between similar components.
+**Severity ladder:** `Critical`: content flashing above the seizure threshold, motion with no reduced-motion alternative, a gesture that is the only path to an action, a destructive gesture with no undo · `Serious`: input blocked during transition, jank on target hardware, auto-playing motion with no pause · `Moderate`: duration outside range, wrong easing for the job, symmetrical exit · `Minor`: inconsistent curve between similar components.
 
 **Verification:** durations measured; the animated property checked; profile recorded on throttled CPU; reduced-motion tested with the preference enabled; gesture alternatives confirmed; rapid-toggle test performed.
 

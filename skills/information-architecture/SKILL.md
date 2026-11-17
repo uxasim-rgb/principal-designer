@@ -17,8 +17,8 @@ The governing idea: structure is a hypothesis about how people expect things to 
 | The situation | Go to |
 | --- | --- |
 | People cannot find something that exists | **Test findability before restructuring** below |
-| You do not know how people group things | Run a card sort — **Card sorting** below |
-| You have a proposed structure and want to check it | Run a tree test — **Tree testing** below |
+| You do not know how people group things | Run a card sort: **Card sorting** below |
+| You have a proposed structure and want to check it | Run a tree test: **Tree testing** below |
 | The label is the problem, not the placement | `content-design`, then return here |
 | The structure is fine but the path is long | `user-flows` |
 | There is too much on one screen | Check grouping here first, then `layout-and-composition` |
@@ -40,9 +40,9 @@ A restructure is expensive and frequently unnecessary. Before moving anything, f
 
 Run a tree test on the current structure with the real tasks people fail at. Three outcomes, three different fixes:
 
-- **People go to the right place but slowly** — the label is ambiguous. `content-design` fixes it.
-- **People confidently go to the wrong place** — the grouping contradicts their model. Restructure.
-- **People wander with no confident first click** — the top level does not describe the domain. Restructure the top level only.
+- **People go to the right place but slowly**: the label is ambiguous. `content-design` fixes it.
+- **People confidently go to the wrong place**: the grouping contradicts their model. Restructure.
+- **People wander with no confident first click**: the top level does not describe the domain. Restructure the top level only.
 
 First-click accuracy is the number that matters. People who get the first click right complete the task far more often than those who do not, so the top level of a structure carries most of its value.
 
@@ -63,7 +63,7 @@ The test for a group: can you name it in one word your users already use, withou
 
 ## Take labels from users, never from the team
 
-Labels are where research pays off most directly. The vocabulary recovered in `user-interviews` and `research-synthesis` is the label set — using it costs nothing and removes an entire class of failure.
+Labels are where research pays off most directly. The vocabulary recovered in `user-interviews` and `research-synthesis` is the label set: using it costs nothing and removes an entire class of failure.
 
 Rules that hold across products:
 
@@ -82,7 +82,7 @@ Rules that hold across products:
 | Many sections, shallow | Sidebar with groups | Beyond ~20 without sub-grouping |
 | Deep hierarchy | Sidebar with expandable sections, plus breadcrumbs | Depth beyond 4 levels |
 | Large, flat, unpredictable | Search-first, with browse as backup | Search quality is poor |
-| Task-based, sequential | Wizard or stepper — see `user-flows` | The user needs to move non-linearly |
+| Task-based, sequential | Wizard or stepper: see `user-flows` | The user needs to move non-linearly |
 
 Prefer breadth over depth. Each level of depth loses people, and a wide menu is scannable in a way a deep one is not. Four levels is the practical limit for a product; past that, reconsider whether the deepest level is a filter rather than a location.
 
@@ -92,13 +92,13 @@ Keep the hierarchy the same everywhere. A sidebar whose contents change between 
 
 Two different methods, frequently confused, and both cheap.
 
-**Card sorting** — participants group your content and name the groups. Use it when you do not yet know how people think about the domain. Open sorts let them name the groups, which produces vocabulary; closed sorts test whether your existing groups are usable. 15–30 participants, unmoderated, under 20 minutes.
+**Card sorting**: participants group your content and name the groups. Use it when you do not yet know how people think about the domain. Open sorts let them name the groups, which produces vocabulary; closed sorts test whether your existing groups are usable. 15 to 30 participants, unmoderated, under 20 minutes.
 
-Look for cards that most people place together, cards that split evenly (genuinely ambiguous — these need to appear in two places or be renamed), and the group names participants invented.
+Look for cards that most people place together, cards that split evenly (genuinely ambiguous: these need to appear in two places or be renamed), and the group names participants invented.
 
-**Tree testing** — participants navigate a text-only version of your structure to complete a task. No visual design, no search: just the labels and the hierarchy. This is the measurement, and it is the one teams skip.
+**Tree testing**: participants navigate a text-only version of your structure to complete a task. No visual design, no search: just the labels and the hierarchy. This is the measurement, and it is the one teams skip.
 
-30+ participants, 8–12 tasks. Measure success rate, **first-click accuracy**, and directness (did they go straight there or backtrack). Run it on the current structure to get a baseline and on the proposal to prove the change is an improvement — a restructure that ships without this is a bet.
+30+ participants, 8 to 12 tasks. Measure success rate, **first-click accuracy**, and directness (did they go straight there or backtrack). Run it on the current structure to get a baseline and on the proposal to prove the change is an improvement: a restructure that ships without this is a bet.
 
 Neither method tells you about the visual design. That is `layout-and-composition` and `usability-testing`.
 
@@ -123,11 +123,11 @@ For anything on the web, the route is the most durable expression of the archite
 
 ## Evidence bar
 
-A structure is a hypothesis. Do not ship a restructure without a tree test against the old structure — "it feels more logical" is the opinion the previous structure was also built on.
+A structure is a hypothesis. Do not ship a restructure without a tree test against the old structure: "it feels more logical" is the opinion the previous structure was also built on.
 
 Report first-click accuracy and success rate with participant counts, never percentages from small samples. 30+ participants makes percentages defensible; below that use counts. `surveys-and-measurement` owns the sampling logic.
 
-Where a card sort splits evenly, that is a finding, not a tie to be broken by the analyst. Report the split and design for it — two locations or a clearer label.
+Where a card sort splits evenly, that is a finding, not a tie to be broken by the analyst. Report the split and design for it: two locations or a clearer label.
 
 Where the current structure tests fine and the complaint is real, the problem is elsewhere: visibility, labelling, or the content not existing. Say so rather than restructuring because a restructure was requested.
 
@@ -151,18 +151,18 @@ Where the current structure tests fine and the complaint is real, the problem is
 
 **The deliverable is a structure with evidence**, not a diagram.
 
-**Severity ladder:** `Critical` — content people need cannot be found at all, or a confident wrong click leads to a dead end · `Serious` — found slowly or via backtracking on a common task · `Moderate` — ambiguous label that resolves on the second attempt · `Minor` — inconsistent term with no observed cost.
+**Severity ladder:** `Critical`: content people need cannot be found at all, or a confident wrong click leads to a dead end · `Serious`: found slowly or via backtracking on a common task · `Moderate`: ambiguous label that resolves on the second attempt · `Minor`: inconsistent term with no observed cost.
 
 **Verification:** tree test run on old and new; first-click accuracy reported for both; labels traced to a research source; every term checked against the product's term list; every meaningful state addressable.
 
 **Format:**
 
-1. **Scope** — what was audited, which tasks were tested.
-2. **Baseline** — current structure's success and first-click accuracy per task.
+1. **Scope**: what was audited, which tasks were tested.
+2. **Baseline**: current structure's success and first-click accuracy per task.
 3. **Findings**, severity order, each naming whether the cause is placement, label or visibility.
 4. **Proposed structure**, with the evidence for each grouping decision.
-5. **Test results** — the proposal's numbers beside the baseline.
-6. **Term list** — the canonical word for each concept, handed to `content-design` and `design-systems`.
-7. **Migration** — redirects needed, and what breaks.
+5. **Test results**: the proposal's numbers beside the baseline.
+6. **Term list**: the canonical word for each concept, handed to `content-design` and `design-systems`.
+7. **Migration**: redirects needed, and what breaks.
 
 **Done when:** the proposal beats the baseline on first-click accuracy, every label traces to a user's word rather than the team's, and nothing meaningful is unaddressable.

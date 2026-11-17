@@ -1,0 +1,3 @@
+interface:
+  display_name: "Deceptive Patterns"
+  short_description: "Find and replace dark patterns in consent, pricing and cancellation"

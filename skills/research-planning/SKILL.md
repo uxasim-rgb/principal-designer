@@ -19,7 +19,7 @@ The governing idea: the method follows the question, and most requests arrive wi
 | A method was requested by name | **Interrogate the method request** below, before planning it |
 | You know the question but not the method | [Method selection](method-selection.md) |
 | The method is settled and you need to run it | `user-interviews`, `usability-testing` or `surveys-and-measurement` |
-| No budget, no participants, no time | `heuristic-evaluation` — weaker evidence, honest about it |
+| No budget, no participants, no time | `heuristic-evaluation`: weaker evidence, honest about it |
 | Sessions already happened | `research-synthesis` |
 | The question is really "did the change work" | `experimentation-and-analytics` |
 
@@ -57,14 +57,14 @@ The full decision table is in [method selection](method-selection.md). The short
 
 | You need to know | Method | Not |
 | --- | --- | --- |
-| Why people do something, what their context is | Interviews, contextual inquiry | Surveys — they cannot ask a follow-up |
-| Whether people can complete a task in your interface | Usability testing | Interviews — people cannot report their own failures accurately |
-| How common something is across a population | Survey, analytics | Interviews — five people cannot tell you a rate |
-| Which of two designs performs better at scale | A/B test → `experimentation-and-analytics` | Preference test — stated preference and behavior diverge |
+| Why people do something, what their context is | Interviews, contextual inquiry | Surveys: they cannot ask a follow-up |
+| Whether people can complete a task in your interface | Usability testing | Interviews: people cannot report their own failures accurately |
+| How common something is across a population | Survey, analytics | Interviews: five people cannot tell you a rate |
+| Which of two designs performs better at scale | A/B test → `experimentation-and-analytics` | Preference test: stated preference and behavior diverge |
 | What terms people use, how they group things | Card sorting, tree testing → `information-architecture` | Asking people to design the menu |
 | Whether an interface violates known principles | `heuristic-evaluation` | Any of the above, when there is no time |
 
-Qualitative methods tell you what and why. Quantitative methods tell you how many and how often. A study that needs both needs two methods, run in that order — qualitative first to learn what to count, quantitative second to count it.
+Qualitative methods tell you what and why. Quantitative methods tell you how many and how often. A study that needs both needs two methods, run in that order: qualitative first to learn what to count, quantitative second to count it.
 
 ## Size the sample by what saturates, not by what sounds rigorous
 
@@ -76,7 +76,7 @@ For quantitative studies the number comes from the effect you need to detect, an
 
 ## Recruit for the behavior, not the demographic
 
-Screen on what someone has done recently, not who they are. "Has filed an expense report in the last 30 days" recruits a useful participant. "Finance professional, 25–40" recruits someone who may never have touched the workflow.
+Screen on what someone has done recently, not who they are. "Has filed an expense report in the last 30 days" recruits a useful participant. "Finance professional, 25 to 40" recruits someone who may never have touched the workflow.
 
 Build the screener so the desirable answer is not obvious. Ask which of a list of activities someone did last month rather than asking whether they did the one you care about, and include plausible decoys. Professional participants learn to pass screeners, and a screener that telegraphs its target selects for them.
 
@@ -88,7 +88,7 @@ Recruit one more than you need per wave. No-show rates run high enough that plan
 
 Decide, in writing, before the first session: what you will code for, what would count as a pattern, and what result would change the recommendation. This is the difference between analysis and storytelling. A plan written after seeing the data will find what the writer already believed.
 
-For quantitative work this is not optional — the comparison and the threshold have to be fixed in advance, because choosing them after seeing the numbers manufactures significance. `experimentation-and-analytics` owns that discipline.
+For quantitative work this is not optional: the comparison and the threshold have to be fixed in advance, because choosing them after seeing the numbers manufactures significance. `experimentation-and-analytics` owns that discipline.
 
 ## Consent is a process, not a checkbox
 
@@ -104,13 +104,13 @@ Vulnerable participants, health or financial data, or anything involving minors 
 
 ## Evidence bar
 
-Qualitative research does not produce rates. Never write a percentage from a study with fewer than thirty participants, and never let "4 of 5 participants" become "80% of users" — one is an observation, the other is a claim about a population you did not sample.
+Qualitative research does not produce rates. Never write a percentage from a study with fewer than thirty participants, and never let "4 of 5 participants" become "80% of users": one is an observation, the other is a claim about a population you did not sample.
 
 A pattern needs three independent observations before it is reported as a pattern. One striking observation is a hypothesis and is reported as one. Two is a coincidence worth watching.
 
 Say what the study cannot tell you, in the plan, before it runs. A plan that claims to answer everything will be held to it.
 
-When the honest answer is that the decision does not need research — the cost of being wrong is low, or the answer is already known — say that and do not run the study. Research that exists to justify a decision already made is the most expensive kind.
+When the honest answer is that the decision does not need research (the cost of being wrong is low, or the answer is already known) say that and do not run the study. Research that exists to justify a decision already made is the most expensive kind.
 
 ## Before you ship
 
@@ -130,13 +130,13 @@ When the honest answer is that the decision does not need research — the cost 
 
 It contains, in this order:
 
-1. **Decision** — what is waiting on this, and who owns it.
-2. **Research questions** — one to three, each passing falsifiable, behavioral, owned.
-3. **Method and why** — including what it was chosen over.
-4. **Participants** — segments, screening criteria, number per segment, source.
-5. **Protocol** — session length, tasks or topics, what gets recorded.
-6. **Analysis plan** — codes, pattern threshold, what result changes the recommendation.
-7. **Limits** — what this study cannot answer. Written before it runs.
-8. **Timeline** — recruit, run, synthesize, share.
+1. **Decision**: what is waiting on this, and who owns it.
+2. **Research questions**: one to three, each passing falsifiable, behavioral, owned.
+3. **Method and why**: including what it was chosen over.
+4. **Participants**: segments, screening criteria, number per segment, source.
+5. **Protocol**: session length, tasks or topics, what gets recorded.
+6. **Analysis plan**: codes, pattern threshold, what result changes the recommendation.
+7. **Limits**: what this study cannot answer. Written before it runs.
+8. **Timeline**: recruit, run, synthesize, share.
 
 **Done when:** someone who was not in the planning conversation could run the study from the document, and the requester has agreed in writing to what the study will not answer.

@@ -17,7 +17,7 @@ The governing idea: the value of a design doc is in the decisions it records and
 | The situation | Go to |
 | --- | --- |
 | A decision needs to outlive the conversation | **Write the decision, not the description** below |
-| You need engineering to build it | `design-handoff` — that is a different document |
+| You need engineering to build it | `design-handoff`: that is a different document |
 | One specific choice needs recording | **Decision records for single choices** below |
 | The same question keeps being re-asked | You need decision records, not more meetings |
 | Presenting to leadership | `stakeholder-communication` |
@@ -32,7 +32,7 @@ Every significant choice gets three things:
 
 - **What was decided.**
 - **What else was considered**, named specifically enough to be recognizable.
-- **Why the alternatives lost** — the constraint, the evidence, or the tradeoff accepted.
+- **Why the alternatives lost**: the constraint, the evidence, or the tradeoff accepted.
 
 The rejected alternatives are the most valuable content in the document. Six months later someone will propose one of them, and the record either answers in thirty seconds or costs the team a week rediscovering why it does not work.
 
@@ -69,7 +69,7 @@ Not every decision needs a document. Many need three paragraphs, written once, f
 >
 > **Context.** Access-review completion sat at 38%. Tree testing showed 4 of 5 admins looking under the profile menu first; first-click accuracy on the current structure was 31%.
 >
-> **Alternatives.** (a) Keep under Settings and add a pointer — rejected, doubles the path for the common case. (b) Duplicate in both — rejected, two pages drift apart.
+> **Alternatives.** (a) Keep under Settings and add a pointer: rejected, doubles the path for the common case. (b) Duplicate in both: rejected, two pages drift apart.
 >
 > **Consequences.** The profile menu grows to seven items and will need grouping. The old URL needs a permanent redirect.
 >
@@ -77,13 +77,13 @@ Not every decision needs a document. Many need three paragraphs, written once, f
 
 The **revisit if** line is what distinguishes a decision record from a historical note. It states the condition under which the decision should be reopened, which means it can be reopened on evidence rather than on whoever complains loudest.
 
-Mark superseded decisions as superseded, linked to the one that replaced them. Never delete — the history of how the understanding changed is itself useful, and a decision that silently vanishes gets re-made.
+Mark superseded decisions as superseded, linked to the one that replaced them. Never delete: the history of how the understanding changed is itself useful, and a decision that silently vanishes gets re-made.
 
 ## Record the uncertainty
 
 A document that presents every choice as confident is a document that will be quoted as certain. Mark what is known, what is inferred and what is a bet, in the text where the claim appears.
 
-> The two-step split is well supported — 4 of 5 participants attempted it in that order. **The default of 30 days is a guess**; we have no data on typical review cadence and will learn from usage.
+> The two-step split is well supported: 4 of 5 participants attempted it in that order. **The default of 30 days is a guess**; we have no data on typical review cadence and will learn from usage.
 
 The marked guess is the part that gets checked later. An unmarked guess becomes organizational fact within a quarter.
 
@@ -98,7 +98,7 @@ Write as you go, in a working document. Tidy it at the end. This also surfaces d
 An unfindable document is one you will write again.
 
 - One place for design docs, with a predictable naming scheme.
-- Tag by product area, never by project name — project names are meaningless within a year.
+- Tag by product area, never by project name: project names are meaningless within a year.
 - Link from the artifact to the document and back. A component in the system should reach its decision record.
 - Date everything, and put a review date on anything expected to go stale.
 - A quarterly pass to mark superseded decisions.
@@ -137,16 +137,16 @@ Where the decision was made on judgement with no evidence, say so plainly. That 
 
 **The deliverable is the document.** For a full design doc:
 
-1. **The ask** — inform, input, or decide. With decider and date if the last.
-2. **Answer** — one paragraph. What was decided and what it means for the reader.
-3. **Problem** — from `problem-framing`, with evidence status per claim.
-4. **Decisions** — each with what was chosen, what was considered, and why the alternatives lost.
-5. **Uncertainty** — what is evidence, what is inference, what is a bet. Marked in place, summarized here.
-6. **How we will know** — the metrics and failure condition from `success-metrics`.
-7. **Consequences** — what this makes harder, what it commits the team to, what needs to change elsewhere.
-8. **Revisit if** — the conditions that reopen this.
-9. **Appendices** — research, explorations, detail.
+1. **The ask**: inform, input, or decide. With decider and date if the last.
+2. **Answer**: one paragraph. What was decided and what it means for the reader.
+3. **Problem**: from `problem-framing`, with evidence status per claim.
+4. **Decisions**: each with what was chosen, what was considered, and why the alternatives lost.
+5. **Uncertainty**: what is evidence, what is inference, what is a bet. Marked in place, summarized here.
+6. **How we will know**: the metrics and failure condition from `success-metrics`.
+7. **Consequences**: what this makes harder, what it commits the team to, what needs to change elsewhere.
+8. **Revisit if**: the conditions that reopen this.
+9. **Appendices**: research, explorations, detail.
 
 For a decision record, the six fields shown above, on one screen.
 
-**Done when:** a reader who was not there can say what was decided, what else was considered, and what would make the team change its mind — without asking anyone.
+**Done when:** a reader who was not there can say what was decided, what else was considered, and what would make the team change its mind: without asking anyone.

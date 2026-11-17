@@ -4,7 +4,7 @@
 
 ## Checklist
 
-Run `npm run validate` — it checks most of this for you.
+Run `npm run validate`: it checks most of this for you.
 
 - [ ] Frontmatter `name` matches the directory name
 - [ ] `description` and `when_to_use` both present, together under 1,536 characters

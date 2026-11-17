@@ -8,7 +8,7 @@ when_to_use: Use when laying out a page or component, setting a spacing scale, f
 
 This skill arranges things on a surface so their relationships are visible without reading. It opens the Craft band.
 
-The governing idea: proximity is the strongest grouping signal available, and most cluttered screens are not too dense — they are evenly spaced, so nothing looks related to anything.
+The governing idea: proximity is the strongest grouping signal available, and most cluttered screens are not too dense: they are evenly spaced, so nothing looks related to anything.
 
 **Works with:** `information-architecture` owns what belongs on the screen at all · `typography` owns text measure and line-height · `components-and-states` owns the internals of a component · `accessibility` owns reading order, zoom and hit areas · `global-and-inclusive` owns RTL and text expansion · `design-systems` owns the scale as a token set.
 
@@ -16,14 +16,14 @@ The governing idea: proximity is the strongest grouping signal available, and mo
 
 | The situation | Go to |
 | --- | --- |
-| The screen feels cluttered | **Space unevenly on purpose** below — usually the cause |
+| The screen feels cluttered | **Space unevenly on purpose** below: usually the cause |
 | The eye does not know where to start | **Give one thing primacy** below |
-| Too much is on the screen | `information-architecture` first — layout cannot fix a content problem |
+| Too much is on the screen | `information-architecture` first: layout cannot fix a content problem |
 | Controls look subtly misaligned | **Align to one edge, optically** below |
 | Deciding what happens on mobile | **Change the layout, not just the width** below |
 | A professional tool feels too sparse | **Density is a decision, not a default** below |
 | Text is hard to read | `typography` |
-| The order is wrong for a screen reader | `accessibility` — DOM order owns it |
+| The order is wrong for a screen reader | `accessibility`: DOM order owns it |
 
 ## Space unevenly on purpose
 
@@ -33,33 +33,33 @@ The rule: **space within a group is smaller than space around it**, and the diff
 
 | Relationship | Typical gap |
 | --- | --- |
-| Label to its control | 4–8px |
-| Items inside one group | 8–12px |
-| Between groups in a section | 24–32px |
-| Between sections | 48–64px |
-| Page top and bottom padding | 48–96px |
+| Label to its control | 4 to 8px |
+| Items inside one group | 8 to 12px |
+| Between groups in a section | 24 to 32px |
+| Between sections | 48 to 64px |
+| Page top and bottom padding | 48 to 96px |
 
 These are starting points for a product with no established density system. Where a project has a scale, use it as written.
 
-Proximity beats borders, backgrounds and dividers. Reach for space first; add a card or a rule only when space alone cannot carry the grouping — typically when two groups must sit side by side.
+Proximity beats borders, backgrounds and dividers. Reach for space first; add a card or a rule only when space alone cannot carry the grouping: typically when two groups must sit side by side.
 
 ## Use a spacing scale and never a value outside it
 
-Pick a base unit — 4px is the common choice, 8px for lower-density products — and derive everything from it: 4, 8, 12, 16, 24, 32, 48, 64, 96.
+Pick a base unit (4px is the common choice, 8px for lower-density products) and derive everything from it: 4, 8, 12, 16, 24, 32, 48, 64, 96.
 
 A scale does two things. It removes a decision from every layout choice, and it makes inconsistency visible: a 13px gap in a 4px system stands out in review in a way that "slightly too tight" never does.
 
-One-off values are the beginning of the end of a system. Where a value outside the scale is genuinely needed — optical correction on an icon, a fixed asset size — mark it as an exception in the code with a reason, rather than leaving it to look like drift. `design-systems` owns the scale as tokens.
+One-off values are the beginning of the end of a system. Where a value outside the scale is genuinely needed (optical correction on an icon, a fixed asset size) mark it as an exception in the code with a reason, rather than leaving it to look like drift. `design-systems` owns the scale as tokens.
 
 ## Give one thing primacy
 
 Every screen answers one primary question or supports one primary action. If everything is emphasized, nothing is, and the user has to read the whole screen to find the point.
 
-Rank the content, then let the ranking show through size, weight, color and position — but not all four at once. One or two signals is usually enough, and using all of them on the same element makes everything else look broken.
+Rank the content, then let the ranking show through size, weight, color and position, but not all four at once. One or two signals is usually enough, and using all of them on the same element makes everything else look broken.
 
 The squint test remains the fastest check: blur the screen until words are unreadable and see what still stands out. If the primary action is not among the first things visible, the hierarchy is not working.
 
-Emphasis is relative. A screen with four "primary" buttons has none. Where several actions are genuinely equal, that is usually a sign the screen is doing too much — back to `information-architecture`.
+Emphasis is relative. A screen with four "primary" buttons has none. Where several actions are genuinely equal, that is usually a sign the screen is doing too much: back to `information-architecture`.
 
 ## Align to one edge, optically
 
@@ -69,7 +69,9 @@ Prefer a small number of alignment edges over many. Two or three vertical edges 
 
 Left-align text in left-to-right languages. Centered text is acceptable for short headings and empty states; a centered paragraph forces the eye to find a new start position on every line.
 
-Optical alignment beats mathematical alignment where the shape is irregular. A triangular play icon centered by its bounding box looks left-heavy and needs nudging right; round shapes need to overshoot a flat edge slightly to look aligned. Trust the eye over the number here — this is one of the few places where measurement is wrong.
+Optical alignment beats mathematical alignment where the shape is irregular. A triangular play icon centered by its bounding box looks left-heavy and needs nudging right; round shapes need to overshoot a flat edge slightly to look aligned. Trust the eye over the number here: this is one of the few places where measurement is wrong.
+
+Secondary actions compete with the primary one. Show at most three beside it; move the rest into a menu labeled with what it holds ("More actions"). Where content continues off-screen sideways, let the next item show 16 to 32px past the edge, so people can see there is more to scroll.
 
 ## Density is a decision, not a default
 
@@ -83,7 +85,7 @@ Decide density from the task:
 | Comparing many items | Medium, with strong alignment |
 | Scanning and operating all day | Dense, with grouping carried by alignment rather than space |
 
-Where density is high, grouping has to come from alignment, rules and subtle background shifts instead of large gaps. Density does not excuse losing hit-area minimums — `accessibility` owns those and they are not negotiable at any density.
+Where density is high, grouping has to come from alignment, rules and subtle background shifts instead of large gaps. Density does not excuse losing hit-area minimums: `accessibility` owns those and they are not negotiable at any density.
 
 ## Change the layout, not just the width
 
@@ -132,10 +134,10 @@ Do not report density as a problem without naming the task. A dense professional
 
 ## Reporting
 
-**Severity ladder:** `Critical` — content unreachable, horizontal scroll at 320px, layout breaking at 200% zoom, focus order scrambled by visual reordering · `Serious` — hierarchy that hides the primary action, grouping that contradicts the content structure · `Moderate` — off-scale spacing, inconsistent alignment, density mismatched to the task · `Minor` — optical alignment, single-instance inconsistency.
+**Severity ladder:** `Critical`: content unreachable, horizontal scroll at 320px, layout breaking at 200% zoom, focus order scrambled by visual reordering · `Serious`: hierarchy that hides the primary action, grouping that contradicts the content structure · `Moderate`: off-scale spacing, inconsistent alignment, density mismatched to the task · `Minor`: optical alignment, single-instance inconsistency.
 
 **Verification:** squint test performed; spacing values checked against the scale; layout checked at 320px and at 200% zoom; DOM order compared with visual order; density checked against the task.
 
-**Format:** findings grouped by the principle they violate, severity order, each with where it occurs, what it costs the reader, and the fix in the project's own styling system. Where the fix belongs elsewhere — too much content, unreadable text, insufficient contrast — name `information-architecture`, `typography` or `accessibility` rather than solving it here.
+**Format:** findings grouped by the principle they violate, severity order, each with where it occurs, what it costs the reader, and the fix in the project's own styling system. Where the fix belongs elsewhere (too much content, unreadable text, insufficient contrast) name `information-architecture`, `typography` or `accessibility` rather than solving it here.
 
 **Done when:** the primary action survives the squint test, every spacing value is on the scale or marked as a deliberate exception, and the layout has been checked at both extremes rather than at the design width.

@@ -1,7 +1,7 @@
 ---
 name: field-guide
 description: Routes a UX request to the right skill in this collection, across research, definition, structure, interface craft, inclusive design, build, validation and practice. Use first when a request spans disciplines or the right starting point is unclear.
-when_to_use: Use when someone asks what skills are available, where to start, which method fits, or asks a broad question like "how do I improve this product", "we need to redesign X", "what should I do next" — and when a request names a role (researcher, product designer, design engineer) rather than a task.
+when_to_use: Use when someone asks what skills are available, where to start, which method fits, or asks a broad question like "how do I improve this product", "we need to redesign X", "what should I do next": and when a request names a role (researcher, product designer, design engineer) rather than a task.
 ---
 
 # The field guide
@@ -21,19 +21,22 @@ It sits in the Route band with `full-review`. The difference: `full-review` judg
 | Something exists and needs judging | `full-review` for a screen or flow, `review-the-change` for a diff, branch or PR |
 | A decision is stuck between two options | `prioritization` if the axis is cost, `problem-framing` if nobody agrees what the problem is |
 | Nobody knows whether it worked | `success-metrics` to define it, `experimentation-and-analytics` to measure it |
+| The request is AI, a chart or dashboard, a landing page or a native app | `ai-and-agents`, `data-visualization`, `marketing-pages` or `native-platforms` |
+| The product is medical, financial, safety-critical or regulated | `high-stakes-domains` first, then the band the work belongs to |
+| Someone wants hands-on work in the codebase | The Make band: `state-gallery`, `stress-test`, `explore-directions`, `design-to-code`, `how-its-built`, `improvement-shift` |
 | The request is for an artifact | `design-docs`, `design-handoff`, `case-studies` or `prototyping` depending on the reader |
 
 ## Intake
 
 Four questions, in order. The first one that produces a clear answer decides the band, and the rest are context.
 
-**1. Is the problem known?** If the answer is a solution rather than a problem — "add a dashboard", "make it look more modern" — the request has skipped the Define band. Go to `problem-framing`. Building the named solution without this step is the single most common way a project produces something nobody uses.
+**1. Is the problem known?** If the answer is a solution rather than a problem ("add a dashboard", "make it look more modern") the request has skipped the Define band. Go to `problem-framing`. Building the named solution without this step is the single most common way a project produces something nobody uses.
 
 **2. Is there evidence?** If the problem is asserted rather than observed, go to the Research band. `research-planning` picks the method. Where there is no budget or time for participants, `heuristic-evaluation` produces defensible findings without them, at the cost of certainty about which ones actually bite.
 
 **3. Does the structure hold?** Before styling anything, the structure has to carry the content: `information-architecture` for what goes where, `user-flows` for how someone moves through it, `content-design` for what it says. A polish pass on a broken structure is wasted work and the polish gets blamed.
 
-**4. Then craft, then inclusion, then build.** Craft is the last 20% and it is worth doing well, but it is genuinely last. `accessibility` is not last — it is read alongside every band, because retrofitting it costs several times what building with it costs.
+**4. Then craft, then inclusion, then build.** Craft is the last 20% and it is worth doing well, but it is genuinely last. `accessibility` is not last: it is read alongside every band, because retrofitting it costs several times what building with it costs.
 
 ## Role lens
 
@@ -53,28 +56,28 @@ Four questions, in order. The first one that produces a clear answer decides the
 
 Read this as the default sequence. Real projects loop, skip and re-enter, but a project that never visits a band should be able to say why.
 
-**Research** — `research-planning` `user-interviews` `usability-testing` `surveys-and-measurement` `research-synthesis` `heuristic-evaluation`
+**Research**: `research-planning` `user-interviews` `usability-testing` `surveys-and-measurement` `research-synthesis` `heuristic-evaluation`
 Turns assumptions into observations. Skipping it does not remove the assumptions, it only removes the chance to find out which were wrong.
 
-**Define** — `problem-framing` `audience-and-journeys` `prioritization` `success-metrics`
+**Define**: `problem-framing` `audience-and-journeys` `prioritization` `success-metrics`
 Turns observations into a decision about what to build and how you will know it worked.
 
-**Structure** — `information-architecture` `user-flows` `forms-and-input` `content-design`
+**Structure**: `information-architecture` `user-flows` `forms-and-input` `content-design`
 Turns the decision into an organization of content, paths and words. Most problems people describe as visual are structural.
 
-**Craft** — `layout-and-composition` `typography` `color-and-theming` `components-and-states` `motion-and-interaction` `icons-and-imagery`
+**Craft**: `layout-and-composition` `typography` `color-and-theming` `components-and-states` `motion-and-interaction` `icons-and-imagery`
 Turns the structure into a surface that feels considered.
 
-**Inclusive** — `accessibility` `global-and-inclusive`
+**Inclusive**: `accessibility` `global-and-inclusive`
 Runs alongside Structure, Craft and Build rather than after them.
 
-**Build** — `design-systems` `design-handoff` `design-engineering` `prototyping`
+**Build**: `design-systems` `design-handoff` `design-engineering` `prototyping`
 Turns the design into something that exists and keeps existing.
 
-**Validate** — `review-the-change` `design-critique` `experimentation-and-analytics`
+**Validate**: `review-the-change` `design-critique` `experimentation-and-analytics`
 Checks what was built against what was intended and what users do.
 
-**Practice** — `design-docs` `stakeholder-communication` `design-ops` `case-studies`
+**Practice**: `design-docs` `stakeholder-communication` `design-ops` `case-studies`
 The work around the work. Underweighted by individuals and the main constraint on teams.
 
 ## Route to the narrowest skill that fully covers the request
@@ -85,7 +88,7 @@ Where several skills apply, name them in working order rather than invoking all 
 
 ## Name the band that was skipped
 
-When a request arrives mid-process — a polish pass on a feature with no research, a metrics dashboard for a goal nobody wrote down — do the work asked for, and say plainly which band was skipped and what that costs. Do not refuse the work and do not silently insert the missing phase.
+When a request arrives mid-process (a polish pass on a feature with no research, a metrics dashboard for a goal nobody wrote down) do the work asked for, and say plainly which band was skipped and what that costs. Do not refuse the work and do not silently insert the missing phase.
 
 The useful form is one sentence: what is missing, what could go wrong because of it, and the smallest thing that would close the gap. "There is no evidence anyone wants this view; a five-person `usability-testing` round on the current build would tell you before the rebuild does."
 

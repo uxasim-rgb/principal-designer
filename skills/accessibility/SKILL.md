@@ -1,6 +1,6 @@
 ---
 name: accessibility
-description: Owns the measurable accessibility requirements — keyboard, focus, ARIA, screen readers, hit areas, contrast thresholds, zoom and motion safety — that every other skill cites. Use alongside any build, never as a final pass.
+description: Owns the measurable accessibility requirements (keyboard, focus, ARIA, screen readers, hit areas, contrast thresholds, zoom and motion safety) that every other skill cites. Use alongside any build, never as a final pass.
 when_to_use: Use when checking or building for accessibility, a11y, WCAG compliance, keyboard navigation, focus management, ARIA roles and labels, screen reader support, color contrast thresholds, touch target size, zoom and reflow, or reduced motion requirements.
 ---
 
@@ -16,8 +16,8 @@ The governing idea: most accessibility defects are subtractions. Someone took aw
 
 | The situation | Go to |
 | --- | --- |
-| You need a specific threshold | [Thresholds](thresholds.md) — contrast, target size, zoom, timing |
-| Running an audit | [Testing](testing.md) — the order to test in, and with what |
+| You need a specific threshold | [Thresholds](thresholds.md): contrast, target size, zoom, timing |
+| Running an audit | [Testing](testing.md): the order to test in, and with what |
 | Building a custom control | **Use the platform, or accept the whole job** below |
 | Focus is going somewhere wrong | **Focus is the keyboard user's cursor** below |
 | Deciding whether ARIA is needed | **The first rule of ARIA is not to use it** below |
@@ -32,7 +32,7 @@ The governing idea: most accessibility defects are subtractions. Someone took aw
 | Design engineer | The implementation requirements and the testing order |
 | UI designer | Contrast, target size, focus visibility and state-not-by-color-alone, at design time |
 | UX researcher | How to include disabled participants, and what assistive-technology testing does and does not prove |
-| Product designer | That this is a constraint on scope, not a phase — retrofitting costs several times more |
+| Product designer | That this is a constraint on scope, not a phase: retrofitting costs several times more |
 
 ## Use the platform, or accept the whole job
 
@@ -49,7 +49,7 @@ A native `<button>` arrives with focus, Enter and Space handling, a role, and fo
 
 Choosing a `<div>` because the native element is hard to style is the most expensive styling decision available. Nearly all native controls can be styled to any design; the cases that genuinely cannot are few and worth knowing before assuming.
 
-If you build a custom control, you own the full behavior contract: role, accessible name, state, keyboard interaction matching platform convention, and focus management. Take the pattern from the ARIA Authoring Practices rather than inventing it — users have expectations for how a combobox responds to arrow keys.
+If you build a custom control, you own the full behavior contract: role, accessible name, state, keyboard interaction matching platform convention, and focus management. Take the pattern from the ARIA Authoring Practices rather than inventing it: users have expectations for how a combobox responds to arrow keys.
 
 ## Everything works from the keyboard
 
@@ -63,13 +63,15 @@ Every interactive element must be reachable by Tab, operable by Enter or Space, 
 
 Test it by unplugging the mouse and completing the primary task. That is the whole method, and it finds more than any automated tool.
 
+Composite widgets such as toolbars, tab lists, menus, grids and radio groups are one Tab stop, with arrow keys moving inside. Implement this with a roving `tabindex` (the active item is `0`, the others `-1`) or with `aria-activedescendant` when focus must stay on an input, as in a combobox. A toolbar where every button is a Tab stop makes a keyboard user press Tab twenty times to get past it.
+
 ## Focus is the keyboard user's cursor
 
 A keyboard user who cannot see focus cannot use the interface. This is the single most common regression in a design system.
 
 - **Style `:focus-visible`, never bare `:focus`.** `:focus-visible` shows for keyboard and assistive technology and stays hidden on mouse click, which is the behavior people are usually trying to achieve when they remove the ring.
 - **Never `outline: none` without a replacement** of at least equal visibility. If you take the ring away, you own providing another.
-- **The indicator needs 3:1 contrast** against what is adjacent to it, and it must not be clipped or obscured by other content — an indicator hidden under a sticky header is a failure.
+- **The indicator needs 3:1 contrast** against what is adjacent to it, and it must not be clipped or obscured by other content: an indicator hidden under a sticky header is a failure.
 - **Give it room.** `outline-offset: 2px` keeps the ring from merging with the element's own border.
 
 ## Manage focus across boundaries
@@ -78,16 +80,16 @@ When the interface changes substantially, focus has to be moved deliberately, or
 
 | Event | Focus goes to |
 | --- | --- |
-| Modal opens | The dialog, or its first meaningful control — not the close button by default |
+| Modal opens | The dialog, or its first meaningful control: not the close button by default |
 | Modal closes | The element that opened it |
 | Content loads into a region | The region, or its heading, with an announcement |
 | A form fails validation | The error summary, which links to each field |
-| An item is deleted from a list | The next item, or the list itself — never nowhere |
+| An item is deleted from a list | The next item, or the list itself: never nowhere |
 | Route change in a single-page app | The new page's main heading |
 
 The deletion case is the one most often missed: removing the focused element sends focus to `<body>`, and the user loses their place entirely.
 
-While a modal is open, the background must be inert — not merely visually covered. Content behind an overlay that is still reachable by Tab is a common and confusing failure.
+While a modal is open, the background must be inert: not merely visually covered. Content behind an overlay that is still reachable by Tab is a common and confusing failure.
 
 ## The first rule of ARIA is not to use it
 
@@ -98,10 +100,10 @@ The rules, in priority order:
 1. If a native element does the job, use it. Do not add ARIA.
 2. Do not change native semantics unless you must. `<button role="heading">` is almost always wrong.
 3. Every interactive ARIA control must be keyboard-operable.
-4. Never put `aria-hidden="true"` on a focusable element — it creates a control that can be focused but not announced.
+4. Never put `aria-hidden="true"` on a focusable element: it creates a control that can be focused but not announced.
 5. Every interactive element needs an accessible name.
 
-Accessible names come from visible text where possible, then `aria-labelledby` pointing at visible text, then `aria-label` as a last resort — it is invisible, so it silently drifts from the visible label over time.
+Accessible names come from visible text where possible, then `aria-labelledby` pointing at visible text, then `aria-label` as a last resort: it is invisible, so it silently drifts from the visible label over time.
 
 `aria-live` regions announce changes: `polite` for status, `assertive` only for genuinely urgent interruptions. The region must exist in the DOM before the content arrives, or nothing is announced.
 
@@ -129,6 +131,8 @@ Anything that moves, blinks or scrolls automatically for more than five seconds 
 
 `motion-and-interaction` owns the craft; the requirement is here.
 
+Which standard applies, and when, depends on the market: WCAG 2.2 is the current version to design to, WCAG 3 is still a draft, and the European Accessibility Act and the ADA Title II rule have their own dates. The current position, with dates and sources, is in [standards-and-law.md](standards-and-law.md). Check it before citing a deadline.
+
 ## Evidence bar
 
 Accessibility findings are mostly measurable, which makes this the one review that should never be arguable.
@@ -139,7 +143,7 @@ Accessibility findings are mostly measurable, which makes this the one review th
 
 **Automated tools find a minority of issues.** They are a first pass, not an audit. A page that passes axe can be completely unusable by keyboard. Never report "no issues found" on the strength of a tool run.
 
-**Do not speak for disabled users you did not talk to.** Conformance is not usability. Where the claim is about experience rather than about a criterion, it needs participants — `research-planning` covers recruiting them, and doing so is worth more than any audit.
+**Do not speak for disabled users you did not talk to.** Conformance is not usability. Where the claim is about experience rather than about a criterion, it needs participants: `research-planning` covers recruiting them, and doing so is worth more than any audit.
 
 Where a criterion genuinely does not apply, say why rather than marking it passed.
 
@@ -165,16 +169,16 @@ Where a criterion genuinely does not apply, say why rather than marking it passe
 
 ## Reporting
 
-**Severity ladder:** `Critical` — content or function unreachable by keyboard or assistive technology, a keyboard trap, flashing above threshold, data loss with no accessible path · `Serious` — a WCAG A or AA criterion failed with a workaround available · `Moderate` — AA failure on a secondary path, or an AAA criterion the product claims · `Minor` — usability friction for assistive-technology users that violates no criterion.
+**Severity ladder:** `Critical`: content or function unreachable by keyboard or assistive technology, a keyboard trap, flashing above threshold, data loss with no accessible path · `Serious`: a WCAG A or AA criterion failed with a workaround available · `Moderate`: AA failure on a secondary path, or an AAA criterion the product claims · `Minor`: usability friction for assistive-technology users that violates no criterion.
 
 **Verification before reporting:** keyboard walk completed on the primary task; screen-reader pass on at least one platform; contrast computed; target sizes measured; zoom checked at 200% and reflow at 400%; automated scan run *and* named as insufficient.
 
 **Format:**
 
-1. **Scope** — what was tested, with what assistive technology and version, and what was not covered.
-2. **Method** — operated, inspected, or read. Per finding where they differ.
+1. **Scope**: what was tested, with what assistive technology and version, and what was not covered.
+2. **Method**: operated, inspected, or read. Per finding where they differ.
 3. **Findings**, severity order, each with: the WCAG criterion, the measured value against the threshold, where it occurs, who it affects and how, and the fix.
-4. **Not applicable** — criteria that do not apply, with the reason.
-5. **Limits** — the standing note that conformance is not usability, and whether disabled participants were involved.
+4. **Not applicable**: criteria that do not apply, with the reason.
+5. **Limits**: the standing note that conformance is not usability, and whether disabled participants were involved.
 
 **Done when:** every finding cites a criterion and a measured value, the method is stated, and no conformance claim rests on an automated scan alone.

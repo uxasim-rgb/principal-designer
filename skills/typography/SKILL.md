@@ -8,7 +8,7 @@ when_to_use: Use when choosing fonts, building a type scale, setting line-height
 
 This skill governs how text is sized, spaced and broken. It sits in the Craft band.
 
-The governing idea: text does different jobs, and each job has its own settings. The most common failure is one scale and one line-height applied to everything — a column header, a paragraph of running prose and a hero headline each need different treatment, and giving them the same treatment makes at least two of them wrong.
+The governing idea: text does different jobs, and each job has its own settings. The most common failure is one scale and one line-height applied to everything: a column header, a paragraph of running prose and a hero headline each need different treatment, and giving them the same treatment makes at least two of them wrong.
 
 **Works with:** `layout-and-composition` owns the space around text blocks · `content-design` owns the words · `accessibility` owns minimum sizes, contrast and zoom · `global-and-inclusive` owns scripts, text expansion and language-specific rules · `design-systems` owns the scale as tokens · `color-and-theming` owns text color.
 
@@ -22,12 +22,12 @@ The governing idea: text does different jobs, and each job has its own settings.
 | Text wraps badly or leaves a single word | **Control the breaks** below |
 | Something needs truncating | **Truncate last** below |
 | Choosing a typeface | **Choose for the job** below |
-| Text is too small or low contrast | `accessibility` — it owns the thresholds |
+| Text is too small or low contrast | `accessibility`: it owns the thresholds |
 | The text will be translated | `global-and-inclusive` |
 
 ## Choose for the job, and default to fewer families
 
-One typeface, used across several weights and sizes, will outperform two chosen for contrast in most products. A second family earns its place only when it does a job the first cannot — a monospace for code and data, or a display face for a marketing surface that the product UI does not share.
+One typeface, used across several weights and sizes, will outperform two chosen for contrast in most products. A second family earns its place only when it does a job the first cannot: a monospace for code and data, or a display face for a marketing surface that the product UI does not share.
 
 What to check before committing:
 
@@ -41,7 +41,7 @@ For body text at small sizes, generous x-height and open apertures matter more t
 
 ## Build a scale with real steps
 
-Pick a base size — 16px is the web default and a reasonable body size — and build steps that are distinguishable.
+Pick a base size (16px is the web default and a reasonable body size) and build steps that are distinguishable.
 
 A ratio between 1.2 and 1.25 suits dense interfaces; 1.25 to 1.333 suits content-led pages. Round to whole pixels and adjust by eye rather than shipping the raw geometric output.
 
@@ -49,14 +49,14 @@ A workable interface scale:
 
 | Role | Size | Line-height |
 | --- | --- | --- |
-| Caption, metadata | 12–13px | 1.4 |
+| Caption, metadata | 12 to 13px | 1.4 |
 | Body small, dense UI | 14px | 1.5 |
-| Body | 16px | 1.5–1.6 |
-| Lead, large body | 18–20px | 1.5 |
-| Heading small | 20–24px | 1.3 |
-| Heading medium | 28–32px | 1.2 |
-| Heading large | 40–48px | 1.1 |
-| Display | 56px+ | 1.0–1.1 |
+| Body | 16px | 1.5 to 1.6 |
+| Lead, large body | 18 to 20px | 1.5 |
+| Heading small | 20 to 24px | 1.3 |
+| Heading medium | 28 to 32px | 1.2 |
+| Heading large | 40 to 48px | 1.1 |
+| Display | 56px+ | 1.0 to 1.1 |
 
 Note the inverse relationship: **as size goes up, line-height comes down**. A 48px heading at 1.5 line-height looks like separate lines rather than one heading. A 14px body at 1.2 is cramped.
 
@@ -66,19 +66,19 @@ Never go below 12px for anything a user must read, and 14px is a better floor fo
 
 Adjacent scale steps do not read as a hierarchy. A 16px body under an 18px heading looks like an inconsistency rather than a level.
 
-When a heading and its body need to be distinguishable, skip a step — or carry the distinction with weight and color rather than size alone. Size, weight and color together on the same element is usually one signal too many; two is enough.
+When a heading and its body need to be distinguishable, skip a step, or carry the distinction with weight and color rather than size alone. Size, weight and color together on the same element is usually one signal too many; two is enough.
 
 Use no more than three or four levels on a single screen. More than that and the reader stops perceiving them as ranked.
 
 ## Measure first, then line-height
 
-**Measure** — the number of characters per line — is the strongest determinant of reading comfort, and it is the one most often left unconstrained.
+**Measure** (the number of characters per line) is the strongest determinant of reading comfort, and it is the one most often left unconstrained.
 
 | Content | Characters per line |
 | --- | --- |
-| Long-form reading | 60–75 |
-| Interface body text | 50–75 |
-| Captions, short blocks | 40–60 |
+| Long-form reading | 60 to 75 |
+| Interface body text | 50 to 75 |
+| Captions, short blocks | 40 to 60 |
 | Absolute maximum | ~90 |
 
 Constrain with `max-width` in `ch` units, which tracks the font rather than guessing: `max-width: 70ch`. A full-width paragraph on a wide screen is the single most common typographic failure in interfaces, and it is one line of CSS.
@@ -91,8 +91,8 @@ Unitless line-height (`1.5`) rather than a fixed value, so it scales with inheri
 
 Body text at body size needs no tracking; the typeface was drawn for it. Two legitimate exceptions:
 
-- **Large display sizes** — tighten slightly, roughly −0.01em to −0.03em. Type drawn for text looks loose at 48px and above.
-- **Uppercase and small caps** — loosen, roughly +0.05em to +0.1em. Capitals were not designed to sit together at text spacing.
+- **Large display sizes**: tighten slightly, roughly −0.01em to −0.03em. Type drawn for text looks loose at 48px and above.
+- **Uppercase and small caps**: loosen, roughly +0.05em to +0.1em. Capitals were not designed to sit together at text spacing.
 
 Never letter-space to fill a space or to create an effect in body copy. It reduces reading speed measurably.
 
@@ -102,8 +102,8 @@ Bad wrapping is what separates typography that has been set from typography that
 
 - **Headings:** `text-wrap: balance` distributes lines evenly and prevents a single trailing word. Use on headings and short blocks; it is capped at a handful of lines and is not for body copy.
 - **Body:** `text-wrap: pretty` prevents widows and improves the last few lines without the cost of balancing a long paragraph.
-- **Never break a unit:** use a non-breaking space between a number and its unit, a name and its title, and inside anything that should read as one token — `10&nbsp;MB`, `Figure&nbsp;3`.
-- **Long unbroken strings** — URLs, tokens, IDs — need `overflow-wrap: break-word` or they will force horizontal scroll. `word-break: break-all` is too aggressive for prose.
+- **Never break a unit:** use a non-breaking space between a number and its unit, a name and its title, and inside anything that should read as one token: `10&nbsp;MB`, `Figure&nbsp;3`.
+- **Long unbroken strings** (URLs, tokens, IDs) need `overflow-wrap: break-word` or they will force horizontal scroll. `word-break: break-all` is too aggressive for prose.
 - **Hyphenation** is worth enabling in narrow columns with justified or long text; it needs the correct `lang` attribute to hyphenate correctly, which `global-and-inclusive` owns.
 
 Avoid justified text in interfaces. Without proper hyphenation and justification control it produces rivers of white space, and browser justification is not good enough to be worth it.
@@ -114,9 +114,9 @@ Truncation is a failure of layout, applied when nothing better is available. Bef
 
 Where truncation is unavoidable:
 
-- Truncate at the end, not the middle, unless the distinguishing part is at the end — file names and IDs frequently are, and middle truncation preserves both ends.
+- Truncate at the end, not the middle, unless the distinguishing part is at the end: file names and IDs frequently are, and middle truncation preserves both ends.
 - Make the full value available: a `title` attribute is not enough on its own because it is unreachable by keyboard and touch; pair it with a tooltip or an expandable row.
-- Never truncate something the user must read to make a decision — a price, an error, a destructive action's target.
+- Never truncate something the user must read to make a decision: a price, an error, a destructive action's target.
 - Clamp multi-line text with `-webkit-line-clamp` rather than by fixed height, so it does not cut a line in half.
 
 A truncated label that the user cannot expand is missing information, and `accessibility` treats it as one.
@@ -131,10 +131,15 @@ OpenType features worth turning on deliberately:
 | --- | --- |
 | `font-variant-numeric: tabular-nums` | Any column of numbers, any figure that updates in place |
 | `font-variant-numeric: oldstyle-nums` | Numerals inside running prose, where lining figures look loud |
-| `font-feature-settings: "ss01"` | Stylistic alternates — a single-storey `a`, a straight-tailed `l` — where the default is ambiguous |
+| `font-feature-settings: "ss01"` | Stylistic alternates (a single-storey `a`, a straight-tailed `l`) where the default is ambiguous |
 | `font-variant-ligatures: none` | Code, IDs, anything where character identity matters more than smoothness |
 
 Tabular figures in tables and on updating values is the highest-value one and it is nearly always missing.
+
+Two more details that separate finished type from default type:
+
+- **Thin weights need size.** Weights 100 to 300 only at 28px and above; below 18px use 400 or heavier. Thin strokes at small sizes break up on ordinary screens and fail contrast in practice even when the color passes.
+- **Trim the space above and below the text** where it must sit optically centered, such as buttons and badges: `text-box: trim-both cap alphabetic`. Support is partial, so treat it as an enhancement and check that the fallback still looks centered.
 
 ## Evidence bar
 
@@ -150,9 +155,9 @@ Where a project has an established scale, review against that scale rather than 
 
 | Symptom | What it means | Fix |
 | --- | --- | --- |
-| A paragraph runs the full width of a wide screen | Measure is unconstrained | `max-width` in `ch`, 50–75 |
-| A 48px heading looks like separate lines | Line-height did not come down with size | 1.0–1.2 at display sizes |
-| 14px body text at 1.2 line-height | Cramped | 1.5–1.6 at body sizes |
+| A paragraph runs the full width of a wide screen | Measure is unconstrained | `max-width` in `ch`, 50 to 75 |
+| A 48px heading looks like separate lines | Line-height did not come down with size | 1.0 to 1.2 at display sizes |
+| 14px body text at 1.2 line-height | Cramped | 1.5 to 1.6 at body sizes |
 | Heading and body are one step apart | Reads as an inconsistency, not a level | Skip a step, or carry it with weight |
 | Six type sizes on one screen | Hierarchy stops being perceived | Three or four levels |
 | A heading leaves one word on the last line | No wrap control | `text-wrap: balance` |
@@ -166,10 +171,10 @@ Where a project has an established scale, review against that scale rather than 
 
 ## Reporting
 
-**Severity ladder:** `Critical` — text below the accessible minimum, contrast failing threshold, layout breaking at 200% zoom, decision-critical text truncated · `Serious` — measure far outside range on long text, unreadable hierarchy, information lost to truncation · `Moderate` — line-height mismatched to size, missing tabular figures, uncontrolled wrapping · `Minor` — tracking, optical nits, single inconsistencies.
+**Severity ladder:** `Critical`: text below the accessible minimum, contrast failing threshold, layout breaking at 200% zoom, decision-critical text truncated · `Serious`: measure far outside range on long text, unreadable hierarchy, information lost to truncation · `Moderate`: line-height mismatched to size, missing tabular figures, uncontrolled wrapping · `Minor`: tracking, optical nits, single inconsistencies.
 
 **Verification:** measure counted at the widest viewport; sizes and line-heights checked against the scale; contrast computed, not estimated; behavior checked at 200% zoom; wrapping checked at the longest realistic string; numerals checked in any table.
 
-**Format:** findings grouped by the principle violated, severity order, each with the measured value, where it occurs, what it costs the reader, and the fix expressed in the project's own system — Tailwind classes where the project uses Tailwind, CSS custom properties where it uses those.
+**Format:** findings grouped by the principle violated, severity order, each with the measured value, where it occurs, what it costs the reader, and the fix expressed in the project's own system: Tailwind classes where the project uses Tailwind, CSS custom properties where it uses those.
 
 **Done when:** every finding carries a number rather than an impression, the scale has been checked rather than assumed, and nothing decision-critical is cut off.

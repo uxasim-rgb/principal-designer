@@ -1,0 +1,5 @@
+interface:
+  display_name: "How It's Built"
+  short_description: "Explain how a site or effect was made"
+policy:
+  allow_implicit_invocation: false

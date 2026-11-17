@@ -26,7 +26,7 @@ The governing idea: an icon is a word with worse recall. It earns its place by b
 
 ## Almost no icon works alone
 
-A small number of icons have genuinely universal recognition: close, search, play, pause, plus, back arrow, and — only within their own platform conventions — share and menu. Everything else is learned, and learned from *your* product.
+A small number of icons have genuinely universal recognition: close, search, play, pause, plus, back arrow, and (only within their own platform conventions) share and menu. Everything else is learned, and learned from *your* product.
 
 Everything else gets a visible text label. Not a tooltip: a tooltip requires hover, which does not exist on touch, and requires the user to already suspect the icon means something.
 
@@ -40,14 +40,14 @@ Everything else gets a visible text label. Not a tooltip: a tooltip requires hov
 
 The test: show the icon to someone unfamiliar with the product and ask what it does. If they hesitate, it needs a label. This takes two minutes and settles most icon arguments.
 
-Every icon-only control needs an accessible name regardless — `accessibility` owns that requirement, and a decorative icon beside a text label must be hidden from assistive technology so the label is not announced twice.
+Every icon-only control needs an accessible name regardless: `accessibility` owns that requirement, and a decorative icon beside a text label must be hidden from assistive technology so the label is not announced twice.
 
 ## One grid, one stroke, one source
 
 Consistency across an icon set matters more than the quality of any individual icon.
 
 - **One grid.** 24×24 is the common base, with a 20×20 or 16×16 set drawn separately rather than scaled down.
-- **One stroke width**, expressed at the base size — 1.5px or 2px on a 24px grid. Stroke width should not scale proportionally when the icon is used smaller; a 2px stroke at 24px becomes a hairline at 16px, which is why a separate small set exists.
+- **One stroke width**, expressed at the base size: 1.5px or 2px on a 24px grid. Stroke width should not scale proportionally when the icon is used smaller; a 2px stroke at 24px becomes a hairline at 16px, which is why a separate small set exists.
 - **One source.** Mixing two icon libraries is visible immediately, and the mismatch reads as unfinished even to people who cannot say why. Where a needed icon is missing from the set, draw it on the set's grid rather than importing one.
 - **Consistent corner radius, terminals and optical weight** across the set.
 
@@ -59,7 +59,7 @@ Icons are irregular shapes inside square boxes, and centering the box does not c
 
 - A triangular play icon centered by its bounding box reads left-heavy; nudge it right by a small amount.
 - Round shapes need to slightly overshoot a flat edge to look the same size as a square one.
-- An icon beside text aligns to the text's optical center, which is usually not its bounding-box center — cap height and x-height matter more than the em box.
+- An icon beside text aligns to the text's optical center, which is usually not its bounding-box center: cap height and x-height matter more than the em box.
 
 Trust the eye over the number here. This is one of the few places in interface work where measurement gives the wrong answer, and `layout-and-composition` owns the general principle.
 
@@ -77,18 +77,18 @@ Alt text is not a description of the image. It is a replacement for the image's 
 
 | Image job | Alt text |
 | --- | --- |
-| Decorative — pattern, glow, background texture | `alt=""` so it is skipped entirely |
+| Decorative: pattern, glow, background texture | `alt=""` so it is skipped entirely |
 | Icon beside a text label | Hidden from assistive tech; the label is the name |
 | Icon-only control | The action, not the picture: "Delete", not "Trash can icon" |
-| Informative — a chart, a diagram, a screenshot | What it shows and what it means, not what it looks like |
+| Informative: a chart, a diagram, a screenshot | What it shows and what it means, not what it looks like |
 | A link's only content | Where the link goes |
-| A photo where the content matters — a product, a person | What matters about it in this context |
+| A photo where the content matters: a product, a person | What matters about it in this context |
 
-Never start with "Image of" or "Picture of" — assistive technology already says so.
+Never start with "Image of" or "Picture of": assistive technology already says so.
 
 The same image gets different alt text in different contexts. A product photo on a listing page might be the product name; the same photo in a gallery with the name beside it might be `alt=""`.
 
-Complex images — charts, data visualizations, diagrams — need a text alternative nearby rather than a long alt string. `dataviz` covers chart accessibility conventions.
+Complex images (charts, data visualizations, diagrams) need a text alternative nearby rather than a long alt string. `dataviz` covers chart accessibility conventions.
 
 ## Ship the smallest thing that looks right
 
@@ -101,7 +101,7 @@ Complex images — charts, data visualizations, diagrams — need a text alterna
 
 Animated GIFs are frequently an order of magnitude larger than an equivalent video and cannot be paused, which makes them both a performance and an accessibility problem.
 
-Serve responsive sources with `srcset` and `sizes` so a phone does not download a 2000px image. Use `loading="lazy"` on anything below the fold and `fetchpriority="high"` on the one image that matters above it — lazy-loading the hero image delays the largest paint and makes the page feel slower.
+Serve responsive sources with `srcset` and `sizes` so a phone does not download a 2000px image. Use `loading="lazy"` on anything below the fold and `fetchpriority="high"` on the one image that matters above it: lazy-loading the hero image delays the largest paint and makes the page feel slower.
 
 `design-engineering` owns the performance budget these decisions are measured against.
 
@@ -111,7 +111,7 @@ An image without dimensions causes layout shift as it loads: content jumps, and 
 
 Always set `width` and `height` attributes, or an `aspect-ratio` in CSS, so the space is held before the bytes arrive. This is the single most common cause of layout instability and it is trivially preventable.
 
-Decide what shows while loading — a neutral placeholder, a blurred low-resolution version, or a solid tone from the image. And decide what shows when loading *fails*, which is the state nobody designs: a broken image icon with alt text overflowing its container is what ships by default.
+Decide what shows while loading: a neutral placeholder, a blurred low-resolution version, or a solid tone from the image. And decide what shows when loading *fails*, which is the state nobody designs: a broken image icon with alt text overflowing its container is what ships by default.
 
 ## Design avatars for the missing case
 
@@ -127,7 +127,7 @@ Icon recognition is testable in two minutes with someone unfamiliar with the pro
 
 Image weight, format and layout shift are measurable. Report the number: file size, the shift score, the largest contentful paint. Do not report performance from a fast connection on a development machine.
 
-Alt text correctness is checkable against the image's job, and it is a requirement rather than a preference — `accessibility` owns it.
+Alt text correctness is checkable against the image's job, and it is a requirement rather than a preference: `accessibility` owns it.
 
 Illustration style, photographic direction and brand expression are preference. Report them only where they cost something nameable: legibility at the size used, a file that delays first paint, contrast that fails, or an image carrying information available nowhere else.
 
@@ -152,7 +152,7 @@ Illustration style, photographic direction and brand expression are preference. 
 
 ## Reporting
 
-**Severity ladder:** `Critical` — an icon-only control with no accessible name, information available only in an image with no text alternative, alt text absent on informative images · `Serious` — ambiguous icon on a primary action, layout shift from unreserved images, hit area below threshold · `Moderate` — set inconsistency, oversized assets, missing responsive sources · `Minor` — optical alignment, style variance.
+**Severity ladder:** `Critical`: an icon-only control with no accessible name, information available only in an image with no text alternative, alt text absent on informative images · `Serious`: ambiguous icon on a primary action, layout shift from unreserved images, hit area below threshold · `Moderate`: set inconsistency, oversized assets, missing responsive sources · `Minor`: optical alignment, style variance.
 
 **Verification:** icon recognition tested with someone unfamiliar; accessible names confirmed on every icon-only control; alt text checked against each image's job; file sizes and layout shift measured on a throttled connection; hit areas measured.
 

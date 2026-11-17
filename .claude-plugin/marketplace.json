@@ -1,21 +1,27 @@
 {
-  "name": "ux-field-kit",
+  "name": "principal-designer",
   "owner": {
     "name": "Asim Sharif",
     "email": "asim@uxasim.com",
     "url": "https://uxasim.com/"
   },
   "metadata": {
-    "description": "Agent skills for everyone who works on the user experience, not only the people who style it.",
-    "version": "1.0.0"
+    "description": "The most senior product designer on your team: research, strategy, interface craft, accessibility, native apps, AI features and design systems, built in your code and checked before it ships.",
+    "version": "2.0.0"
   },
   "plugins": [
     {
-      "name": "ux-field-kit",
+      "name": "principal-designer",
       "source": "./",
-      "description": "35 skills spanning research, definition, structure, interface craft, inclusive design, build, validation and practice.",
+      "description": "48 skills and two agents spanning research, definition, structure, interface craft, inclusive design, native apps, AI, build, validation and practice.",
       "category": "design",
-      "keywords": ["ux", "ui", "research", "design-systems", "accessibility"]
+      "keywords": [
+        "ux",
+        "ui",
+        "research",
+        "design-systems",
+        "accessibility"
+      ]
     }
   ]
 }

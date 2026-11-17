@@ -1,0 +1,5 @@
+interface:
+  display_name: "State Gallery"
+  short_description: "Every state of one component, on one page"
+policy:
+  allow_implicit_invocation: false

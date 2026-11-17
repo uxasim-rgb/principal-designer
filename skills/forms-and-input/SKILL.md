@@ -21,8 +21,8 @@ The governing idea: the form should adapt to what the user typed, not the other 
 | Errors are the problem | **Never reject what you could accept** below |
 | The form is long | **Multi-step** below, and `user-flows` |
 | Labels and messages need wording | `content-design` |
-| Screen reader or keyboard behavior | `accessibility` — it owns the requirements |
-| Names, addresses, dates, phone numbers | `global-and-inclusive` — assumptions there break internationally |
+| Screen reader or keyboard behavior | `accessibility`: it owns the requirements |
+| Names, addresses, dates, phone numbers | `global-and-inclusive`: assumptions there break internationally |
 | It works but feels sluggish | `motion-and-interaction` for feedback timing |
 
 ## Ask for less
@@ -41,7 +41,7 @@ A placeholder is not a label. It disappears when typing starts, which removes th
 
 Labels sit above the field for scannability in most layouts. Placeholders, where used *in addition*, show format: `name@company.com`, not "Enter your email".
 
-`accessibility` owns the programmatic requirements — every control needs a `<label for>` or wrapping label, and a field with only a placeholder is a defect there, not a style preference.
+`accessibility` owns the programmatic requirements: every control needs a `<label for>` or wrapping label, and a field with only a placeholder is a defect there, not a style preference.
 
 ## Match the input to the data
 
@@ -51,15 +51,15 @@ The control tells the user what kind of answer is expected and gets them the rig
 | --- | --- |
 | Email | `type="email"` `inputmode="email"` |
 | Phone | `type="tel"` `inputmode="tel"` |
-| Numeric that is not a quantity — card, PIN, postcode | `inputmode="numeric"` with `type="text"`, so leading zeros survive and spinners do not appear |
+| Numeric that is not a quantity: card, PIN, postcode | `inputmode="numeric"` with `type="text"`, so leading zeros survive and spinners do not appear |
 | Quantity | `type="number"` with sensible `min`, `max`, `step` |
 | Date the user knows | Three separate fields or a masked text input, not a calendar picker |
 | Date the user is choosing | Calendar picker with text entry as a fallback |
-| 2–5 mutually exclusive options | Radios, all visible |
+| 2 to 5 mutually exclusive options | Radios, all visible |
 | More than ~7 options | Select |
 | Many options with a known value | Combobox with type-ahead |
 
-Use `autocomplete` attributes correctly — `given-name`, `family-name`, `email`, `street-address`, `postal-code`, `cc-number`. It is the single cheapest improvement to completion rate and it is usually missing.
+Use `autocomplete` attributes correctly: `given-name`, `family-name`, `email`, `street-address`, `postal-code`, `cc-number`. It is the single cheapest improvement to completion rate and it is usually missing.
 
 Never disable paste. It breaks password managers, forces retyping of card numbers, and prevents nothing.
 
@@ -70,11 +70,11 @@ Timing matters more than the message.
 | When | Use for |
 | --- | --- |
 | **As they type** | Only positive, non-blocking feedback: password strength, character count, a format hint resolving |
-| **On blur** | Format checks — email shape, required-not-filled, out of range |
+| **On blur** | Format checks: email shape, required-not-filled, out of range |
 | **On submit** | Cross-field rules, server checks, anything needing a round trip |
 | **Never** | Erroring on an incomplete value while the field still has focus |
 
-The defining failure is marking an email invalid after the third character. The user has not finished. Validate on blur, and once a field has errored, re-validate as they type so the error clears the moment it is fixed — error-on-blur, clear-on-input is the pairing that feels right.
+The defining failure is marking an email invalid after the third character. The user has not finished. Validate on blur, and once a field has errored, re-validate as they type so the error clears the moment it is fixed: error-on-blur, clear-on-input is the pairing that feels right.
 
 On submit with multiple errors: summarize at the top, link each summary item to its field, move focus to the summary, and mark each field inline as well. `accessibility` owns the announcement requirements.
 
@@ -90,7 +90,7 @@ Never silently truncate. A field with a length limit shows the limit and stops a
 
 ## Preserve everything, always
 
-On any error — validation, server failure, session expiry, navigation away — the user's input survives.
+On any error (validation, server failure, session expiry, navigation away) the user's input survives.
 
 This is the most common and most damaging form defect, and it is an implementation shortcut rather than a decision. A payment form that clears on a declined card is why people abandon checkouts.
 
@@ -115,7 +115,7 @@ Do not split a short form to make it feel lighter. Four steps of two fields is s
 
 "Submit" tells the user nothing. Use the outcome: `Create account`, `Pay £42.00`, `Send invitation`. On an irreversible or charging action, put the consequence in the label.
 
-On submit, disable the control and show it is working — but only after the request starts, and always re-enable on failure. A button that disables and never returns is how duplicate-submission bugs get discovered by users.
+On submit, disable the control and show it is working, but only after the request starts, and always re-enable on failure. A button that disables and never returns is how duplicate-submission bugs get discovered by users.
 
 Guard against double submission on the server as well. Users double-click.
 
@@ -125,7 +125,7 @@ Measure abandonment by field where instrumentation allows. Field-level drop-off 
 
 Test with realistic data, not demo data: the longest name you actually see, a hyphenated surname, an address with no postcode, a number at the boundary. A form tested with "John Smith" has been tested on the case that was never going to fail.
 
-Contrast, labelling and focus behavior are measurable and belong to `accessibility` — measure them rather than judging by eye.
+Contrast, labelling and focus behavior are measurable and belong to `accessibility`: measure them rather than judging by eye.
 
 Where a field is defended as required by a stakeholder, the evidence needed is what happens downstream when it is missing. Frequently the answer is nothing, and the field survives because nobody checked.
 
@@ -152,17 +152,17 @@ Where a field is defended as required by a stakeholder, the evidence needed is w
 
 **The deliverable is a field-level review** with validation timing stated.
 
-**Severity ladder:** `Critical` — data loss, unrecoverable error, a field that cannot be completed by a legitimate user · `Serious` — input discarded, rejection of valid data, missing label · `Moderate` — poor validation timing, unclear error, missing autocomplete · `Minor` — inconsistent styling or ordering.
+**Severity ladder:** `Critical`: data loss, unrecoverable error, a field that cannot be completed by a legitimate user · `Serious`: input discarded, rejection of valid data, missing label · `Moderate`: poor validation timing, unclear error, missing autocomplete · `Minor`: inconsistent styling or ordering.
 
 **Verification:** every field has a persistent label; required/optional marked on the rarer state; input types and autocomplete checked; validation timing stated per field; error recovery preserves input; tested with boundary and international data.
 
 **Format:**
 
-1. **Scope** — which form, which flows reach it, which roles.
-2. **Field inventory** — field, control type, required, autocomplete, validation timing, and whether it could be derived or dropped.
+1. **Scope**: which form, which flows reach it, which roles.
+2. **Field inventory**: field, control type, required, autocomplete, validation timing, and whether it could be derived or dropped.
 3. **Findings**, severity order, each naming the owning skill.
-4. **Error catalogue** — each failure, its message, and the recovery available.
+4. **Error catalogue**: each failure, its message, and the recovery available.
 5. **Abandonment data** where it exists, by field.
-6. **Cuts proposed** — fields that could be removed or deferred, with what breaks.
+6. **Cuts proposed**: fields that could be removed or deferred, with what breaks.
 
 **Done when:** every field justifies its existence, no error discards input, validation timing is stated per field rather than assumed, and the form has been exercised with data that is shaped like real data.

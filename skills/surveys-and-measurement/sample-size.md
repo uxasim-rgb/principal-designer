@@ -26,7 +26,7 @@ Note the shape: precision improves with the square root of n. Going from ±10% t
 
 ## Finite population correction
 
-When your whole population is small — a B2B product with 800 accounts, an internal tool with 200 users — you need fewer responses than the table suggests:
+When your whole population is small (a B2B product with 800 accounts, an internal tool with 200 users) you need fewer responses than the table suggests:
 
 ```
 n_adjusted = n / (1 + (n − 1) / N)
@@ -54,25 +54,25 @@ Rough rates to plan against, then measure your own:
 
 | Channel | Typical rate |
 | --- | --- |
-| In-product prompt, well-targeted | 2–10% |
-| Email to engaged users | 5–15% |
-| Email to full list | 1–5% |
-| Panel with incentive | 30–60% |
-| Post-interaction (support, checkout) | 10–25% |
+| In-product prompt, well-targeted | 2 to 10% |
+| Email to engaged users | 5 to 15% |
+| Email to full list | 1 to 5% |
+| Panel with incentive | 30 to 60% |
+| Post-interaction (support, checkout) | 10 to 25% |
 
 At 5%, a ±5% margin needs roughly 7,700 invitations. Teams discover this after fielding, which is how a survey ends up reported at ±12% and described as if it were ±5%.
 
 ## Segment comparison is the trap
 
-The most common sample-size failure is not the headline number — it is comparing two groups inside it.
+The most common sample-size failure is not the headline number: it is comparing two groups inside it.
 
 A survey with 400 responses split 370 enterprise / 30 small-business cannot compare them. The small-business estimate carries a margin of error around ±18%, so any difference under about 20 points is unreadable.
 
-**Plan segment sizes before fielding.** If you need to compare three segments at ±10% each, you need roughly 96 in each segment — about 290 completed responses, distributed. Getting that distribution usually requires quota sampling rather than an open invitation, because the segments do not volunteer at equal rates.
+**Plan segment sizes before fielding.** If you need to compare three segments at ±10% each, you need roughly 96 in each segment: about 290 completed responses, distributed. Getting that distribution usually requires quota sampling rather than an open invitation, because the segments do not volunteer at equal rates.
 
 **Comparing two proportions** needs more than estimating one. As a working rule, to detect a 10-point difference between two groups at 95% confidence you need roughly 400 per group; to detect 20 points, roughly 100 per group. Smaller differences than that are rarely worth designing a survey around.
 
-When a segment comes back under about 30, report it as a count with its n visible — "7 of 24 small-business respondents" — or leave it out. Converting it to a percentage manufactures precision that will be quoted without the caveat.
+When a segment comes back under about 30, report it as a count with its n visible ("7 of 24 small-business respondents") or leave it out. Converting it to a percentage manufactures precision that will be quoted without the caveat.
 
 ## Checking a difference before reporting it
 
@@ -90,7 +90,7 @@ Two groups at 62% ±7.8% and 55% ±9% are not different. Reporting them as diffe
 
 ## Qualitative sample sizes do not come from this page
 
-Interview and usability-test sample sizes are not calculated from margins of error. They come from saturation — the point where new sessions stop producing new findings — and run about five per distinct segment. See `research-planning`.
+Interview and usability-test sample sizes are not calculated from margins of error. They come from saturation (the point where new sessions stop producing new findings) and run about five per distinct segment. See `research-planning`.
 
 Mixing the two logics produces both classic errors: running 50 interviews because it felt more rigorous, and reporting "80% of users" from 5 sessions.
 
@@ -106,7 +106,7 @@ Mixing the two logics produces both classic errors: running 50 interviews becaus
 >
 > **Response rate.** Last in-product survey returned 7%. Admins historically respond at roughly double the rate of members.
 >
-> **Invitations.** Members: 96 / 0.05 ≈ 1,920. Admins: 96 / 0.14 ≈ 690, against a population of ~1,280 — feasible but tight, so invite all admins and accept a higher-than-usual rate.
+> **Invitations.** Members: 96 / 0.05 ≈ 1,920. Admins: 96 / 0.14 ≈ 690, against a population of ~1,280: feasible but tight, so invite all admins and accept a higher-than-usual rate.
 >
 > **Stop rule.** Close after 14 days or when both segments pass 96, whichever comes first. Report actual n per segment regardless.
 >

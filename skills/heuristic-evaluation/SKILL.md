@@ -17,9 +17,9 @@ The governing idea: it produces hypotheses about what will hurt users, not evide
 | The situation | Go to |
 | --- | --- |
 | You need the heuristic sets | [Heuristic sets](heuristic-sets.md) |
-| You are evaluating your own product's craft in detail | `full-review` — it routes to every domain skill |
+| You are evaluating your own product's craft in detail | `full-review`: it routes to every domain skill |
 | You are evaluating a competitor | **Competitive teardown** below |
-| You have participants and time | `usability-testing` — stronger evidence, use it |
+| You have participants and time | `usability-testing`: stronger evidence, use it |
 | You need a number to track over time | `surveys-and-measurement`, SUS or UMUX-Lite |
 | You found issues and need them ranked | **Rate by consequence** below, then `prioritization` |
 
@@ -37,7 +37,7 @@ A single evaluator finds a fraction of the issues present, and which fraction de
 
 The procedure: each evaluates alone, against the same heuristic set and the same task list, and writes findings before anyone compares. Then merge, deduplicate, and rate together. Comparing before writing produces the first speaker's list with three names on it.
 
-Where only one evaluator is available — the common case — say so in the report. A single-evaluator review is legitimate and it is weaker, and the reader deserves to know which they are holding.
+Where only one evaluator is available (the common case) say so in the report. A single-evaluator review is legitimate and it is weaker, and the reader deserves to know which they are holding.
 
 ## Walk tasks, not screens
 
@@ -45,7 +45,7 @@ Screen-by-screen inspection finds cosmetic issues and misses flow failures, whic
 
 Take the task list from `usability-testing` conventions: goals with a reason, not instructions. Then do two passes. The first goes through each task at speed, getting a feel for the flow. The second goes slowly, inspecting against the heuristics.
 
-Cover the unhappy path deliberately — empty states, errors, permission denials, the longest realistic input, the slowest connection. Expert review is unusually good at these because you can force them, where a usability test has to wait for them to happen.
+Cover the unhappy path deliberately: empty states, errors, permission denials, the longest realistic input, the slowest connection. Expert review is unusually good at these because you can force them, where a usability test has to wait for them to happen.
 
 ## Name the heuristic, or it is an opinion
 
@@ -53,11 +53,11 @@ Every finding cites the specific heuristic it violates. A finding without one is
 
 The sets are in [heuristic sets](heuristic-sets.md): Nielsen's ten for general interface work, plus narrower sets for forms, data-heavy interfaces and mobile. Pick one set and use it throughout. Mixing sets mid-review produces an issue list with no consistent basis.
 
-Where a problem is real but no heuristic covers it, hand it to the domain skill that owns it — `content-design`, `accessibility`, `information-architecture`, `components-and-states` — and cite that instead. Inventing a heuristic to justify a preference is the failure mode this rule exists to prevent.
+Where a problem is real but no heuristic covers it, hand it to the domain skill that owns it (`content-design`, `accessibility`, `information-architecture`, `components-and-states`) and cite that instead. Inventing a heuristic to justify a preference is the failure mode this rule exists to prevent.
 
 ## Rate by consequence, and mark the confidence separately
 
-Use the same severity model as `usability-testing` — impact, frequency, persistence — so that findings from both methods can sit in one backlog.
+Use the same severity model as `usability-testing` (impact, frequency, persistence) so that findings from both methods can sit in one backlog.
 
 Add one column that usability findings do not need: **confidence**. It is the honest part of an expert review.
 
@@ -77,19 +77,19 @@ Same method, different subject, and two additional rules.
 
 **Separate what you can see from what you can infer.** You do not know their constraints, their data, their test results, or whether the pattern you admire is performing. A competitor's design is evidence of what they decided, not of what worked.
 
-Structure the teardown by task: for each task, how they handle it, how you handle it, and what the difference costs the user. End with the two or three decisions worth stealing and the reason — never a list of features.
+Structure the teardown by task: for each task, how they handle it, how you handle it, and what the difference costs the user. End with the two or three decisions worth stealing and the reason: never a list of features.
 
 ## Benchmarking over time
 
 To make a review comparable across rounds, hold constant: the heuristic set, the task list, the evaluator count, and the severity model. Then report issue counts by severity per round.
 
-This produces a crude but real trend line, and it is substantially better than nothing for teams with no research budget. State clearly that it measures heuristic conformance, not user success — those diverge, and a team that forgets it will optimize toward the audit.
+This produces a crude but real trend line, and it is substantially better than nothing for teams with no research budget. State clearly that it measures heuristic conformance, not user success: those diverge, and a team that forgets it will optimize toward the audit.
 
 ## Evidence bar
 
 A heuristic finding is a hypothesis. Write it as one. "This is likely to cause users to miss the save action" is honest; "users cannot find save" claims an observation you did not make.
 
-Never report expert findings in the same list as study findings without marking which is which. They have different evidence weight, and merging them silently upgrades the weaker ones — which is the single most common way expert review misleads a team.
+Never report expert findings in the same list as study findings without marking which is which. They have different evidence weight, and merging them silently upgrades the weaker ones: which is the single most common way expert review misleads a team.
 
 Some findings are not hypotheses but facts, and should be stated flatly: a contrast ratio below 4.5:1, a control unreachable by keyboard, a form field with no label. These are measurable and either true or false. `accessibility` owns them, and they should be measured rather than eyeballed.
 
@@ -119,11 +119,11 @@ Cap the list. Beyond roughly twenty issues nobody acts on any of them; report th
 
 **Format:**
 
-1. **Scope** — what was evaluated, which build, which tasks, which heuristic set, how many evaluators. State plainly that these are expert findings, not user evidence.
-2. **Summary** — issue counts by severity, and the three that matter most.
+1. **Scope**: what was evaluated, which build, which tasks, which heuristic set, how many evaluators. State plainly that these are expert findings, not user evidence.
+2. **Summary**: issue counts by severity, and the three that matter most.
 3. **Findings**, severity order. Each with: severity, confidence, the heuristic violated, where it occurs, what the user is likely to experience, the consequence, and the owning skill for the fix.
-4. **Test these** — the Critical and Serious findings at Low or Medium confidence, framed as research questions for a five-person study. This is the most valuable section and it is usually missing.
-5. **Strengths** — what works and should not be broken.
-6. **Limits** — evaluator count, areas not covered, and the standing caveat that this method predicts rather than observes.
+4. **Test these**: the Critical and Serious findings at Low or Medium confidence, framed as research questions for a five-person study. This is the most valuable section and it is usually missing.
+5. **Strengths**: what works and should not be broken.
+6. **Limits**: evaluator count, areas not covered, and the standing caveat that this method predicts rather than observes.
 
 **Done when:** each finding names its heuristic, the reader can tell hypotheses from measurements, and the "test these" list gives a researcher a study they could run on Monday.

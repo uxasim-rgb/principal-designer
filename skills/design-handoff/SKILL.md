@@ -1,6 +1,6 @@
 ---
 name: design-handoff
-description: Produces the spec engineering actually needs — states, edge cases, behavior, acceptance criteria and instrumentation — rather than redlines of things a token already answers. Use when a design is ready to build.
+description: Produces the spec engineering actually needs (states, edge cases, behavior, acceptance criteria and instrumentation) rather than redlines of things a token already answers. Use when a design is ready to build.
 when_to_use: Use when handing a design to engineering, writing a spec or acceptance criteria, documenting states and edge cases for a build, preparing developer annotations, or when engineers keep asking questions the design should have answered.
 ---
 
@@ -53,7 +53,7 @@ Run this list before handing over. Each unanswered question becomes an interrupt
 
 **Behavior.** What each control does, what it does while working, what it does on failure, and whether it is idempotent when pressed twice.
 
-**Transitions.** Duration and easing where they matter — `motion-and-interaction` owns the values; a token reference is enough.
+**Transitions.** Duration and easing where they matter: `motion-and-interaction` owns the values; a token reference is enough.
 
 **Responsive.** What changes at each breakpoint and what triggers it, expressed as content-driven rather than device-named.
 
@@ -83,7 +83,7 @@ Write them from the unhappy paths first. The happy path is what gets built and d
 
 ## Flag divergence explicitly
 
-Where the design departs from the system — a one-off spacing, a new variant, a color outside the palette — say so, and say why, in the spec.
+Where the design departs from the system (a one-off spacing, a new variant, a color outside the palette) say so, and say why, in the spec.
 
 Undeclared divergence gets implemented as a local override, and local overrides are how a system erodes. Declared divergence gets either accepted with a reason or routed into `design-systems` as a proposed addition.
 
@@ -91,7 +91,7 @@ Where the divergence exists because the system lacks something, that is a contri
 
 ## Hand over early and in conversation
 
-A spec delivered as a finished document at the end of design is the most expensive way to do this. Engineering finds the infeasible parts, the parts that cost ten times what an alternative would, and the parts that conflict with existing architecture — and by then the design is committed and the conversation is adversarial.
+A spec delivered as a finished document at the end of design is the most expensive way to do this. Engineering finds the infeasible parts, the parts that cost ten times what an alternative would, and the parts that conflict with existing architecture, and by then the design is committed and the conversation is adversarial.
 
 Involve engineering while the design is still movable: a rough flow, a question about what the data can actually supply, a check on whether a pattern is expensive. Most of the value is in this conversation rather than in the document.
 
@@ -101,7 +101,7 @@ The document still matters, because conversations are not durable and the person
 
 Handoff is not finished when the spec is delivered. Review the implementation before it ships, against the criteria, and treat the review as collaborative rather than as an inspection.
 
-Check the unhappy paths first — they are the ones most likely to have been skipped, and the ones the spec spent its effort on. Check on real data, at real volume, on a throttled connection.
+Check the unhappy paths first: they are the ones most likely to have been skipped, and the ones the spec spent its effort on. Check on real data, at real volume, on a throttled connection.
 
 Findings go through `review-the-change` for a diff or branch, or `full-review` for a whole surface. Where the build diverges because the spec was wrong or infeasible, fix the spec rather than pretending the design was right.
 
@@ -136,18 +136,18 @@ Where a measurement is already answered by a token, do not restate it. A duplica
 
 **The deliverable is the spec itself.** Its structure:
 
-1. **What this is and who it is for** — the flow, the roles, the entry points.
-2. **Component references** — which system components are used, with a link. Not respecified.
-3. **Divergences** — anything departing from the system, with a reason and whether it is a proposal.
-4. **State matrix** — state by component, each rendered or marked impossible with a reason.
-5. **Behavior** — per control: action, in-flight, failure, repeat-press.
-6. **Content** — every string final; limits and overflow behavior per field.
-7. **Data** — source, null handling, precision, staleness.
-8. **Permissions** — per role.
-9. **Responsive** — what changes where, and what triggers it.
-10. **Accessibility contract** — focus order, names, announcements, keyboard behavior.
-11. **Instrumentation** — events, triggers, properties, baseline requirement.
-12. **Acceptance criteria** — testable, unhappy paths first.
-13. **Open questions** — with an owner and a date, rather than left implicit.
+1. **What this is and who it is for**: the flow, the roles, the entry points.
+2. **Component references**: which system components are used, with a link. Not respecified.
+3. **Divergences**: anything departing from the system, with a reason and whether it is a proposal.
+4. **State matrix**: state by component, each rendered or marked impossible with a reason.
+5. **Behavior**, per control: action, in-flight, failure, repeat-press.
+6. **Content**: every string final; limits and overflow behavior per field.
+7. **Data**: source, null handling, precision, staleness.
+8. **Permissions**: per role.
+9. **Responsive**: what changes where, and what triggers it.
+10. **Accessibility contract**: focus order, names, announcements, keyboard behavior.
+11. **Instrumentation**: events, triggers, properties, baseline requirement.
+12. **Acceptance criteria**: testable, unhappy paths first.
+13. **Open questions**: with an owner and a date, rather than left implicit.
 
 **Done when:** an engineer who was not in the design conversation could build it without asking a question that the spec should have answered, and every open question has a name and a date against it.

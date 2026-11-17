@@ -26,11 +26,11 @@ The governing idea: almost every default in interface design encodes an assumpti
 
 ## Design for expansion before you translate
 
-Translated text is rarely the same length. German, Finnish and Russian commonly run 30% longer than English; Japanese and Chinese are often shorter but need more vertical space per line. Short strings expand most — a 10-character English label can double.
+Translated text is rarely the same length. German, Finnish and Russian commonly run 30% longer than English; Japanese and Chinese are often shorter but need more vertical space per line. Short strings expand most: a 10-character English label can double.
 
 - **Never size a container to its English content.** Buttons, tabs, nav items and table headers are where this breaks first.
 - **Allow wrapping** in labels and buttons rather than truncating. A truncated action label is unusable.
-- **Test with pseudo-localization** — machine-expand every string by 40% with accented characters — before translation, not after. It finds every fixed-width container in one pass.
+- **Test with pseudo-localization** (machine-expand every string by 40% with accented characters) before translation, not after. It finds every fixed-width container in one pass.
 - **Never concatenate sentences from fragments.** `"You have " + n + " items"` cannot be translated: word order, pluralization and grammatical gender all vary. Use full parameterized strings with plural rules.
 - **Do not embed text in images.** It cannot be translated and cannot be read by assistive technology.
 - **Give translators context.** A string that reads "Open" might be a verb or an adjective, and the translator cannot tell from the string alone.
@@ -41,19 +41,21 @@ Pluralization is not two cases. Several languages have three to six plural forms
 
 For Arabic, Hebrew, Farsi and Urdu, the layout mirrors: reading order, alignment, navigation position, icon direction, progress direction.
 
-Use logical CSS properties throughout — `margin-inline-start` rather than `margin-left`, `padding-inline-end`, `inset-inline-start`, `text-align: start`. A codebase using logical properties mirrors correctly by setting `dir="rtl"`; one using physical properties needs a parallel stylesheet that will drift.
+Use logical CSS properties throughout, `margin-inline-start` rather than `margin-left`, `padding-inline-end`, `inset-inline-start`, `text-align: start`. A codebase using logical properties mirrors correctly by setting `dir="rtl"`; one using physical properties needs a parallel stylesheet that will drift.
 
 What does **not** mirror:
 
 - Numbers and their digits.
-- Media playback controls — play still points in the direction of playback by convention.
+- Media playback controls: play still points in the direction of playback by convention.
 - Clocks, and anything representing physical reality.
 - Logos and brand marks.
 - Code, and anything monospaced representing literal text.
 
-Icons that imply direction — back, forward, next, undo, indentation, send — do mirror. A back arrow pointing left in an RTL layout points forward.
+Icons that imply direction (back, forward, next, undo, indentation, send) do mirror. A back arrow pointing left in an RTL layout points forward.
 
-Test by switching `dir` and looking, not by reasoning about it. Mixed-direction content — an English product name inside an Arabic sentence — is where bidirectional rendering gets genuinely hard, and it needs real text to check.
+Urdu and Arabic need more than mirroring: Nastaliq versus Naskh, taller line heights, no letter spacing or uppercase, numeral sets and words like "کل" that mean both yesterday and tomorrow. See [urdu-and-arabic.md](urdu-and-arabic.md).
+
+Test by switching `dir` and looking, not by reasoning about it. Mixed-direction content (an English product name inside an Arabic sentence) is where bidirectional rendering gets genuinely hard, and it needs real text to check.
 
 ## Personal data does not fit your schema
 
@@ -73,19 +75,19 @@ Most name, address and phone validation encodes assumptions that are wrong for a
 - Put country first, so the rest of the form can adapt.
 - Never require a postcode or a state globally.
 
-**Phone numbers.** Store in international format. Accept spaces, dashes, brackets and a leading `+`, and normalize rather than reject — `forms-and-input` owns that principle.
+**Phone numbers.** Store in international format. Accept spaces, dashes, brackets and a leading `+`, and normalize rather than reject: `forms-and-input` owns that principle.
 
-**Dates.** `03/04/2026` is ambiguous across locales and always will be. Use an unambiguous format in display — `3 Apr 2026` — or a locale-aware formatter. For input, use separate fields or a picker with the expected order made explicit.
+**Dates.** `03/04/2026` is ambiguous across locales and always will be. Use an unambiguous format in display (`3 Apr 2026`) or a locale-aware formatter. For input, use separate fields or a picker with the expected order made explicit.
 
 ## Format from locale, never from assumption
 
 | Data | Varies by |
 | --- | --- |
 | Date order and separators | Locale |
-| First day of the week | Locale — Sunday, Monday and Saturday are all common |
+| First day of the week | Locale: Sunday, Monday and Saturday are all common |
 | Decimal and thousands separators | `1,234.56` and `1.234,56` and `1 234,56` |
 | Currency symbol position and spacing | Locale, not currency |
-| Time — 12 or 24 hour | Locale |
+| Time: 12 or 24 hour | Locale |
 | Calendar system | Not universally Gregorian |
 | Sorting order | Locale-specific collation, not code point order |
 | Text case rules | Turkish dotless i, German ß |
@@ -98,14 +100,14 @@ Always show a timezone on a timestamp that matters, and store in UTC. "3pm" with
 
 Red means danger in many places and prosperity in others. A thumbs-up, an OK gesture, an owl and the colour white all carry meanings that differ by region.
 
-Practical stance: lean on conventions that are near-universal in software — a red destructive action, a green confirmation — but never let colour carry the meaning alone, which `accessibility` already requires. Avoid gestures, animals and religious symbols as functional icons. Check that photography represents the audience you actually have.
+Practical stance: lean on conventions that are near-universal in software (a red destructive action, a green confirmation) but never let colour carry the meaning alone, which `accessibility` already requires. Avoid gestures, animals and religious symbols as functional icons. Check that photography represents the audience you actually have.
 
 ## Design for the slowest realistic conditions
 
 The development machine on a fast connection is not representative of the audience.
 
 - **Test on a throttled connection** and a low-end device. Regularly, not once.
-- **Set a performance budget** and hold to it — `design-engineering` owns the measurement.
+- **Set a performance budget** and hold to it: `design-engineering` owns the measurement.
 - **Design the intermediate states.** What shows while the image loads, while the font swaps, while the data arrives. `components-and-states` owns the state set.
 - **Use `font-display: swap`** so text renders in a fallback rather than invisibly.
 - **Make the core task work without the optional parts.** A form that cannot submit until an analytics script loads is a broken form.
@@ -113,14 +115,14 @@ The development machine on a fast connection is not representative of the audien
 
 ## Reduce what the user must hold
 
-Cognitive load is an accessibility concern and a usability one, and it affects everyone under pressure — not only users with cognitive disabilities.
+Cognitive load is an accessibility concern and a usability one, and it affects everyone under pressure: not only users with cognitive disabilities.
 
 - **Do not make people remember across screens.** Show the value rather than asking them to recall it.
 - **Keep instructions beside the thing they describe**, not in a paragraph above it.
 - **Set safe defaults**, so the common case needs no decisions.
 - **Break long processes into steps** with visible progress, and allow leaving and returning.
 - **Write plainly.** `content-design` owns the reading level; domain jargon is vocabulary, unnecessary complexity is not.
-- **Do not impose time limits** without an extension — `accessibility` owns the criterion.
+- **Do not impose time limits** without an extension: `accessibility` owns the criterion.
 - **Be consistent.** Every inconsistency is a thing to learn.
 - **Make errors recoverable** rather than requiring care.
 
@@ -141,7 +143,7 @@ Where the product genuinely serves one locale and has no plan to expand, say so 
 | Symptom | What it means | Fix |
 | --- | --- | --- |
 | A button was sized to its English label | It will break in German | Pseudo-localize at 40% and re-check |
-| Sentences built by concatenation | Untranslatable — word order varies | Full parameterized strings |
+| Sentences built by concatenation | Untranslatable: word order varies | Full parameterized strings |
 | `if (n === 1)` pluralization | Several languages have more forms | Use the platform's plural rules |
 | Text baked into images | Cannot be translated or read aloud | Real text |
 | `margin-left` throughout | Will not mirror | Logical properties |
@@ -158,7 +160,7 @@ Where the product genuinely serves one locale and has no plan to expand, say so 
 
 ## Reporting
 
-**Severity ladder:** `Critical` — a user cannot complete the task in their locale, name or address, or the core task fails on a slow connection · `Serious` — text truncated or clipped after expansion, RTL layout broken, ambiguous date or number format on a decision · `Moderate` — untranslatable construction, missing locale formatting, unnecessary cognitive load · `Minor` — cultural or imagery mismatch with no functional cost.
+**Severity ladder:** `Critical`: a user cannot complete the task in their locale, name or address, or the core task fails on a slow connection · `Serious`: text truncated or clipped after expansion, RTL layout broken, ambiguous date or number format on a decision · `Moderate`: untranslatable construction, missing locale formatting, unnecessary cognitive load · `Minor`: cultural or imagery mismatch with no functional cost.
 
 **Verification:** pseudo-localization run at 40%; RTL checked by setting `dir` with real mixed-direction text; name, address and phone fields tested with real-world edge cases; date and number formatting checked in at least two locales; performance measured on a throttled connection and a low-end device.
 

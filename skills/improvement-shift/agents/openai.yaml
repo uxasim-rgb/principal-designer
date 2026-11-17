@@ -1,0 +1,5 @@
+interface:
+  display_name: "Improvement Shift"
+  short_description: "Unattended improvements on a branch, with a report"
+policy:
+  allow_implicit_invocation: false

@@ -4,9 +4,9 @@ Single source of guidance for agents working in this repository. `CLAUDE.md` imp
 
 ## What this repository is
 
-Agent skills covering the whole UX practice, not only the styling end of it. It is documentation-only: no build, no lint, no tests. Distributed as the Claude Code plugin `ux-field-kit` and via `npx skills add uxasim-rgb/ux-field-kit-skills`.
+Agent skills covering the whole UX practice, not only the styling end of it. It is documentation-only: no build, no lint, no tests. Distributed as the Claude Code plugin `principal-designer` and via `npx skills add uxasim-rgb/principal-designer`.
 
-`.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` define the plugin. Both live inside `.claude-plugin/`; every component directory, including `skills/`, lives at the repository root. Skills are discovered from `skills/` with no manifest entry, so adding one needs no manifest change — but `version` in `plugin.json` must be bumped in the same commit as any change under `skills/`, because `claude plugin update` compares that number and nothing else. A change shipped without a bump reports "already at the latest version" and never reaches anyone.
+`.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json` define the plugin. Both live inside `.claude-plugin/`; every component directory, including `skills/`, lives at the repository root. Skills are discovered from `skills/` with no manifest entry, so adding one needs no manifest change, but `version` in `plugin.json` must be bumped in the same commit as any change under `skills/`, because `claude plugin update` compares that number and nothing else. A change shipped without a bump reports "already at the latest version" and never reaches anyone.
 
 ## Who it is for
 
@@ -28,7 +28,7 @@ A skill that serves more than one of these carries a `## Role lens` section sayi
 
 ## Bands
 
-Skills are grouped by the phase of work they belong to, not by the CSS property they touch. The band is not in the skill name — names stay job-shaped so they match what a person types — but every skill states its band in the opener.
+Skills are grouped by the phase of work they belong to, not by the CSS property they touch. The band is not in the skill name, names stay job-shaped so they match what a person types, but every skill states its band in the opener.
 
 | Band | Skills |
 | --- | --- |
@@ -37,10 +37,12 @@ Skills are grouped by the phase of work they belong to, not by the CSS property 
 | Define | `problem-framing`, `audience-and-journeys`, `prioritization`, `success-metrics` |
 | Structure | `information-architecture`, `user-flows`, `forms-and-input`, `content-design` |
 | Craft | `layout-and-composition`, `typography`, `color-and-theming`, `components-and-states`, `motion-and-interaction`, `icons-and-imagery` |
-| Inclusive | `accessibility`, `global-and-inclusive` |
+| Inclusive | `accessibility`, `global-and-inclusive`, `deceptive-patterns`, `high-stakes-domains` |
 | Build | `design-systems`, `design-handoff`, `design-engineering`, `prototyping` |
-| Validate | `review-the-change`, `design-critique`, `experimentation-and-analytics` |
+| Validate | `review-the-change`, `design-critique`, `experimentation-and-analytics`, `launch-and-retirement` |
 | Practice | `design-docs`, `stakeholder-communication`, `design-ops`, `case-studies` |
+| Surfaces | `ai-and-agents`, `data-visualization`, `marketing-pages`, `native-platforms` |
+| Make | `state-gallery`, `stress-test`, `explore-directions`, `design-to-code`, `how-its-built`, `improvement-shift` |
 
 ## The shape of a skill
 
@@ -56,7 +58,7 @@ when_to_use: <trigger phrases and keywords a person would actually type>
 ---
 ```
 
-`description` and `when_to_use` share a 1,536-character budget and are sent on every turn, so both stay tight. Keep the split honest: `description` says what the skill does, `when_to_use` says what a request looks like when this skill is the answer. Do not restate one inside the other. Trigger phrases belong in `when_to_use` only — a description stuffed with keywords reads as spam to a human browsing the list and buys nothing in retrieval that `when_to_use` does not already buy.
+`description` and `when_to_use` share a 1,536-character budget and are sent on every turn, so both stay tight. Keep the split honest: `description` says what the skill does, `when_to_use` says what a request looks like when this skill is the answer. Do not restate one inside the other. Trigger phrases belong in `when_to_use` only: a description stuffed with keywords reads as spam to a human browsing the list and buys nothing in retrieval that `when_to_use` does not already buy.
 
 User-invoked skills add `disable-model-invocation: true`. See **Invocation** below.
 
@@ -96,7 +98,7 @@ A three-column table where the domain has recurring failures:
 
 | Symptom | What it means | Fix |
 
-The left column is a detection pattern, not a rule restated as a mistake. A principle tells you what to do; this table tells you how to notice you did not. The heading names the moment it is worth consulting — `Common mistakes` is a label a reader skims past while orienting.
+The left column is a detection pattern, not a rule restated as a mistake. A principle tells you what to do; this table tells you how to notice you did not. The heading names the moment it is worth consulting: `Common mistakes` is a label a reader skims past while orienting.
 
 ### Reporting
 
@@ -110,7 +112,7 @@ Those three overlap on purpose. Someone who installs only `typography` has no `f
 
 Supporting `.md` files carry depth past the principle statements: procedures, code, lookup tables, worked examples, templates. Link each one from the principle that needs it, so the link sits where the reader lands.
 
-A principle states the rule and links out for the recipe. It never restates the reference file in shorter form, and the reference file never restates the principle in longer form. Add one only when the depth genuinely exceeds what a principle can hold — a skill with six thin reference files is one skill wearing a costume.
+A principle states the rule and links out for the recipe. It never restates the reference file in shorter form, and the reference file never restates the principle in longer form. Add one only when the depth genuinely exceeds what a principle can hold: a skill with six thin reference files is one skill wearing a costume.
 
 ## Rule ownership
 
@@ -153,18 +155,33 @@ Each rule lives in exactly one skill. Others point to it by name in backticks.
 | `stakeholder-communication` | Presenting work, framing per audience, handling pushback, negotiating scope |
 | `design-ops` | File and naming hygiene, rituals, intake, the operating cadence of a design team |
 | `case-studies` | Portfolio structure, evidence selection, what reviewers look for |
+| `ai-and-agents` | Whether to use AI, expectation setting, generation workflow, draft-review-approve-apply for agents, audit of who decided, AI failure and memory |
+| `data-visualization` | Chart choice from the question, honest scales, chart color use, dashboards built around decisions, chart text alternatives |
+| `marketing-pages` | Visitor question order, literal headlines, real proof only, the template look, one goal per page |
+| `deceptive-patterns` | Dark pattern recognition, equal choices, cancellation parity, honest persuasion, the legal direction |
+| `native-platforms` | iOS, Android and cross-platform conventions, native text scaling, VoiceOver and TalkBack labeling, platform updates |
+| `high-stakes-domains` | Boundaries for regulated and safety work, domain packs, concept labeling, critical information and money states |
+| `launch-and-retirement` | Release readiness, staged and reversible rollout, post-launch watching, migration of people's work, evidence-gated retirement |
+| `state-gallery` | The temporary states page: finding states in code, feeding them at the data boundary, the switcher, missing-state reporting |
+| `stress-test` | Hostile-condition axes, the stress page, ranking failures by who they hurt |
+| `explore-directions` | The design question, directions that differ in their bet, in-place hosting, the recommendation, promotion and cleanup |
+| `design-to-code` | Reading a design at its source, the 2px token-mapping rule, proposed states, side-by-side comparison |
+| `how-its-built` | Measured, from-source and guessed labels, mechanism over readout, technique versus owner's work |
+| `improvement-shift` | Unattended shift guardrails, evidence gathering, wide generation, the rejection step, the seven-part report |
 
 ## Invocation
 
 A user-invoked skill may invoke model-invoked skills but can never reach another user-invoked skill. That rule decides the setting; it is not a preference.
 
 - `review-the-change`, `design-critique`, `prototyping` and `case-studies` carry `disable-model-invocation: true`. Each writes a substantial artifact or passes judgement on work in progress, and an agent firing one unprompted produces work nobody asked for.
+- The Make band skills `state-gallery`, `stress-test`, `explore-directions`, `how-its-built` and `improvement-shift` carry it too. Each writes temporary code into the project, runs unattended, or would fire on every pasted link.
+- `design-to-code` stays model-invoked, because a design plus a request to build it is already a direct instruction.
 - Every other skill is model-invoked, because something has to reach it. `field-guide` routes to every band and `full-review` routes across disciplines, and neither can reach a skill that has opted out of model invocation.
 - `full-review` therefore cannot start `review-the-change`. Where it would want to, it asks the person to run it.
 
 ## Evals
 
-Skill collections fail quietly. A skill that never triggers looks identical to one that works until someone notices they have been getting generic answers for a month. With 35 skills the risk is not that one fails to fire — it is that two compete and the wrong one wins.
+Skill collections fail quietly. A skill that never triggers looks identical to one that works until someone notices they have been getting generic answers for a month. With 35 skills the risk is not that one fails to fire: it is that two compete and the wrong one wins.
 
 The suite lives in `evals/` and runs with `claude plugin eval .` from the repository root. Each case runs three times with the plugin loaded and three times without, reporting `WITH`, `W/OUT` and the difference `Δ`. A high `WITH` score with a `Δ` near zero means Claude would have answered as well without the plugin, which means the skill is not contributing.
 
@@ -178,7 +195,7 @@ Every skill has a case. A skill with no case has not been shown to trigger, and 
 
 `skill-fired` graders carry `arm: with-only`, because a skill cannot fire in the no-plugin arm and scoring it there would drag every `Δ` downward for no reason. Rubric graders are scored in both arms so the `Δ` measures something real.
 
-The most common finding is a `tool_used: Skill` grader failing on natural phrasing. The fix is nearly always `when_to_use` rather than the skill body — the body is not read until the skill has already been chosen.
+The most common finding is a `tool_used: Skill` grader failing on natural phrasing. The fix is nearly always `when_to_use` rather than the skill body: the body is not read until the skill has already been chosen.
 
 ## CI
 
@@ -188,11 +205,15 @@ The most common finding is a `tool_used: Skill` grader failing on natural phrasi
 - Every skill directory has a `SKILL.md`, and its frontmatter `name` matches the directory.
 - `description`, `when_to_use`, `## Start here` and `## Evidence bar` are present.
 - `description` plus `when_to_use` fits the 1,536-character budget.
-- `disable-model-invocation` and `allow_implicit_invocation` agree — both set or neither. They are the Claude Code and Codex halves of one switch, and a skill with only one set behaves differently per harness.
+- `disable-model-invocation` and `allow_implicit_invocation` agree: both set or neither. They are the Claude Code and Codex halves of one switch, and a skill with only one set behaves differently per harness.
 - No cross-skill relative links.
 - `plugin.json` was touched whenever `skills/` changed.
 
 The eval job runs only on pull requests and only when `ANTHROPIC_API_KEY` is present in repository secrets. Without the secret it skips cleanly rather than failing, so a fork can still run the structure checks.
+
+## Agents
+
+`agents/` at the repository root holds two Claude Code subagents. `principal-designer` is the lead: it frames the problem, builds in the project's code, checks the result in a browser and explains its decisions, calling skills as it goes. `fresh-eyes` is a read-only reviewer the lead asks to look at finished work cold before it reaches a person. Each skill's own `agents/openai.yaml` is unrelated: that is Codex metadata.
 
 ## Other harnesses
 

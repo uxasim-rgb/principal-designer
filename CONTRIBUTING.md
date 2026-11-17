@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for looking. This repository is documentation only — no build, no dependencies, no tests beyond the eval suite and the structure checks in CI.
+Thanks for looking. This repository is documentation only: no build, no dependencies, no tests beyond the eval suite and the structure checks in CI.
 
 Read [AGENTS.md](AGENTS.md) before changing anything under `skills/`. It holds the shape of a skill, the rule-ownership table, and the invocation rules. Most review comments on a PR would otherwise just be quoting it back.
 
@@ -37,14 +37,14 @@ Then:
 
 1. **Check it does not already have an owner.** The ownership table in AGENTS.md is the source of truth. A rule lives in exactly one skill; if your idea belongs inside an existing one, add it there.
 2. **Pick a job-shaped name.** `usability-testing`, not `asim-testing` and not `testing-stuff`. The name is what a person types, so it should match what they would type.
-3. **Write `SKILL.md` to the house shape** — opener, Works with, Start here, Role lens where roles differ, principles with headings that carry their point, Evidence bar, Before you ship, Reporting.
+3. **Write `SKILL.md` to the house shape**: opener, Works with, Start here, Role lens where roles differ, principles with headings that carry their point, Evidence bar, Before you ship, Reporting.
 4. **Add it to the ownership table and the band table** in AGENTS.md, and to the map in README.md.
 5. **Add `agents/openai.yaml`** with a display name and a short description.
 6. **Add an eval case.** See below. A skill with no eval case has not been shown to trigger.
 
 ## Changing an existing skill
 
-Keep rule ownership intact. If you find yourself explaining a contrast threshold inside `typography`, that rule belongs to `accessibility` — reference it by name instead of restating it. Restated rules drift.
+Keep rule ownership intact. If you find yourself explaining a contrast threshold inside `typography`, that rule belongs to `accessibility`: reference it by name instead of restating it. Restated rules drift.
 
 If a change moves ownership from one skill to another, update the table in AGENTS.md in the same PR.
 
@@ -52,9 +52,9 @@ If a change moves ownership from one skill to another, update the table in AGENT
 
 Every skill has a case under `evals/<skill-name>/`. A case is a directory with `prompt.md` and a `graders/` directory. See [`evals/README.md`](evals/README.md) for the format and the grader types.
 
-Write the prompt the way a person would actually type it. **Do not name the skill in the prompt** — the point is to test whether Claude chooses it from natural phrasing.
+Write the prompt the way a person would actually type it. **Do not name the skill in the prompt**: the point is to test whether Claude chooses it from natural phrasing.
 
-Check it is well-formed first — free, no API calls:
+Check it is well-formed first, free, no API calls:
 
 ```bash
 npm run check:evals
@@ -80,13 +80,13 @@ If two skills compete for the same kind of request, add a case under `evals/rout
 
 ## Tone
 
-Prescriptive and specific. Exact values, exact properties, exact thresholds — `44px` and `WCAG 2.5.8`, not "large enough". Numbers from a standard cite the standard; numbers that are a house default say so.
+Prescriptive and specific. Exact values, exact properties, exact thresholds: `44px` and `WCAG 2.5.8`, not "large enough". Numbers from a standard cite the standard; numbers that are a house default say so.
 
 Write for an agent that will act on it immediately and a human who will read it once. Both are poorly served by throat-clearing.
 
 ## Reporting a problem
 
-Open an issue with the skill name, the request that went wrong, and what you expected instead. A trigger failure — the wrong skill fired, or none did — is the most useful bug report this repository can get, because it usually means a `when_to_use` is wrong and that is a quick fix.
+Open an issue with the skill name, the request that went wrong, and what you expected instead. A trigger failure, the wrong skill fired, or none did, is the most useful bug report this repository can get, because it usually means a `when_to_use` is wrong and that is a quick fix.
 
 ## Licence
 

@@ -61,9 +61,9 @@ for (const c of cases) {
 
     // what Claude Code actually sends for a Skill call, both forms
     const bare = JSON.stringify({ skill: slug });
-    const namespaced = JSON.stringify({ skill: `ux-field-kit:${slug}` });
+    const namespaced = JSON.stringify({ skill: `principal-designer:${slug}` });
     const spaced = `{"skill" : "${slug}"}`;
-    const other = JSON.stringify({ skill: 'ux-field-kit:typography' });
+    const other = JSON.stringify({ skill: 'principal-designer:typography' });
 
     if (!re.test(bare)) err(`${slug}: does not match bare form ${bare}`);
     if (!re.test(namespaced)) err(`${slug}: does not match namespaced form ${namespaced}`);
@@ -84,7 +84,7 @@ console.log('  ok if nothing above');
 
 // --- 4. prompts do not name their own skill (defeats the test) ---
 console.log('\n4. prompts do not leak the skill name');
-const slashAllowed = ['prototyping', 'review-the-change', 'design-critique', 'case-studies'];
+const slashAllowed = ['prototyping', 'review-the-change', 'design-critique', 'case-studies', 'state-gallery', 'stress-test', 'explore-directions', 'how-its-built', 'improvement-shift'];
 for (const s of skills) {
   const p = path.join(EVALS, s, 'prompt.md');
   if (!fs.existsSync(p)) continue;

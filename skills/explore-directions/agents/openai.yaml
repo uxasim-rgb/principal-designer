@@ -1,0 +1,5 @@
+interface:
+  display_name: "Explore Directions"
+  short_description: "Three real alternatives in the product, with a recommendation"
+policy:
+  allow_implicit_invocation: false

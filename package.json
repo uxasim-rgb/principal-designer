@@ -1,7 +1,7 @@
 {
-  "name": "ux-field-kit",
-  "version": "1.0.0",
-  "description": "Agent skills covering the whole UX practice: research, definition, structure, interface craft, inclusive design, build, validation and the habits around them.",
+  "name": "principal-designer",
+  "version": "2.0.0",
+  "description": "The most senior product designer on your team: research, strategy, interface craft, accessibility, native apps, AI features and design systems, built in your code and checked before it ships.",
   "private": true,
   "license": "MIT",
   "author": {
@@ -9,13 +9,13 @@
     "email": "asim@uxasim.com",
     "url": "https://uxasim.com/"
   },
-  "homepage": "https://github.com/uxasim-rgb/ux-field-kit-skills#readme",
+  "homepage": "https://github.com/uxasim-rgb/principal-designer#readme",
   "repository": {
     "type": "git",
-    "url": "https://github.com/uxasim-rgb/ux-field-kit-skills.git"
+    "url": "https://github.com/uxasim-rgb/principal-designer.git"
   },
   "bugs": {
-    "url": "https://github.com/uxasim-rgb/ux-field-kit-skills/issues"
+    "url": "https://github.com/uxasim-rgb/principal-designer/issues"
   },
   "keywords": [
     "claude-code",

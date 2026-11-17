@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Structure checks for ux-field-kit.
+# Structure checks for principal-designer.
 #
 # Run locally:  ./scripts/validate.sh    (or: npm run validate)
 # CI runs this exact file, so local and CI can never disagree.

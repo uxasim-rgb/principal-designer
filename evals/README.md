@@ -7,7 +7,7 @@ claude plugin eval .
 ```
 
 Each case runs three times with the plugin loaded and three times without, and reports
-`WITH`, `W/OUT` and the difference `Δ` — what the plugin contributed.
+`WITH`, `W/OUT` and the difference `Δ`: what the plugin contributed.
 
 ## Layout
 
@@ -19,12 +19,12 @@ Each case runs three times with the plugin loaded and three times without, and r
 
 ## Graders
 
-- `skill-fired.md` — `tool_used: Skill`, scoped to that skill's name. Marked `arm: with-only`,
+- `skill-fired.md`, `tool_used: Skill`, scoped to that skill's name. Marked `arm: with-only`,
   since the skill cannot fire in the no-plugin arm.
-- `routes-to-owner.md` / `avoids-neighbour.md` — the routing pair. The second uses
+- `routes-to-owner.md` / `avoids-neighbour.md`: the routing pair. The second uses
   `min: 0, max: 0` to assert the neighbour was **not** invoked. Weighted 2:1 toward the owner.
-- `no-skill-fires.md` — negative cases. Asserts no skill ran.
-- `criteria.md` — an `llm` rubric on the answer itself, scored in both arms so `Δ` is meaningful.
+- `no-skill-fires.md`: negative cases. Asserts no skill ran.
+- `criteria.md`: an `llm` rubric on the answer itself, scored in both arms so `Δ` is meaningful.
 
 ## Reading a failure
 
@@ -32,7 +32,7 @@ A `Δ` near zero with `skill-fired` failing means Claude is not choosing the ski
 phrasing. Fix the skill's `description` and `when_to_use`, then re-run and compare.
 
 A routing case where `avoids-neighbour` fails means two skills compete for the same request.
-Tighten the `when_to_use` of both — the one that should win and the one that should not.
+Tighten the `when_to_use` of both: the one that should win and the one that should not.
 
 ## Iterating on one case
 
@@ -52,7 +52,7 @@ node scripts/check-evals.js
 
 It verifies that every frontmatter block parses, that each `input_match` regex matches a real
 Skill-call payload in both bare (`{"skill":"typography"}`) and namespaced
-(`{"skill":"ux-field-kit:typography"}`) form without cross-matching another skill, that every
+(`{"skill":"principal-designer:typography"}`) form without cross-matching another skill, that every
 skill has a case, that no prompt contains its own skill name, and that each routing case names
 two distinct real skills.
 
@@ -63,7 +63,7 @@ the skills.
 ## Cost
 
 At roughly $0.41 per case for the default 3 runs across both arms, the full suite is about
-**$19–25**. Bound it:
+**$19 to 25**. Bound it:
 
 ```bash
 claude plugin eval . --trust-plugin --max-cost-usd 30 --no-publish

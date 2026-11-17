@@ -31,7 +31,7 @@ Good first-pass codes:
 - `abandoned-after-error`
 - `asked-if-it-saved`
 
-Bad first-pass codes — these are conclusions, and they foreclose the analysis:
+Bad first-pass codes, these are conclusions, and they foreclose the analysis:
 
 - `poor-discoverability`
 - `confusing`
@@ -40,13 +40,13 @@ Bad first-pass codes — these are conclusions, and they foreclose the analysis:
 
 The test: could two people apply this code to the same row without discussing it first? `used-browser-find` yes. `confusing` no.
 
-Expect 30–80 distinct codes from five sessions. Fewer means you are coding at conclusion level; many more means you are transcribing rather than coding.
+Expect 30 to 80 distinct codes from five sessions. Fewer means you are coding at conclusion level; many more means you are transcribing rather than coding.
 
 ## Pass two: grouping codes
 
 Once every row is coded, group the codes themselves. `used-browser-find`, `scrolled-past-filter` and `asked-where-filter-is` might group under `filter-not-found`.
 
-This is where meaning enters, and it is the right place for it — after the descriptive layer exists and can be re-examined.
+This is where meaning enters, and it is the right place for it: after the descriptive layer exists and can be re-examined.
 
 Keep the first-pass codes. The grouped code is a view, not a replacement. When someone challenges a theme six months later, the descriptive codes are what let you answer.
 
@@ -63,7 +63,7 @@ Write it as you go, not at the end. A codebook written at the end documents the 
 ## Coding with more than one analyst
 
 1. Both code the same two sessions independently.
-2. Compare row by row. Count agreement — an informal percentage is enough for product work; formal inter-rater reliability statistics are for published research.
+2. Compare row by row. Count agreement: an informal percentage is enough for product work; formal inter-rater reliability statistics are for published research.
 3. Where you disagree, the disagreement is about code *meaning*. Resolve by writing a sharper definition into the codebook.
 4. Split the remaining sessions, coding against the agreed codebook.
 5. Both review the final clusters.
@@ -96,7 +96,7 @@ Move from codes to themes.
 1. Put every grouped code on its own card, physically or in a board tool.
 2. Pair the two that obviously belong together. Then the next. Do not create category headers.
 3. Continue until movement stops.
-4. Only now, name each cluster — as a sentence, not a label. See [insight statements](insight-statements.md).
+4. Only now, name each cluster: as a sentence, not a label. See [insight statements](insight-statements.md).
 5. Keep an orphans pile and look at it last, deliberately. Orphans are disproportionately where surprises live.
 
 Where a code belongs in two clusters, duplicate it. The overlap is usually a finding about the relationship between the two.

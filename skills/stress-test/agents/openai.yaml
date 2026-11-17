@@ -1,0 +1,5 @@
+interface:
+  display_name: "Stress Test"
+  short_description: "Break one component on purpose, ranked by who it hurts"
+policy:
+  allow_implicit_invocation: false

@@ -6,7 +6,7 @@ How to turn a pile of observed problems into a ranked list a team can work from,
 
 Severity is a function of three things. Rate each, then combine.
 
-**Impact — what it costs the user when it happens.**
+**Impact: what it costs the user when it happens.**
 
 | Level | Meaning |
 | --- | --- |
@@ -15,7 +15,7 @@ Severity is a function of three things. Rate each, then combine.
 | 2 | Hesitation or a wrong turn, recovered without help. |
 | 1 | Noticed and mentioned, no effect on the outcome. |
 
-**Frequency — how many users meet it, how often.**
+**Frequency: how many users meet it, how often.**
 
 | Level | Meaning |
 | --- | --- |
@@ -24,12 +24,12 @@ Severity is a function of three things. Rate each, then combine.
 | 2 | On a secondary path, or under conditions a minority meet. |
 | 1 | Edge case, rare configuration, or one-off. |
 
-**Persistence — whether it gets better with exposure.**
+**Persistence: whether it gets better with exposure.**
 
 | Level | Meaning |
 | --- | --- |
 | 3 | Never learnable. Trips experienced users as reliably as new ones. |
-| 2 | Learnable but costly — users build a workaround and keep it. |
+| 2 | Learnable but costly: users build a workaround and keep it. |
 | 1 | First-run only. Disappears once the user knows. |
 
 ## Combining them
@@ -39,10 +39,10 @@ Take the highest of impact and frequency, then adjust by persistence.
 | Result | Severity | Means |
 | --- | --- | --- |
 | Impact 4, any frequency | **Critical** | Fix before ship. No exceptions for a data-loss or money problem. |
-| Impact 3 with frequency 3–4 | **Critical** | A costly problem on a path everyone takes is a blocker even though each instance is survivable. |
-| Impact 3 with frequency 1–2 | **Serious** | Fix this release. |
-| Impact 2 with frequency 3–4 and persistence 2–3 | **Serious** | Small friction on a daily path compounds into real cost. |
-| Impact 2 with frequency 1–2 | **Moderate** | Fix when the area is touched. |
+| Impact 3 with frequency 3 to 4 | **Critical** | A costly problem on a path everyone takes is a blocker even though each instance is survivable. |
+| Impact 3 with frequency 1 to 2 | **Serious** | Fix this release. |
+| Impact 2 with frequency 3 to 4 and persistence 2 to 3 | **Serious** | Small friction on a daily path compounds into real cost. |
+| Impact 2 with frequency 1 to 2 | **Moderate** | Fix when the area is touched. |
 | Impact 1, any | **Minor** | Log it. Fix if free. |
 
 Persistence 3 raises the rating one step. A problem that trips experts forever is qualitatively different from one that disappears after the first use, and teams systematically under-rate it because the team themselves have long since learned around it.
@@ -55,7 +55,7 @@ The most common rating error is treating "4 of 5 participants hit this" as frequ
 
 A problem one participant hit on the account-creation path has frequency 4: every user creates an account. A problem four participants hit on a bulk-export flow that 3% of accounts use has frequency 1.
 
-When analytics exist, use them for frequency rather than guessing. `experimentation-and-analytics` owns that. When they do not, state the estimate and its basis in the report: "frequency estimated 3 — this is the default path from the dashboard."
+When analytics exist, use them for frequency rather than guessing. `experimentation-and-analytics` owns that. When they do not, state the estimate and its basis in the report: "frequency estimated 3: this is the default path from the dashboard."
 
 ## Rate the problem, not the fix
 
@@ -89,9 +89,9 @@ Six fields. Every one earns its place:
 >
 > **Observed.** 3 of 5 participants opened the Filters panel, scrolled past the date range twice, and used the browser's find-in-page instead. Mean time to locate: 48s.
 >
-> **Consequence.** Users reach the right answer but roughly a minute late, every time they need it, and two of the three said they would normally export to a spreadsheet instead — abandoning the feature.
+> **Consequence.** Users reach the right answer but roughly a minute late, every time they need it, and two of the three said they would normally export to a spreadsheet instead: abandoning the feature.
 >
-> **Quote.** "I know it's in here somewhere. I usually just dump it into Sheets." — P4
+> **Quote.** "I know it's in here somewhere. I usually just dump it into Sheets.": P4
 >
 > **Frequency basis.** Filtering is the default action from the orders list; estimated frequency 3 from placement, not measured.
 >

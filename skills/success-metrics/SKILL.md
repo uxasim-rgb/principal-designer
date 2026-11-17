@@ -21,7 +21,7 @@ The governing idea: a metric chosen after launch describes whatever happened. Ch
 | You need a framework to structure it | **HEART** below |
 | The metric exists but the data does not | **Write the instrumentation request** below |
 | You need to run a test on it | `experimentation-and-analytics` |
-| The metric is attitudinal — satisfaction, ease | `surveys-and-measurement` |
+| The metric is attitudinal: satisfaction, ease | `surveys-and-measurement` |
 | It already shipped and nobody defined success | **Retrofitting** below, honestly |
 
 ## Role lens
@@ -30,13 +30,13 @@ The governing idea: a metric chosen after launch describes whatever happened. Ch
 | --- | --- |
 | Product designer | The full chain: outcome, metric, guardrail, failure condition, instrumentation |
 | UX researcher | How behavioral metrics pair with attitudinal ones, and where each misleads |
-| Design engineer | The instrumentation request — what events, what properties, and why they are needed at build time not after |
+| Design engineer | The instrumentation request: what events, what properties, and why they are needed at build time not after |
 
 ## Measure the outcome, not the output
 
 Output is what you shipped. Outcome is what changed because of it. Teams measure output because it is available on the day of launch.
 
-| Output — always goes up | Outcome — might not |
+| Output (always goes up | Outcome) might not |
 | --- | --- |
 | Feature adoption | Task completion rate for the job the feature serves |
 | Page views on the new page | Time from start to a correct result |
@@ -50,7 +50,7 @@ The test: could this number go up while users are worse off? If yes, it is an ou
 
 ## Write the failure condition before launch
 
-For every metric, state the number that would mean this did not work — in writing, before the work ships, with a date.
+For every metric, state the number that would mean this did not work: in writing, before the work ships, with a date.
 
 > **Success.** Access review completion rate rises from 38% to above 55% within two full quarterly cycles.
 > **Failure.** Below 45% after two cycles, or support contacts about access review rise at all.
@@ -62,11 +62,11 @@ Set the date too. "Eventually" means the review never happens, and a metric with
 
 ## One north star, several signals, and guardrails on both
 
-A north star is a single metric the organization steers by. It should describe value delivered to users, not revenue collected — revenue is the consequence, and steering directly at it produces dark patterns fast.
+A north star is a single metric the organization steers by. It should describe value delivered to users, not revenue collected: revenue is the consequence, and steering directly at it produces dark patterns fast.
 
 Good north stars share three properties: they move when users get value, they are hard to game without actually delivering value, and everyone can name them.
 
-Beneath it sit **signal metrics** — the things a specific team can actually move, which roll up. A design team cannot move "weekly active teams"; it can move "proportion of new teams reaching their first shared report within a week".
+Beneath it sit **signal metrics**: the things a specific team can actually move, which roll up. A design team cannot move "weekly active teams"; it can move "proportion of new teams reaching their first shared report within a week".
 
 Beside both sit **guardrails**: things that must not get worse. Guardrails are what stop a metric being achieved by damage.
 
@@ -82,11 +82,11 @@ Every driving metric gets at least one guardrail. A metric with no guardrail is 
 
 ## HEART, used as a checklist rather than a scorecard
 
-HEART structures the question "what could we measure" into five categories. Pick one or two, not five — a team tracking all five tracks none.
+HEART structures the question "what could we measure" into five categories. Pick one or two, not five: a team tracking all five tracks none.
 
 | Category | Measures | Typical signal |
 | --- | --- | --- |
-| **Happiness** | Attitude | SUS, UMUX-Lite, CSAT — `surveys-and-measurement` owns these |
+| **Happiness** | Attitude | SUS, UMUX-Lite, CSAT: `surveys-and-measurement` owns these |
 | **Engagement** | Depth of interaction | Actions per active user, sessions with a completed task |
 | **Adoption** | New users of a feature | First-time completion, not first-time opening |
 | **Retention** | Users returning | Cohort return rate at a period that matches the natural usage cycle |
@@ -118,9 +118,9 @@ The request, delivered through `design-handoff`:
 | Trigger | Fires when the final member row is confirmed and the summary saves |
 | Properties | `member_count`, `duration_seconds`, `entry_point`, `partial` (bool) |
 | Why | Completion rate is the primary success metric; `entry_point` tests the navigation hypothesis |
-| Baseline needed | Yes — instrument before the change ships, so there is a before |
+| Baseline needed | Yes: instrument before the change ships, so there is a before |
 
-That last row is the one teams miss. A metric with no pre-change baseline cannot show improvement, and the fix — shipping instrumentation one cycle ahead of the change — costs nothing if it is planned and is impossible afterwards.
+That last row is the one teams miss. A metric with no pre-change baseline cannot show improvement, and the fix (shipping instrumentation one cycle ahead of the change) costs nothing if it is planned and is impossible afterwards.
 
 Name events consistently: `object_action`, past tense, snake_case. Inconsistent event names make analysis a data-cleaning exercise a year later. `design-systems` conventions apply to event vocabulary as much as to component names.
 
@@ -147,9 +147,9 @@ State the baseline, the target and the measurement window for every metric, befo
 
 Never report a movement smaller than the noise. Where the metric varies week to week by 4 points, a 3-point rise is not a result. `experimentation-and-analytics` owns significance; the discipline starts here, by recording the historical variance alongside the baseline.
 
-Distinguish correlation from cause explicitly. A number that moved after a launch moved after a launch. Where the causal claim matters — and it usually does, because the next decision depends on it — that requires a test, not a before-and-after.
+Distinguish correlation from cause explicitly. A number that moved after a launch moved after a launch. Where the causal claim matters (and it usually does, because the next decision depends on it) that requires a test, not a before-and-after.
 
-Where the honest answer is that the effect cannot be isolated — the change shipped alongside a marketing push and a pricing change — say so rather than claiming the credit. The claim survives one meeting; the credibility loss lasts longer.
+Where the honest answer is that the effect cannot be isolated (the change shipped alongside a marketing push and a pricing change) say so rather than claiming the credit. The claim survives one meeting; the credibility loss lasts longer.
 
 ## Before you ship
 
@@ -171,13 +171,13 @@ Where the honest answer is that the effect cannot be isolated — the change shi
 
 **The deliverable is a measurement plan, written before build**, and carried into `design-handoff`.
 
-1. **Outcome** — from `problem-framing`, in one sentence.
-2. **Primary metric** — definition, current baseline with date, historical variance, target, measurement window.
-3. **Supporting metrics** — at most two.
-4. **Guardrails** — what must not get worse, with thresholds.
-5. **Failure condition** — the number that means it did not work, the review date, and the pre-committed response.
-6. **Segments** — which cuts will be checked before any aggregate is believed.
-7. **Instrumentation request** — events, triggers, properties, and whether a pre-change baseline is needed.
-8. **What we will not be able to tell** — the confounds known in advance.
+1. **Outcome**: from `problem-framing`, in one sentence.
+2. **Primary metric**: definition, current baseline with date, historical variance, target, measurement window.
+3. **Supporting metrics**: at most two.
+4. **Guardrails**: what must not get worse, with thresholds.
+5. **Failure condition**: the number that means it did not work, the review date, and the pre-committed response.
+6. **Segments**: which cuts will be checked before any aggregate is believed.
+7. **Instrumentation request**: events, triggers, properties, and whether a pre-change baseline is needed.
+8. **What we will not be able to tell**: the confounds known in advance.
 
 **Done when:** every metric has a baseline and a date, a failure condition with a committed response exists, every driving metric has a guardrail, and engineering has the event list before the build starts rather than after.

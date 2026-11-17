@@ -16,11 +16,11 @@ The governing idea: a survey measures what you asked, not what you meant, and it
 
 | The situation | Go to |
 | --- | --- |
-| You need a benchmark number for usability | [Instruments](instruments.md) — SUS, UMUX-Lite, SEQ |
+| You need a benchmark number for usability | [Instruments](instruments.md): SUS, UMUX-Lite, SEQ |
 | You need to know how many people to survey | [Sample size](sample-size.md) |
 | You are writing the questions | **Write questions that cannot steer the answer** below |
-| You want to know *why* people answered that way | `user-interviews` — a survey will not tell you |
-| You want to know what people actually do | `experimentation-and-analytics` — behavior beats self-report |
+| You want to know *why* people answered that way | `user-interviews`: a survey will not tell you |
+| You want to know what people actually do | `experimentation-and-analytics`: behavior beats self-report |
 | Someone asked for the NPS to go up | **NPS measures loyalty, badly, and diagnoses nothing** below |
 | The population is under 100 people | Interview them instead; a survey will not reach significance |
 
@@ -36,7 +36,7 @@ The governing idea: a survey measures what you asked, not what you meant, and it
 
 A survey's answer options are a hypothesis about the range of possible answers. Writing them from imagination means the respondent picks the closest wrong option, and the data looks clean while being wrong.
 
-Interview first, extract the vocabulary and the actual range of behavior, then write options that reflect it. Where that is impossible, include an "Other" with a text field and expect to code it — and treat a large Other share as evidence the options were invented.
+Interview first, extract the vocabulary and the actual range of behavior, then write options that reflect it. Where that is impossible, include an "Other" with a text field and expect to code it, and treat a large Other share as evidence the options were invented.
 
 The reverse order is legitimate in one case: a survey surfaces a segment behaving unexpectedly, and interviews go find out why.
 
@@ -62,12 +62,12 @@ Then read every question aloud. Anything that makes you hesitate will make a res
 
 - **Label every point**, not just the ends. Unlabeled midpoints are interpreted differently by every respondent, and the resulting distribution is noise dressed as data.
 - **Use 5 or 7 points.** Below 5 loses resolution; above 7 adds no discrimination and slows completion.
-- **Keep it balanced** — as many negative points as positive, with a genuine neutral. A scale running Excellent / Very good / Good / Fair guarantees a positive mean.
+- **Keep it balanced**: as many negative points as positive, with a genuine neutral. A scale running Excellent / Very good / Good / Fair guarantees a positive mean.
 - **Include an escape.** "Not applicable" and "Don't know" are real answers. Forcing a choice manufactures data.
 - **Keep the direction constant** across the survey. Flipping polarity to "catch inattentive respondents" mostly catches attentive ones reading fast.
 - **Never mix agreement and frequency scales** in one block. Respondents answer the previous scale's shape.
 
-Avoid agree/disagree statements where a direct question exists. Agreement scales carry acquiescence bias — a measurable tendency to agree regardless of content — and "How easy was it to complete this?" outperforms "I found this easy to complete."
+Avoid agree/disagree statements where a direct question exists. Agreement scales carry acquiescence bias (a measurable tendency to agree regardless of content) and "How easy was it to complete this?" outperforms "I found this easy to complete."
 
 ## Order questions so early ones do not contaminate late ones
 
@@ -77,11 +77,11 @@ Put the most important question early, while attention is highest. Group related
 
 Anything that reveals what you are hoping to hear goes last, for the same reason it does in `user-interviews`.
 
-Keep the whole thing under five minutes. Completion rates fall sharply past that, and the people who persist are systematically different from the ones who abandon — which biases your sample in a way no sample-size calculation will fix.
+Keep the whole thing under five minutes. Completion rates fall sharply past that, and the people who persist are systematically different from the ones who abandon: which biases your sample in a way no sample-size calculation will fix.
 
 ## Sample size comes from the precision you need
 
-The full calculation is in [sample size](sample-size.md). The short version for the common case — estimating a proportion in a large population at 95% confidence:
+The full calculation is in [sample size](sample-size.md). The short version for the common case, estimating a proportion in a large population at 95% confidence:
 
 | Margin of error | Completed responses needed |
 | --- | --- |
@@ -92,7 +92,7 @@ The full calculation is in [sample size](sample-size.md). The short version for 
 
 These are *completed* responses, not invitations. At a 10% response rate, ±5% needs roughly 3,800 invitations.
 
-Two consequences teams routinely miss. First, comparing two segments needs enough in each segment, not overall — a 400-response survey split 370/30 cannot compare them. Second, precision improves with the square root, so halving the margin of error quadruples the cost.
+Two consequences teams routinely miss. First, comparing two segments needs enough in each segment, not overall: a 400-response survey split 370/30 cannot compare them. Second, precision improves with the square root, so halving the margin of error quadruples the cost.
 
 Below about 100 responses, report counts rather than percentages. "31 of 84" is honest; "37%" implies a precision that is not there.
 
@@ -108,13 +108,13 @@ State the response rate in the report, always. A result from a 4% response rate 
 
 ## NPS measures loyalty, badly, and diagnoses nothing
 
-The Net Promoter Score — 0–10 likelihood to recommend, collapsed into promoters minus detractors — is widely tracked and widely misused.
+The Net Promoter Score (0 to 10 likelihood to recommend, collapsed into promoters minus detractors) is widely tracked and widely misused.
 
 What it is legitimately good for: a single comparable number over time, and an open-text follow-up that generates qualitative leads.
 
-What it cannot do: tell you *why* the number moved, identify which part of the experience caused it, or support a product decision on its own. It discards most of the information in the 0–10 response by bucketing it, and it is unstable at small samples because a few responses can swing the score by double digits.
+What it cannot do: tell you *why* the number moved, identify which part of the experience caused it, or support a product decision on its own. It discards most of the information in the 0 to 10 response by bucketing it, and it is unstable at small samples because a few responses can swing the score by double digits.
 
-If a stakeholder wants NPS to move, the useful response is to accept the metric and pair it with something diagnostic — SUS or UMUX-Lite for the interface, `usability-testing` for the reasons, and the open-text field coded through `research-synthesis`. Arguing the metric away rarely works; instrumenting around it does.
+If a stakeholder wants NPS to move, the useful response is to accept the metric and pair it with something diagnostic: SUS or UMUX-Lite for the interface, `usability-testing` for the reasons, and the open-text field coded through `research-synthesis`. Arguing the metric away rarely works; instrumenting around it does.
 
 ## Use a standardized instrument rather than inventing one
 
@@ -122,12 +122,12 @@ When the question is "how usable is this, compared to before or compared to othe
 
 Details and scoring in [instruments](instruments.md):
 
-- **SUS** — 10 items, score 0–100, general usability. An industry mean around 68 makes any score interpretable.
-- **UMUX-Lite** — 2 items, correlates well with SUS at a fraction of the length. The right default when survey space is scarce.
-- **SEQ** — single item after a task, 1–7. The cheapest useful measure in existence; add it to every usability session.
-- **CSAT** — satisfaction with a specific interaction, not with the product.
+- **SUS**: 10 items, score 0 to 100, general usability. An industry mean around 68 makes any score interpretable.
+- **UMUX-Lite**: 2 items, correlates well with SUS at a fraction of the length. The right default when survey space is scarce.
+- **SEQ**: single item after a task, 1 to 7. The cheapest useful measure in existence; add it to every usability session.
+- **CSAT**: satisfaction with a specific interaction, not with the product.
 
-Never reword a validated instrument. Changing the items breaks the norms and you no longer have a comparable score — you have a bespoke scale with a borrowed name.
+Never reword a validated instrument. Changing the items breaks the norms and you no longer have a comparable score: you have a bespoke scale with a borrowed name.
 
 ## Evidence bar
 
@@ -164,13 +164,13 @@ When the sample cannot support the question asked, say so and do not report the 
 
 **Format:**
 
-1. **What we asked and why** — the research question and the decision waiting on it.
-2. **Fielding** — dates, invited, completed, response rate, how the sample was drawn.
-3. **Headline results** — each with n, percentage, and margin of error. Most decision-relevant first.
-4. **Segment differences** — only those exceeding the margin of error, with n for each segment shown.
-5. **Instrument scores** — SUS, UMUX-Lite or SEQ with the comparison point (last quarter, industry mean) that makes them interpretable.
-6. **Open text themes** — coded, with counts, handed through `research-synthesis`.
-7. **Limits** — who is not represented, what the survey could not ask, what the non-response pattern probably is.
-8. **Next step** — one, usually qualitative, because a survey tells you where to look and not what you are looking at.
+1. **What we asked and why**: the research question and the decision waiting on it.
+2. **Fielding**: dates, invited, completed, response rate, how the sample was drawn.
+3. **Headline results**: each with n, percentage, and margin of error. Most decision-relevant first.
+4. **Segment differences**: only those exceeding the margin of error, with n for each segment shown.
+5. **Instrument scores**: SUS, UMUX-Lite or SEQ with the comparison point (last quarter, industry mean) that makes them interpretable.
+6. **Open text themes**: coded, with counts, handed through `research-synthesis`.
+7. **Limits**: who is not represented, what the survey could not ask, what the non-response pattern probably is.
+8. **Next step**: one, usually qualitative, because a survey tells you where to look and not what you are looking at.
 
 **Done when:** no number appears without its n, and a reader could not accidentally quote a result without its uncertainty.

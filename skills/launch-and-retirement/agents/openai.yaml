@@ -1,0 +1,3 @@
+interface:
+  display_name: "Launch and Retirement"
+  short_description: "Rollout, live operation, migration and removal"

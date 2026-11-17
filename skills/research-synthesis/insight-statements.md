@@ -6,7 +6,7 @@ How to name a theme so that it survives the meeting, and how to write up finding
 
 The most common failure in research write-ups is naming a cluster rather than stating what it found.
 
-| Label — says nothing | Statement — says something |
+| Label (says nothing | Statement) says something |
 | --- | --- |
 | Navigation | People look for billing under their profile, not under settings |
 | Onboarding friction | Users abandon setup at the team-invite step because they do not yet know who to invite |
@@ -42,14 +42,14 @@ Three separable claims. Writing them as one sentence means a reader who disagree
 >
 > **Recommendation.** Surface billing from the profile menu. Structure owned by `information-architecture`.
 
-The implication line is the one most often missing, and it is the one that makes the finding matter to someone who does not care about navigation. Connect the observed behavior to a cost the organization already recognizes — support volume, churn, failed conversions, engineering rework.
+The implication line is the one most often missing, and it is the one that makes the finding matter to someone who does not care about navigation. Connect the observed behavior to a cost the organization already recognizes: support volume, churn, failed conversions, engineering rework.
 
 ## Attach evidence inline
 
 Every statement carries its count and rating where the reader will see them, not in a methods appendix.
 
 > **People look for billing under their profile, not under settings.**
-> *Strong — 4 of 5 participants, observed, unprompted. Consistent with 18 support tickets tagged `billing-location` in Q2.*
+> *Strong: 4 of 5 participants, observed, unprompted. Consistent with 18 support tickets tagged `billing-location` in Q2.*
 
 Inline evidence does two things. It stops a weak finding being quoted as a strong one, and it pre-empts the "how do you know" question that otherwise consumes the meeting.
 
@@ -59,7 +59,7 @@ For a single-participant observation, the label does the work:
 
 ## Write the answer first
 
-Put a one-paragraph answer to the research question at the top of the document. Most readers will stop there, and that is the correct outcome — they got what they needed.
+Put a one-paragraph answer to the research question at the top of the document. Most readers will stop there, and that is the correct outcome: they got what they needed.
 
 Burying the answer under methodology is a habit from academic writing and it costs research its audience. Method belongs in section two, where the people who want to challenge the finding will look for it.
 
@@ -71,7 +71,7 @@ Exception: a surprise that contradicts a team assumption goes early regardless o
 
 ## Quotes
 
-One quote per theme, verbatim, with a participant ID. More than one is padding, and quotes are the most persuasive and least representative element in the document — a vivid quote from one participant will be repeated in meetings for years while the count is forgotten.
+One quote per theme, verbatim, with a participant ID. More than one is padding, and quotes are the most persuasive and least representative element in the document: a vivid quote from one participant will be repeated in meetings for years while the count is forgotten.
 
 Never clean up a quote to make it clearer. Trim with an ellipsis, do not rewrite. The participant's actual vocabulary is frequently the finding, and it feeds `content-design` and `information-architecture` directly.
 
@@ -83,7 +83,7 @@ Strip identifying detail. Role plus company size plus a distinctive phrase ident
 
 **Design specifications.** Naming the fix in detail takes the decision away from the skill that owns it. "Move billing into the profile menu" is a recommendation; a spec for the menu is `information-architecture`'s job.
 
-**Participant demographics as explanation.** "Older users struggled" is almost always a proxy for something else — unfamiliarity with a pattern, a different device, a different tenure. Find the real variable.
+**Participant demographics as explanation.** "Older users struggled" is almost always a proxy for something else: unfamiliarity with a pattern, a different device, a different tenure. Find the real variable.
 
 **Anything with no implication.** If you cannot say what it changes, it is context. Move it to the background section or cut it.
 
@@ -91,6 +91,6 @@ Strip identifying detail. Role plus company size plus a distinctive phrase ident
 
 Every theme should compress to a single line that survives being copied into a ticket, a Slack message or a slide without its context:
 
-> Billing is filed under "my account" in users' heads, not under settings — 4/5, observed.
+> Billing is filed under "my account" in users' heads, not under settings: 4/5, observed.
 
 If the one-line version is misleading without the full section, the statement is not finished. That compressed line is what will actually travel.
