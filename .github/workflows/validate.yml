@@ -25,15 +25,18 @@ jobs:
         run: |
           git fetch --no-tags --depth=1 origin "${{ github.base_ref }}"
           base="origin/${{ github.base_ref }}"
-          if git diff --quiet "$base" -- skills/; then
-            echo "No skill changes; version bump not required."
+          if git diff --quiet "$base" -- skills/ agents/; then
+            echo "No skill or agent changes; version bump not required."
             exit 0
           fi
-          if git diff --quiet "$base" -- .claude-plugin/plugin.json; then
-            echo "::error::skills/ changed but .claude-plugin/plugin.json was not touched. 'claude plugin update' compares that version and nothing else, so this change would never reach anyone who installed the plugin."
+          old=$(git show "$base:.claude-plugin/plugin.json" | node -e 'let s="";process.stdin.on("data",d=>s+=d).on("end",()=>console.log(JSON.parse(s).version))')
+          new=$(node -e 'console.log(require("./.claude-plugin/plugin.json").version)')
+          higher=$(node -e 'const a=process.argv[1].split(".").map(Number),b=process.argv[2].split(".").map(Number);for(let i=0;i<3;i++){if(b[i]>a[i]){console.log("yes");process.exit()}if(b[i]<a[i])break}console.log("no")' "$old" "$new")
+          if [ "$higher" != "yes" ]; then
+            echo "::error::skills/ or agents/ changed but the version in .claude-plugin/plugin.json went from $old to $new. 'claude plugin update' compares that version and nothing else, so raise it or this change never reaches anyone who installed the plugin."
             exit 1
           fi
-          echo "ok: plugin.json touched alongside skills/"
+          echo "Version raised from $old to $new."
 
   eval:
     name: Skill triggering evals
@@ -74,7 +77,7 @@ jobs:
             --trust-plugin \
             --model claude-sonnet-5 \
             --threshold 0.8 \
-            --max-cost-usd 15 \
+            --max-cost-usd 30 \
             --no-publish \
             --json evals-result.json
 

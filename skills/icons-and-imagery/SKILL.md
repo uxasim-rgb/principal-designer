@@ -88,7 +88,7 @@ Never start with "Image of" or "Picture of": assistive technology already says s
 
 The same image gets different alt text in different contexts. A product photo on a listing page might be the product name; the same photo in a gallery with the name beside it might be `alt=""`.
 
-Complex images (charts, data visualizations, diagrams) need a text alternative nearby rather than a long alt string. `dataviz` covers chart accessibility conventions.
+Complex images (charts, data visualizations, diagrams) need a text alternative nearby rather than a long alt string. `data-visualization` covers chart accessibility conventions.
 
 ## Ship the smallest thing that looks right
 

@@ -10,7 +10,7 @@ This skill builds the color system and verifies it. It sits in the Craft band.
 
 The governing idea: most color arguments are decidable. Contrast resolves to a number, gamut resolves to in or out, and an even ramp is produced by arithmetic rather than by judgement. Where a question has a calculable answer, calculate it and the argument ends.
 
-**Works with:** `accessibility` owns the contrast thresholds this skill computes against · `design-systems` owns token naming conventions and versioning · `components-and-states` owns which states need which semantic color · `dataviz` owns categorical and sequential palettes for charts · `global-and-inclusive` owns cultural color meaning.
+**Works with:** `accessibility` owns the contrast thresholds this skill computes against · `design-systems` owns token naming conventions and versioning · `components-and-states` owns which states need which semantic color · `data-visualization` owns categorical and sequential palettes for charts · `global-and-inclusive` owns cultural color meaning.
 
 ## Start here
 
@@ -21,7 +21,7 @@ The governing idea: most color arguments are decidable. Contrast resolves to a n
 | Checking whether a pair passes | **Compute contrast, never estimate it** below |
 | Setting up dark mode | **Dark mode is a different palette** below |
 | Colors are inconsistent across the product | Token architecture: **Name by role** and `design-systems` |
-| Choosing colors for a chart | `dataviz` |
+| Choosing colors for a chart | `data-visualization` |
 | Deciding whether a threshold applies | `accessibility` owns which threshold, this skill owns the math |
 
 ## Work in a perceptual color space
@@ -92,16 +92,16 @@ The thresholds, `accessibility` owns these; this skill owns computing against th
 
 | What | WCAG 2.2 AA | AAA |
 | --- | --- | --- |
-| Body text under 18.66px, or under 14px bold | 4.5:1 | 7:1 |
-| Large text, 18.66px+, or 14px+ bold | 3:1 | 4.5:1 |
-| UI components, focus indicators, graphical objects | 3:1 |: |
+| Normal text: under 24px regular, or under about 18.67px bold | 4.5:1 | 7:1 |
+| Large text: 24px (18pt) or larger regular, or about 18.67px (14pt) or larger bold | 3:1 | 4.5:1 |
+| Visual parts needed to identify controls and states, graphical objects, focus indicators | 3:1 | None |
 | Disabled controls | Exempt, but see below |
 
 Check the pair that actually renders. Text on a gradient, on an image, on a translucent surface or on a hover background is a different pair from text on the base surface, and each has to pass. The commonest miss is checking against the page background when the text sits on a card.
 
 Disabled controls are technically exempt. Making them illegible is still a usability problem: a user who cannot read a disabled field cannot tell what they would be filling in. Aim for 3:1 anyway.
 
-A ratio that was not computed does not go in the report. This is the one rule in this skill with no exceptions.
+Compare the unrounded ratio with the threshold and round only for display: 4.48:1 fails 4.5:1 even though it rounds to 4.5. A ratio that was not computed does not go in the report. This is the one rule in this skill with no exceptions.
 
 ## Never carry meaning by color alone
 

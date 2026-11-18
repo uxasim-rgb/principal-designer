@@ -8,7 +8,7 @@ when_to_use: Use when reviewing a whole screen, flow or feature across disciplin
 
 This skill reviews a surface as one system. It sits in the Route band with `field-guide`, and owns the severity ladder, the consolidation rules and the verdict that every other skill reports against.
 
-The governing idea: a strong interface is not nine independent audits stapled together. Route to each domain, then resolve the conflicts and rank the whole.
+The governing idea: a strong interface is not twenty independent audits stapled together. Route to each domain, then resolve the conflicts and rank the whole.
 
 **Works with:** every domain skill owns its own rules and reports here · `review-the-change` owns change-scoped review and hands its findings to this ladder · `field-guide` decides what work to do rather than judging what exists · `design-critique` handles feedback to a person on unfinished work.
 
@@ -20,7 +20,7 @@ The governing idea: a strong interface is not nine independent audits stapled to
 | Reviewing a diff, branch or PR | `review-the-change`: it hands findings back here |
 | Giving feedback on work in progress | `design-critique` |
 | Deciding what work to do next | `field-guide` |
-| You only need one domain checked | That skill directly. Routing to all nine is waste |
+| You only need one domain checked | That skill directly. Routing to all twenty is waste |
 | You need the output format | [How to report](how-to-report.md) |
 
 ## 1. Establish the scope and the standard
@@ -60,7 +60,7 @@ Each domain skill owns its rules. This skill never restates or overrides them.
 | iOS, Android and cross-platform apps | `native-platforms` |
 | Regulated or safety-critical products | `high-stakes-domains` |
 
-Not every surface needs all fourteen. A static content page does not need `forms-and-input`. State which domains you covered and which you did not: implied completeness is the most common dishonesty in a review.
+Not every surface needs all twenty. A static content page does not need `forms-and-input`. State which domains you covered and which you did not: implied completeness is the most common dishonesty in a review.
 
 For the details reviews usually miss (first-use versus empty, stale data, focus after delete, partial bulk results, locale formats, ending states), run the relevant groups in [small-checks.md](small-checks.md).
 

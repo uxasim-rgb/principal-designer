@@ -34,7 +34,7 @@ A study that needs both quadrants needs two studies. Run qualitative first: it t
 
 **Interviews chosen to validate a design.** Showing someone a design and asking what they think produces politeness and speculation. If the question is whether the design works, give them a task and watch: `usability-testing`.
 
-**Usability test chosen to choose between concepts.** A usability test finds problems in one thing. Running it on two designs produces a comparison with no statistical basis and an outcome decided by whichever went first. Use it to fix each, and `experimentation-and-analytics` to choose between them in production.
+**Small usability test used to pick a winner.** A five-person usability test finds problems; it cannot say which of two designs performs better. Use it to fix each. To choose between them, either run a comparative test designed for it (enough participants for the measure, order counterbalanced so neither design always goes first, carryover considered) or compare in production with `experimentation-and-analytics`.
 
 **Preference test chosen for anything.** "Which do you prefer" correlates poorly with which performs better. Its one legitimate use is checking that a brand direction does not actively repel people.
 

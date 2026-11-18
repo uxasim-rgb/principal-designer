@@ -63,9 +63,7 @@ for d in skills/*/; do
   grep -q '^## Start here'   "$f" || err "$slug: missing '## Start here'"
   grep -q '^## Evidence bar' "$f" || err "$slug: missing '## Evidence bar'"
 
-  # description + when_to_use share a 1536-character budget, sent every turn
-  n=$(awk '/^(description|when_to_use):/{sub(/^[a-z_]+:[[:space:]]*/,""); t+=length($0)} END{print t+0}' "$f")
-  [ "$n" -le 1536 ] || err "$slug: description + when_to_use is $n chars, budget is 1536"
+  # the 1536-character budget and YAML validity are checked by scripts/check-frontmatter.js
 
   # the two halves of the invocation switch must agree
   y="$d/agents/openai.yaml"
@@ -82,6 +80,10 @@ for d in skills/*/; do
   done
 done
 [ "$COUNT" -gt 0 ] && pass "$COUNT skill directories checked"
+
+head "Frontmatter"
+
+node scripts/check-frontmatter.js || err "frontmatter check failed (see above)"
 
 head "Cross-references"
 

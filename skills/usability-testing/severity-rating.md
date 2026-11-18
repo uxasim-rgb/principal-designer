@@ -85,7 +85,7 @@ Keep the disagreement in the report where it survives discussion. "Rated Serious
 
 Six fields. Every one earns its place:
 
-> **Severity.** Serious (impact 3, frequency 3, persistence 2)
+> **Severity.** Serious (impact 3, frequency 2, persistence 2: the date filter is on a secondary path)
 >
 > **Observed.** 3 of 5 participants opened the Filters panel, scrolled past the date range twice, and used the browser's find-in-page instead. Mean time to locate: 48s.
 >

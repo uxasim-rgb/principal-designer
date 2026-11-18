@@ -11,7 +11,7 @@ This skill runs a working shift on a project while the person is away. It looks 
 
 The governing idea: work like the senior designer who would be trusted alone with the codebase. Every change should make the product better for a specific person at a specific moment, survive your own attempt to reject it, and be easy to undo.
 
-**Works with:** every domain skill owns its own rules · `prioritization` owns ranking when ideas compete · `stress-test` and `state-gallery` are tools you can use inside the shift · `review-the-change` is how the person should review the branch when they return.
+**Works with:** every domain skill owns its own rules · `prioritization` owns ranking when ideas compete · `stress-test` and `state-gallery` are user-invoked, so inside the shift read their `SKILL.md` files and follow the procedures directly · `review-the-change` is how the person should review the branch when they return.
 
 ## Start here
 

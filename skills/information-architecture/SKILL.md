@@ -71,7 +71,7 @@ Rules that hold across products:
 - **No internal jargon.** Entity names from the data model, project codenames and team names are invisible to the team and opaque to everyone else.
 - **Avoid clever.** A section called "Mission Control" cannot be searched for or guessed.
 - **Be specific over short.** "Export data" beats "Data". Single-word nav items are frequently ambiguous and the space saved is not worth it.
-- **Keep one term per concept.** If it is "member" in the nav, it is "member" in the empty state, the error and the email. `design-systems` owns the term list.
+- **Keep one term per concept.** If it is "member" in the nav, it is "member" in the empty state, the error and the email. This skill derives the candidate terms; `content-design` decides the wording and owns the term list; `design-systems` publishes it.
 - **Front-load the distinguishing word.** "Payment methods" and "Payment history" scan poorly as a pair; "Cards and accounts" / "Invoices" scan instantly.
 
 ## Choose a navigation model that fits breadth and depth
@@ -139,7 +139,7 @@ Where the current structure tests fine and the complaint is real, the problem is
 | Four top-level items all mean "settings" | Each team added their own | Consolidate; group internally |
 | A group name contains "and" | It is two groups | Split or rename |
 | Labels came from a team workshop | Internal vocabulary shipped | Take them from research |
-| The same concept has two names across screens | No term list | One term per concept; `design-systems` owns it |
+| The same concept has two names across screens | No term list | One term per concept, recorded in the term list `content-design` owns |
 | The hierarchy is five levels deep | People will not reach the bottom | Flatten; ask whether the deepest level is a filter |
 | The sidebar changes between sections | The mental map is destroyed | Keep it stable |
 | A restructure shipped with no tree test | It is a bet | Test old and new; compare first-click accuracy |

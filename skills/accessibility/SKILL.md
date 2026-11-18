@@ -53,7 +53,7 @@ If you build a custom control, you own the full behavior contract: role, accessi
 
 ## Everything works from the keyboard
 
-Every interactive element must be reachable by Tab, operable by Enter or Space, and dismissible by Escape where it is transient.
+Everything must work from the keyboard using its established pattern: buttons and links are reached by Tab and work with Enter or Space, transient things close with Escape. Composite widgets take one Tab stop and use arrow keys inside: a tab list is one Tab stop, with Left and Right moving between tabs. That passes; it is the expected pattern, not a gap.
 
 - **Tab order follows visual order.** Where they diverge, fix the DOM order rather than adding `tabindex` values. Positive `tabindex` creates a separate tab sequence and is nearly always a bug.
 - **No keyboard traps.** Focus must be able to leave anything it can enter. The exception is a modal, which traps deliberately and releases on close.
@@ -82,7 +82,8 @@ When the interface changes substantially, focus has to be moved deliberately, or
 | --- | --- |
 | Modal opens | The dialog, or its first meaningful control: not the close button by default |
 | Modal closes | The element that opened it |
-| Content loads into a region | The region, or its heading, with an announcement |
+| The person navigates to new content (a new route, a "Load results" they pressed and wait on) | The new content's heading |
+| Content updates while the person keeps working (typing in a filter, a count changing, a background request finishing) | Stays where it is. Announce the meaningful change in a polite live region |
 | A form fails validation | The error summary, which links to each field |
 | An item is deleted from a list | The next item, or the list itself: never nowhere |
 | Route change in a single-page app | The new page's main heading |

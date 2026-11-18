@@ -32,7 +32,7 @@ At most twenty, severity order. Each finding as a block, not a table row: a tabl
 
 > **Serious: `accessibility`**
 > **Where.** Member list, bulk-select checkbox, all breakpoints.
-> **Measured.** Target is 16×16 CSS px. Adjacent targets 8px apart, so the spacing exception does not apply. WCAG 2.5.8 requires 24×24.
+> **Measured.** Target is 16×16 CSS px. The row's name link starts 2px to its right. A 24px circle centred on the checkbox reaches 12px from its centre, which is 4px past its edge, so it overlaps the link and the spacing exception does not apply. WCAG 2.5.8 needs 24×24 or that clear spacing.
 > **Consequence.** Selecting members on touch requires repeated attempts, and the adjacent row link is hit instead: which navigates away and loses the selection.
 > **Fix.** Expand the hit area to 24px minimum with padding on the wrapping label. Visible checkbox can stay 16px.
 
@@ -76,7 +76,7 @@ Findings beyond the cap, listed in one line each. Present so they are not lost, 
 | --- | --- |
 | Spacing is inconsistent | The two card variants use 12px and 16px internal spacing, so a scanning user reads them as different object types |
 | The copy could be better | The error says "Invalid input" with no indication of which field or what a valid value is, so the user must guess |
-| Contrast looks low | Body text `#767676` on `#FFFFFF` computes to 4.54:1, passes AA at 4.5:1 but fails at 14px bold, which this is |
+| Contrast looks low | Caption text `#9CA3AF` on `#FFFFFF` computes to 2.54:1, below the 4.5:1 that 14px text needs, so people with low vision may not read the timestamps |
 | I'd use a different icon | The gear icon is used for workspace settings here and for row-level actions on the previous screen |
 
 **Measure what is measurable.** Contrast, target size, duration, measure in characters, bundle size, layout shift. A finding that could carry a number and does not is incomplete.

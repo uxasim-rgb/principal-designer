@@ -181,7 +181,7 @@ A user-invoked skill may invoke model-invoked skills but can never reach another
 
 ## Evals
 
-Skill collections fail quietly. A skill that never triggers looks identical to one that works until someone notices they have been getting generic answers for a month. With 35 skills the risk is not that one fails to fire: it is that two compete and the wrong one wins.
+Skill collections fail quietly. A skill that never triggers looks identical to one that works until someone notices they have been getting generic answers for a month. With 48 skills the risk is not that one fails to fire: it is that two compete and the wrong one wins.
 
 The suite lives in `evals/` and runs with `claude plugin eval .` from the repository root. Each case runs three times with the plugin loaded and three times without, reporting `WITH`, `W/OUT` and the difference `Δ`. A high `WITH` score with a `Δ` near zero means Claude would have answered as well without the plugin, which means the skill is not contributing.
 
@@ -219,7 +219,7 @@ The eval job runs only on pull requests and only when `ANTHROPIC_API_KEY` is pre
 
 `opencode.json` registers `skills/` so opencode loads the collection while this repository is open. That is for working on the skills; opencode users install through the skills CLI, which exposes each skill as a slash command on its own, so this repository carries no command wrappers.
 
-Each skill carries `agents/openai.yaml` with a display name and short description for Codex, plus `policy.allow_implicit_invocation: false` on the four user-invoked skills.
+Each skill carries `agents/openai.yaml` with a display name and short description for Codex, plus `policy.allow_implicit_invocation: false` on the nine user-invoked skills.
 
 ## Authoring conventions
 

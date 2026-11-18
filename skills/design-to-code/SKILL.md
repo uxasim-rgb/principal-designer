@@ -47,7 +47,8 @@ For every color, size, space, radius, shadow, font and component in the design, 
 | --- | --- |
 | Matches a token or component exactly | Use it |
 | Within 2px of a spacing or size token, or the same color step | Use the token, and list the rounding in the report |
-| More than 2px off, or a different color step | Stop and ask. It may be a deliberate change or a mistake in the file |
+| More than 2px off a spacing or size token | Use the nearest token unless the difference is clearly intentional (a hero that is meant to be larger). Record each one in the report so the designer can confirm. Do not stop the build for it |
+| A different color step, a new color, or a value that changes meaning (a status color, a brand color) | Ask before building that part, and keep building the rest. It may be a deliberate change or a mistake in the file |
 | A component the library does not have | Build it from existing primitives and list it as new |
 | A one-off value with no token | Ask whether it should become a token. Never add a token or a variant just to hit a number |
 

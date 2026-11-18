@@ -6,14 +6,18 @@ The numbers other skills cite. All figures are WCAG 2.2 unless noted. CSS pixels
 
 | What | AA | AAA |
 | --- | --- | --- |
-| Body text, under 18.66px regular, or under 14px bold | 4.5:1 | 7:1 |
-| Large text, 18.66px+ regular, or 14px+ bold | 3:1 | 4.5:1 |
-| UI components (control boundaries, input borders, icons that carry meaning | 3:1 |)|
-| Focus indicators | 3:1 against adjacent colors |: |
-| Graphical objects needed to understand content | 3:1 |: |
-| Disabled controls | Exempt |: |
-| Logotypes | Exempt |: |
-| Decorative, purely aesthetic, or invisible | Exempt |: |
+| Normal text: under 24px regular, or under about 18.67px bold | 4.5:1 | 7:1 |
+| Large text: 24px (18pt) or larger regular, or about 18.67px (14pt) or larger bold | 3:1 | 4.5:1 |
+| Visual parts needed to identify a control or its state (an input border that is the only sign of the field, a checkbox outline, icons that carry meaning) | 3:1 | None |
+| Focus indicators (house rule; WCAG 2.2 AA itself only requires focus to be visible) | 3:1 against adjacent colors | None |
+| Graphical objects needed to understand content | 3:1 | None |
+| Disabled controls | Exempt | None |
+| Logotypes | Exempt | None |
+| Decorative, purely aesthetic, or invisible | Exempt | None |
+
+WCAG defines large text in points: 18pt regular and 14pt bold. At 1pt = 1.333 CSS px that is 24px and about 18.67px. So 18px regular and 14px bold are normal text and need 4.5:1. Fonts with unusually thin strokes may need more.
+
+**Compare the unrounded ratio.** `#767676` on `#FFFFFF` is 4.54:1, which passes 4.5:1 for normal text at any size. `#777777` on white is 4.48:1 and fails, even though both display as "4.5". Round only for display.
 
 **Check the pair that actually renders.** Text on a card is measured against the card, not the page. Text over a gradient is measured at its worst point. Text on a translucent surface is measured against the composited result. Hover and active backgrounds are separate pairs.
 
@@ -66,7 +70,7 @@ Test 1.4.12 by injecting the text-spacing values as a stylesheet. Fixed-height c
 | 2.2.2 Pause, stop, hide (A) | Anything moving, blinking or auto-updating for more than 5 seconds needs a pause control |
 | 2.3.1 Three flashes (A) | Nothing flashes more than 3 times per second |
 
-The flash threshold is a seizure risk and has no exceptions. It applies to video content, animated transitions and rapidly updating interfaces alike.
+WCAG 2.3.1 passes content that flashes no more than three times in any one second, or content whose flashes stay below the general flash and red flash thresholds. **House rule, stricter than WCAG:** design to the three-flash limit with no reliance on the threshold exception, because measuring flash area and luminance is rarely possible during design. Label it as a house rule in reports. It applies to video content, animated transitions and rapidly updating interfaces alike.
 
 Session timeouts need a warning with at least 20 seconds to respond, and an option to extend. A session that expires silently and discards a form is both a timing failure and a data-loss failure.
 

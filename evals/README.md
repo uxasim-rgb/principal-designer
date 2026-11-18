@@ -13,7 +13,7 @@ Each case runs three times with the plugin loaded and three times without, and r
 
 | Directory | Cases | What it checks |
 | --- | --- | --- |
-| `evals/<skill-name>/` | 35 | Each skill fires on natural phrasing, and produces the right kind of answer |
+| `evals/<skill-name>/` | 48 | Each skill fires on natural phrasing, and produces the right kind of answer |
 | `evals/routing/` | 8 | Neighbouring skills do not steal each other's requests |
 | `evals/negative/` | 3 | Unrelated requests do not invoke a skill at all |
 
@@ -62,8 +62,8 @@ the skills.
 
 ## Cost
 
-At roughly $0.41 per case for the default 3 runs across both arms, the full suite is about
-**$19 to 25**. Bound it:
+At roughly $0.41 per case for the default 3 runs across both arms, the full suite of 59 cases
+is about **$24**. CI caps a run at $30. Bound it:
 
 ```bash
 claude plugin eval . --trust-plugin --max-cost-usd 30 --no-publish

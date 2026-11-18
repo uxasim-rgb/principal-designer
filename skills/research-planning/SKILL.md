@@ -68,7 +68,7 @@ Qualitative methods tell you what and why. Quantitative methods tell you how man
 
 ## Size the sample by what saturates, not by what sounds rigorous
 
-For qualitative studies, five participants per distinct user segment surfaces the large majority of issues in that segment. The number comes from diminishing returns, not from statistical power, and it applies per segment: two segments means ten sessions, not five.
+For formative usability testing, five participants per distinct user segment is a good first batch: it usually surfaces the most common issues in that segment. The number comes from diminishing returns, not from statistical power, and it applies per segment: two segments means ten sessions, not five. Exploratory interviews are different: how many you need depends on the purpose, how varied the people are and how deep the questions go, so plan a first batch and decide on more after synthesis.
 
 Run in waves. Five sessions, synthesize, decide whether the next five would change anything. Most of the time they would not, and the budget is better spent on a second segment or a second round after a fix.
 

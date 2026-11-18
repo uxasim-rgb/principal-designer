@@ -84,7 +84,7 @@ The same defect means different things depending on whether this change caused i
 
 This distinction is the whole discipline of change review. Blocking a small change on pre-existing problems it happens to sit beside is how reviews become adversarial, and how people learn to make changes as small and as unreviewable as possible.
 
-Report inherited defects in their own section, clearly marked, framed as "worth a separate change" rather than as feedback on this one. Where an inherited defect is Critical (data loss, an accessibility barrier) say so plainly and suggest raising it, but still do not gate the current change on it.
+Report inherited defects in their own section, clearly marked, framed as "worth a separate change" rather than as feedback on this one. Where an inherited defect is Critical (data loss, an accessibility barrier) say so plainly and suggest raising it. Do not gate the current change on it, but do state that the surface's release verdict is still blocked.
 
 Decide the label from history, not from where the defect sits. `git blame` the defective lines against the base: lines older than the change make it Inherited; lines written by the change make it New; a line the change restored after an earlier commit fixed it makes it Reintroduced. `git log -S` on the removed fix finds that earlier commit.
 
@@ -147,6 +147,6 @@ When there is nothing to report, report nothing. A review that manufactures thre
 4. **Reintroduced**: findings that came back, each noting when it was previously fixed if that is discoverable, with a suggested guard.
 5. **Inherited**: pre-existing, clearly marked as not blocking this change, framed as separate work.
 6. **Worth keeping**: one or two specific things the change does well.
-7. **Verdict**: from `full-review`'s ladder, applied only to New and Reintroduced findings.
+7. **Two verdicts, stated separately.** The change verdict, from `full-review`'s ladder applied only to New and Reintroduced findings, answers "may this change merge?". The release verdict answers "may this surface ship?" and counts every open Critical, inherited ones included. A passing change verdict is never a release approval: if an inherited Critical remains, write "Change: pass. Surface: blocked by an inherited Critical" so nobody reads one as the other.
 
 **Done when:** every finding has an origin label and an owning skill, the scope is stated including its gaps, the verdict ignores inherited defects, and a clean change is allowed to be clean.

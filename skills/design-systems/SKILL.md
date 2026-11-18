@@ -10,7 +10,7 @@ This skill covers the architecture and governance of a shared system. It opens t
 
 The governing idea: a design system is a product whose users are the people building your product, and it fails for product reasons: it was not adopted, not maintained, or not worth the constraint it imposed.
 
-**Works with:** `color-and-theming` and `typography` own their token values · `components-and-states` owns a component's anatomy and state set · `design-handoff` owns delivery to engineering · `design-engineering` owns implementation · `content-design` owns the term list · `design-ops` owns the team rituals around it.
+**Works with:** `color-and-theming` and `typography` own their token values · `components-and-states` owns a component's anatomy and state set · `design-handoff` owns delivery to engineering · `design-engineering` owns implementation · `content-design` owns the term list and this skill publishes it · `design-ops` owns the team rituals around it.
 
 ## Start here
 

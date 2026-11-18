@@ -6,7 +6,22 @@ Notable changes to this collection. Versions follow [semantic versioning](https:
 - **Minor**: a new skill, or a new section in an existing one.
 - **Patch**: wording, examples, fixed links, eval cases.
 
-The version in `.claude-plugin/plugin.json` must be bumped in the same commit as any change under `skills/`. `claude plugin update` compares that number and nothing else, so an unbumped change reports "already at the latest version" and never reaches anyone.
+The version in `.claude-plugin/plugin.json` must be raised in the same commit as any change under `skills/` or `agents/`. `claude plugin update` compares that number and nothing else, so an unbumped change reports "already at the latest version" and never reaches anyone.
+
+## 2.0.1
+
+Fixes from the 18 November 2026 audit.
+
+- **Install:** `field-guide` and `design-critique` had headers that strict YAML loaders reject, so `npx skills add` installed 46 of 48 skills. Both are fixed, and a new `scripts/check-frontmatter.js` parses every header, checks the 1536-character budget correctly for folded values, and checks that every skill named in a Works with line exists.
+- **Contrast:** large text is 24px regular or about 18.67px bold (18pt and 14pt), not 18.66px and 14px. Fixed in `accessibility` and `color-and-theming`, with a note to compare unrounded ratios. The worked review examples in `full-review` no longer call a passing color a failure or a target with enough spacing a failure.
+- **Focus:** content that updates while the person keeps working leaves focus where it is and is announced instead.
+- **Keyboard and flash:** composite widgets with one Tab stop are the expected pattern; the three-flash rule is labeled a house rule stricter than WCAG 2.3.1.
+- **Research:** compare two groups with an interval for the difference, not by overlapping intervals; five per segment is scoped to formative usability testing; a small population can be surveyed as a census; comparative usability tests are allowed when designed for it; a single reproduced defect is a finding.
+- **Forms:** postcodes no longer get a numeric keyboard by default.
+- **Severity and verdicts:** the worked severity example matches the table; `review-the-change` states the change verdict and the surface's release verdict separately.
+- **References:** `dataviz` corrected to `data-visualization`; the term list has one owner (`content-design`), with `information-architecture` deriving terms and `design-systems` publishing them.
+- **Agents and Make skills:** `fresh-eyes` can load skills and is told which shell commands it may run; `design-to-code` no longer stops the build for spacing values more than 2px off a token; `improvement-shift` follows `stress-test` and `state-gallery` by reading them.
+- **Repository:** broken table cells left by the dash cleanup are repaired; WCAG 3 draft date updated to 10 September 2026; CI now requires a higher version (not just a touched manifest) when skills or agents change, and the eval cost cap matches the estimate; counts in AGENTS.md and evals/README.md corrected; line endings pinned to LF.
 
 ## 2.0.0
 

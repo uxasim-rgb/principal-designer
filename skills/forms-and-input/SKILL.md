@@ -51,7 +51,8 @@ The control tells the user what kind of answer is expected and gets them the rig
 | --- | --- |
 | Email | `type="email"` `inputmode="email"` |
 | Phone | `type="tel"` `inputmode="tel"` |
-| Numeric that is not a quantity: card, PIN, postcode | `inputmode="numeric"` with `type="text"`, so leading zeros survive and spinners do not appear |
+| Numeric that is not a quantity: card, PIN, one-time code | `inputmode="numeric"` with `type="text"`, so leading zeros survive and spinners do not appear |
+| Postcode | `type="text"` with `autocomplete="postal-code"` and no numeric keyboard by default, because UK, Canadian, Dutch and many other postcodes contain letters. Switch to `inputmode="numeric"` only when the selected country uses digit-only codes (the US, Pakistan), and keep leading zeros |
 | Quantity | `type="number"` with sensible `min`, `max`, `step` |
 | Date the user knows | Three separate fields or a masked text input, not a calendar picker |
 | Date the user is choosing | Calendar picker with text entry as a fallback |

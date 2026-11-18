@@ -1,7 +1,8 @@
 ---
 name: field-guide
 description: Routes a UX request to the right skill in this collection, across research, definition, structure, interface craft, inclusive design, build, validation and practice. Use first when a request spans disciplines or the right starting point is unclear.
-when_to_use: Use when someone asks what skills are available, where to start, which method fits, or asks a broad question like "how do I improve this product", "we need to redesign X", "what should I do next": and when a request names a role (researcher, product designer, design engineer) rather than a task.
+when_to_use: >-
+  Use when someone asks what skills are available, where to start, which method fits, or asks a broad question like "how do I improve this product", "we need to redesign X", "what should I do next": and when a request names a role (researcher, product designer, design engineer) rather than a task.
 ---
 
 # The field guide

@@ -115,4 +115,4 @@ A benchmark is only worth running if it is comparable. That means holding consta
 
 Change any of those and note it prominently in the report, because the next person to read the trend line will not know. A score that jumped because the survey moved from post-purchase to post-signup is a measurement artifact that will be celebrated as a win.
 
-Report the trend with error bars, or report it as a table of score plus n. A line chart of four quarterly scores with no uncertainty shown invites the reader to interpret noise as direction: see `dataviz` conventions if the chart is being built.
+Report the trend with error bars, or report it as a table of score plus n. A line chart of four quarterly scores with no uncertainty shown invites the reader to interpret noise as direction: see `data-visualization` conventions if the chart is being built.

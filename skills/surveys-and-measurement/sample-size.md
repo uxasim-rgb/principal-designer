@@ -40,7 +40,7 @@ For N = 800 and a target of ±5% (n = 384):
 384 / (1 + 383/800) = 384 / 1.479 ≈ 260
 ```
 
-For populations under roughly 100, the correction gets you close to needing everyone, which is the signal to stop surveying and start interviewing. Thirty conversations with an 80-person population tells you more than a survey ever will.
+For populations under roughly 100, the correction gets you close to needing everyone. That makes the study a census: survey all of them and report counts, not margins of error. A census of a small internal team can be valuable. If the question is why rather than how many, interviews will usually tell you more.
 
 ## Responses, not invitations
 
@@ -76,7 +76,7 @@ When a segment comes back under about 30, report it as a count with its n visibl
 
 ## Checking a difference before reporting it
 
-Before writing that segment A is higher than segment B, check whether the difference exceeds the uncertainty. The quick check: compute the margin of error for each group and see whether the intervals overlap substantially.
+Before writing that segment A is higher than segment B, estimate the uncertainty of the difference itself. Do not compare the two groups' intervals for overlap: two intervals can overlap while the difference is still clear. For example, 50% and 60% in two independent groups of 200 have overlapping 95% intervals, yet the difference of 10 points has a 95% interval of about 0.3 to 19.7 points (p ≈ 0.044).
 
 Margin of error for a single proportion:
 
@@ -86,11 +86,20 @@ e = 1.96 × √( p(1−p) / n )
 
 For p = 0.62 and n = 150: `1.96 × √(0.62 × 0.38 / 150)` = `1.96 × 0.0396` ≈ ±7.8%.
 
-Two groups at 62% ±7.8% and 55% ±9% are not different. Reporting them as different is the single most common way a survey produces a wrong decision, and it happens because the numbers look different in a table.
+Interval for the difference between two independent proportions:
+
+```
+d = p1 − p2
+e = 1.96 × √( p1(1−p1)/n1 + p2(1−p2)/n2 )
+```
+
+For 62% of 150 and 55% of 118: d = 7 points, e = `1.96 × √(0.62×0.38/150 + 0.55×0.45/118)` ≈ ±11.9 points. The interval runs from about −5 to +19, so this data cannot say which group is higher. Reporting them as different is the most common way a survey produces a wrong decision.
+
+This formula assumes simple random samples from independent groups. Paired data (the same people before and after), weighted samples and clustered samples need their own methods. An inconclusive result means the data cannot tell, not that the groups are the same; to claim they are equivalent, decide in advance how small a difference counts as no difference.
 
 ## Qualitative sample sizes do not come from this page
 
-Interview and usability-test sample sizes are not calculated from margins of error. They come from saturation (the point where new sessions stop producing new findings) and run about five per distinct segment. See `research-planning`.
+Interview and usability-test sample sizes are not calculated from margins of error. They come from the study's purpose and from saturation (the point where new sessions stop producing new findings). Around five per distinct segment is a common planning batch for formative usability testing; exploratory interviews often need more, depending on how varied the people are and how deep the questions go. See `research-planning`.
 
 Mixing the two logics produces both classic errors: running 50 interviews because it felt more rigorous, and reporting "80% of users" from 5 sessions.
 

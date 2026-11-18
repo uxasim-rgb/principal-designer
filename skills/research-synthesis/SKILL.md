@@ -117,7 +117,9 @@ Before planning any new study, search the repository. `research-planning` should
 
 Every theme carries a participant count and an evidence rating, in the document, not in a footnote.
 
-Never promote a single observation to a finding, however vivid. A striking quote from one participant is the most persuasive and least reliable artifact in research, and it will be repeated in meetings long after the study is forgotten. Label it a hypothesis and give it the count.
+Do not promote a single opinion or quote to a theme, however vivid. A striking quote from one participant is the most persuasive and least reliable artifact in research, and it will be repeated in meetings long after the study is forgotten. Label it a hypothesis and give it the count.
+
+A defect is different. If one session shows a reproducible failure (the product charged someone twice, deleted their data, blocked the task), it is a finding: the defect is established, even though how often it happens is not. Report it with the count ("seen in 1 of 6 sessions, reproduced by the team") and leave prevalence open.
 
 Where the data does not support a conclusion, say so explicitly. "We could not tell from this study whether X" is a real result, and writing it is what buys credibility for the themes that are supported.
 

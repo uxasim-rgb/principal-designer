@@ -1,6 +1,7 @@
 ---
 name: design-critique
-description: Runs and receives critique on work in progress: framing the ask, separating reaction from reasoning, and capturing what was decided. Use for feedback between people, not for auditing a build.
+description: >-
+  Runs and receives critique on work in progress: framing the ask, separating reaction from reasoning, and capturing what was decided. Use for feedback between people, not for auditing a build.
 when_to_use: Use when running or joining a design critique or review session, giving feedback on someone's design, asking for feedback on your own work, handling difficult critique conversations, or setting up a team critique practice.
 disable-model-invocation: true
 ---

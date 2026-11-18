@@ -70,7 +70,7 @@ Tables, dashboards, admin tools, anything where the primary job is reading.
 1. The default view answers the most common question without configuration.
 2. Sorting and filtering state is visible and removable.
 3. Empty results explain why and offer a way back.
-4. Numbers are aligned for comparison and formatted consistently: see `dataviz` for chart conventions.
+4. Numbers are aligned for comparison and formatted consistently: see `data-visualization` for chart conventions.
 5. Density is appropriate to the task; a professional tool used daily is allowed to be dense.
 6. Bulk actions exist where the task is repetitive, and say how many items they will affect.
 7. Destructive bulk actions confirm with a count, and are undoable.

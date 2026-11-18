@@ -10,7 +10,7 @@ This skill owns every word a user reads in the product. It sits in the Structure
 
 The governing idea: interface copy is not writing for its own sake. The best sentence is frequently the one that lets you delete the sentence.
 
-**Works with:** `information-architecture` owns navigation labels and the canonical term list · `forms-and-input` owns field behavior · `components-and-states` owns which states need copy · `accessibility` owns announcements and accessible names · `global-and-inclusive` owns translation readiness · `typography` owns how the text renders.
+**Works with:** `information-architecture` owns navigation labels and derives candidate terms from research · `forms-and-input` owns field behavior · `components-and-states` owns which states need copy · `accessibility` owns announcements and accessible names · `global-and-inclusive` owns translation readiness · `typography` owns how the text renders.
 
 ## Start here
 
@@ -109,7 +109,7 @@ Write at the shortest length that is still clear. Shorter is not automatically b
 
 If it is a "member" in the navigation, it is a member in the invitation, the error, the confirmation email and the API docs. Synonyms that read as elegant variation in prose read as two different things in an interface.
 
-Keep a term list: the canonical word, what it means, and the words it replaces. `information-architecture` derives the terms from research; `design-systems` stores the list so it survives staff changes.
+Keep a term list: the canonical word, what it means, and the words it replaces. Three skills share it, each with one job: `information-architecture` derives candidate terms from research and the object model; this skill decides the canonical wording and owns the list; `design-systems` publishes it alongside the components so it survives staff changes.
 
 Check the term against what users actually say (`research-synthesis` output) not against what the data model calls it.
 
